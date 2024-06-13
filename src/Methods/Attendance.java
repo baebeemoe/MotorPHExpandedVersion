@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -23,7 +24,7 @@ public class Attendance {
      
 }
     
-    public String punchIn(String employeeID) {
+    public String punchIn(String employeeID) throws ParseException {
         Connection con = dbManager.getConnection();
         String currentTime = getCurrentTimeFormatted();
         String currentDate = getCurrentDateFormatted();
@@ -50,7 +51,7 @@ public class Attendance {
                 PreparedStatement insertStmt = con.prepareStatement(insertQuery);
                 insertStmt.setString(1, employeeID);
                 insertStmt.setString(2, currentDate);
-                insertStmt.setString(3, currentTime);
+                insertStmt.setTime(3, new java.sql.Time(new SimpleDateFormat("HH:mm").parse(currentTime).getTime()));
                 insertStmt.executeUpdate();
             }
 
@@ -62,7 +63,7 @@ public class Attendance {
         }
     }
 
-   public String punchOut(String employeeID) {
+   public String punchOut(String employeeID) throws ParseException {
         Connection con = dbManager.getConnection();
         String currentTime = getCurrentTimeFormatted();
         String currentDate = getCurrentDateFormatted();
@@ -79,7 +80,7 @@ public class Attendance {
                 // Update existing record with punch-out time
                 String updateQuery = "UPDATE attendancerecord SET timeOut = ? WHERE employeeID = ? AND date = ?";
                 PreparedStatement updateStmt = con.prepareStatement(updateQuery);
-                updateStmt.setString(1, currentTime);
+                updateStmt.setTime(1, new java.sql.Time(new SimpleDateFormat("HH:mm").parse(currentTime).getTime())); // Set timeOut
                 updateStmt.setString(2, employeeID);
                 updateStmt.setString(3, currentDate);
                 updateStmt.executeUpdate();

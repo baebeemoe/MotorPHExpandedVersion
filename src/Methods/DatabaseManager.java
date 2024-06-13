@@ -23,8 +23,7 @@ public class DatabaseManager {
 
     public DatabaseManager() {
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/payrollsystem_db", "root",
-               "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/dummy", "root", "");
         } catch (SQLException e) {
             e.printStackTrace();
         }

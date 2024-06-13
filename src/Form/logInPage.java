@@ -195,24 +195,24 @@ public class logInPage extends javax.swing.JFrame {
         try{
             //Class.forName("com.mysql.cj.jdbc.Driver");
             con = dbManager.getConnection();
-            String username = jTextField1.getText();
+            String userID = jTextField1.getText();
             String password = jPasswordField1.getText();
             
-            if (username.isEmpty() || password.isEmpty()) {
+            if (userID.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please enter both username and password");
             return;
         }
             
             stmt = con.createStatement();
              
-            String query = "SELECT * FROM employee e INNER JOIN user u INNER JOIN department d ON e.employeeID = u.employeeID AND e.departmentID = d.departmentID where username ='" +username+"'and password='"+password+"'" ; 
+            String query = "SELECT * FROM `login_credentials` where userID ='" +userID+"'and password='"+password+"'" ; 
             rs = stmt.executeQuery(query);
             if(rs.next()){
                 
                 String employeeID = rs.getString("employeeID");
                 String firstName = rs.getString("firstName");
                 int roleID = rs.getInt("roleID");
-                String deptName = rs.getString("departmentName");
+                String deptName = rs.getString("department");
                 
                 dashboard.setEmployeeID(employeeID); // Set employeeID using setter method
                 dashboard.setEmployeefName(firstName);
