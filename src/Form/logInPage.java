@@ -224,6 +224,7 @@ public class logInPage extends javax.swing.JFrame {
                 dashboard.getProfilePanel().show(false);
                 dashboard.getAttendancePanel().show(false);
                 dashboard.getLeavePanel().show(false);
+                dashboard.getPayslipPanel().show(false);
                 
               
                 

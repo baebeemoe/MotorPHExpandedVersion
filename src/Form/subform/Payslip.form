@@ -76,128 +76,126 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jLabel1" min="-2" pref="82" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jLabel55" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel2" max="32767" attributes="0"/>
-                                      <Component id="jLabel3" max="32767" attributes="0"/>
-                                      <Component id="jLabel4" min="-2" pref="325" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="jLabel5" min="-2" pref="266" max="-2" attributes="0"/>
+                                  <Component id="jLabel40" max="32767" attributes="0"/>
+                                  <Component id="jLabel41" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel42" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel43" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel44" max="32767" attributes="0"/>
+                                  <Component id="jLabel50" max="32767" attributes="0"/>
+                                  <Component id="jLabel52" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel53" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel54" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="jLabel55" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel40" max="32767" attributes="0"/>
-                                          <Component id="jLabel41" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel42" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel43" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel44" max="32767" attributes="0"/>
-                                          <Component id="jLabel50" max="32767" attributes="0"/>
-                                          <Component id="jLabel52" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel53" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel54" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="pagibig" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="philhealth" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="tax" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="totaldeduction" max="32767" attributes="0"/>
-                                          <Component id="grossIncome" max="32767" attributes="0"/>
-                                          <Component id="totalBenefit" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="totalDeduction" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="netPay" pref="559" max="32767" attributes="0"/>
-                                          <Component id="sss" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jLabel45" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel30" max="32767" attributes="0"/>
-                                          <Component id="jLabel33" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel34" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="jLabel35" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="clothing" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="phone" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="totalbenefit" max="32767" attributes="0"/>
-                                          <Component id="rice" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jLabel23" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel21" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel25" max="32767" attributes="0"/>
-                                          <Component id="jLabel20" alignment="1" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="daysworked" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="dailyrate" max="32767" attributes="0"/>
-                                          <Component id="overtime" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="grossincome" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="basicsalary" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel9" max="32767" attributes="0"/>
-                                          <Component id="jLabel8" max="32767" attributes="0"/>
-                                          <Component id="jLabel7" max="32767" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="employeeName" min="-2" pref="154" max="-2" attributes="0"/>
-                                          <Component id="employeeID" min="-2" pref="154" max="-2" attributes="0"/>
-                                          <Component id="payslipNo" alignment="0" min="-2" pref="154" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="jLabel16" alignment="0" min="-2" pref="154" max="-2" attributes="0"/>
-                                          <Component id="jLabel17" min="-2" pref="154" max="-2" attributes="0"/>
-                                          <Component id="jLabel18" min="-2" pref="154" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                          <Component id="endDate" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="stardate" alignment="0" pref="214" max="32767" attributes="0"/>
-                                          <Component id="position" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Component id="jLabel19" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="setpagibig" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setphilhealth" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="settax" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="settotaldeduction" max="32767" attributes="0"/>
+                                  <Component id="setgrossIncome" max="32767" attributes="0"/>
+                                  <Component id="settotalBenefit" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="settotalDeduction" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setnetPay" pref="559" max="32767" attributes="0"/>
+                                  <Component id="setsss" alignment="0" max="32767" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="jLabel45" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel30" max="32767" attributes="0"/>
+                                  <Component id="jLabel33" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel34" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jLabel35" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="setclothing" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setphone" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="settotalbenefit" max="32767" attributes="0"/>
+                                  <Component id="setrice" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel23" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel22" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel21" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel25" max="32767" attributes="0"/>
+                                  <Component id="jLabel20" alignment="1" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="setdaysworked" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setdailyrate" max="32767" attributes="0"/>
+                                  <Component id="setovertime" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setgrossincome" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setbasicsalary" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel9" max="32767" attributes="0"/>
+                                  <Component id="jLabel8" max="32767" attributes="0"/>
+                                  <Component id="jLabel7" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="setemployeeName" min="-2" pref="154" max="-2" attributes="0"/>
+                                  <Component id="setemployeeID" min="-2" pref="154" max="-2" attributes="0"/>
+                                  <Component id="setpayslipNo" alignment="0" min="-2" pref="154" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel16" alignment="0" min="-2" pref="154" max="-2" attributes="0"/>
+                                  <Component id="jLabel17" min="-2" pref="154" max="-2" attributes="0"/>
+                                  <Component id="jLabel18" min="-2" pref="154" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="setendDate" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setstardate" alignment="0" pref="214" max="32767" attributes="0"/>
+                                  <Component id="setposition" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel19" alignment="1" max="32767" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" pref="195" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="190" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jLabel2" max="32767" attributes="0"/>
+                              <Component id="jLabel3" max="32767" attributes="0"/>
+                              <Component id="jLabel4" min="-2" pref="325" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel5" min="-2" pref="266" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" pref="115" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="jLabel1" min="-2" pref="115" max="-2" attributes="0"/>
+                          </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                               <Component id="jLabel2" min="-2" pref="31" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -219,11 +217,11 @@
                               <Component id="jLabel9" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="payslipNo" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setpayslipNo" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="employeeID" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setemployeeID" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="employeeName" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setemployeeName" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel16" min="-2" pref="26" max="-2" attributes="0"/>
@@ -233,11 +231,11 @@
                               <Component id="jLabel18" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="stardate" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setstardate" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="endDate" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setendDate" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="position" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setposition" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -245,18 +243,18 @@
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel20" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="basicsalary" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="setbasicsalary" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="dailyrate" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setdailyrate" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="daysworked" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setdaysworked" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="overtime" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setovertime" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="grossincome" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setgrossincome" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Component id="jLabel21" min="-2" pref="26" max="-2" attributes="0"/>
@@ -273,14 +271,14 @@
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel35" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="rice" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="setrice" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="phone" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setphone" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="clothing" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setclothing" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel34" min="-2" pref="26" max="-2" attributes="0"/>
@@ -290,7 +288,7 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="totalbenefit" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="settotalbenefit" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel30" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -298,18 +296,18 @@
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel44" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="sss" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="setsss" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="philhealth" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setphilhealth" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="pagibig" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="setpagibig" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="tax" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="settax" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="totaldeduction" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="settotaldeduction" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel43" min="-2" pref="26" max="-2" attributes="0"/>
@@ -326,14 +324,14 @@
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel54" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
-                          <Component id="grossIncome" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="setgrossIncome" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="totalBenefit" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="settotalBenefit" min="-2" pref="26" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                              <Component id="totalDeduction" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="settotalDeduction" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel53" min="-2" pref="26" max="-2" attributes="0"/>
@@ -343,10 +341,10 @@
                       </Group>
                       <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="netPay" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="setnetPay" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel50" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="23" max="32767" attributes="0"/>
+                      <EmptySpace pref="12" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -355,7 +353,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/user (2).png"/>
+                  <Image iconType="3" name="/images/companyPic.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -468,16 +466,7 @@
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="employeeName">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                    <MatteColorBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="employeeID">
+            <Component class="javax.swing.JLabel" name="setemployeeName">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -486,7 +475,16 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="payslipNo">
+            <Component class="javax.swing.JLabel" name="setemployeeID">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                    <MatteColorBorder bottom="0" left="1" right="1" top="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="setpayslipNo">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -496,16 +494,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="position">
-              <Properties>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
-                    <MatteColorBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="endDate">
+            <Component class="javax.swing.JLabel" name="setposition">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -514,7 +503,16 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="stardate">
+            <Component class="javax.swing.JLabel" name="setendDate">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
+                    <MatteColorBorder bottom="0" left="1" right="1" top="1"/>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="setstardate">
               <Properties>
                 <Property name="text" type="java.lang.String" value=" "/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -605,7 +603,7 @@
                 <Property name="text" type="java.lang.String" value="Overtime"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="basicsalary">
+            <Component class="javax.swing.JLabel" name="setbasicsalary">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
@@ -622,22 +620,22 @@
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="dailyrate">
+            <Component class="javax.swing.JLabel" name="setdailyrate">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="daysworked">
+            <Component class="javax.swing.JLabel" name="setdaysworked">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="overtime">
+            <Component class="javax.swing.JLabel" name="setovertime">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="grossincome">
+            <Component class="javax.swing.JLabel" name="setgrossincome">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -661,7 +659,7 @@
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="totalbenefit">
+            <Component class="javax.swing.JLabel" name="settotalbenefit">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -704,22 +702,22 @@
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="rice">
+            <Component class="javax.swing.JLabel" name="setrice">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="phone">
+            <Component class="javax.swing.JLabel" name="setphone">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="clothing">
+            <Component class="javax.swing.JLabel" name="setclothing">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="totaldeduction">
+            <Component class="javax.swing.JLabel" name="settotaldeduction">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
@@ -779,22 +777,22 @@
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="sss">
+            <Component class="javax.swing.JLabel" name="setsss">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="philhealth">
+            <Component class="javax.swing.JLabel" name="setphilhealth">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="pagibig">
+            <Component class="javax.swing.JLabel" name="setpagibig">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="tax">
+            <Component class="javax.swing.JLabel" name="settax">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
@@ -842,22 +840,22 @@
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="grossIncome">
+            <Component class="javax.swing.JLabel" name="setgrossIncome">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="totalBenefit">
+            <Component class="javax.swing.JLabel" name="settotalBenefit">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="totalDeduction">
+            <Component class="javax.swing.JLabel" name="settotalDeduction">
               <Properties>
                 <Property name="horizontalAlignment" type="int" value="4"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="netPay">
+            <Component class="javax.swing.JLabel" name="setnetPay">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="cc" green="cc" red="cc" type="rgb"/>
