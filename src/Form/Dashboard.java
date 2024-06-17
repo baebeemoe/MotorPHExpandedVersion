@@ -7,6 +7,7 @@ package Form;
 import Form.subform.ChangePassword;
 import Form.subform.OvertimeRequestForm;
 import Form.subform.Payslip;
+import Form.subform.employee_details;
 import Methods.Attendance;
 import Methods.DatabaseManager;
 import com.sun.jdi.connect.spi.Connection;
@@ -1488,7 +1489,67 @@ public class Dashboard extends javax.swing.JFrame {
 
     
     private void hrRolebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hrRolebtnActionPerformed
-        // TODO add your handling code here:
+   employee_details emp = new employee_details();
+    dbManager = new DatabaseManager();
+    con = dbManager.getConnection();
+    
+     try {
+            String query = "SELECT * FROM `employee_details`";
+            PreparedStatement pstmt = con.prepareStatement(query);
+
+            // Execute the query
+            try (ResultSet resultSet = pstmt.executeQuery()) {
+
+                DefaultTableModel tableModel = (DefaultTableModel) emp.getEmployee_table().getModel();
+
+                // Clear existing data
+                tableModel.setRowCount(0);
+
+                // Get column names
+                if (tableModel.getColumnCount() == 0) {
+                    int columnCount = resultSet.getMetaData().getColumnCount();
+                    Vector<String> columnNames = new Vector<>();
+                    for (int i = 1; i <= columnCount; i++) {
+                        columnNames.add(resultSet.getMetaData().getColumnName(i));
+                    }
+                    tableModel.setColumnIdentifiers(columnNames);
+                }
+
+                // Get rows
+                Vector<Vector<Object>> data = new Vector<>();
+                while (resultSet.next()) {
+                    Vector<Object> row = new Vector<>();
+                    row.add(resultSet.getString("employeeID"));
+                    row.add(resultSet.getString("name"));
+                    row.add(resultSet.getString("birthDate"));
+                    row.add(resultSet.getString("address"));
+                    row.add(resultSet.getString("phoneNo"));
+                    row.add(resultSet.getString("sssNo"));
+                    row.add(resultSet.getString("pagibigNo"));
+                    row.add(resultSet.getString("philhealthNo"));
+                    row.add(resultSet.getString("tin"));
+                    row.add(resultSet.getString("position"));
+                    row.add(resultSet.getString("department"));
+                    row.add(resultSet.getString("status"));
+                    data.add(row);
+                }
+
+                // Add rows to the table model
+                for (Vector<Object> rowData : data) {
+                    tableModel.addRow(rowData.toArray());
+                }
+
+                con.close();
+                emp.setVisible(true);
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
+    
+    
+
     }//GEN-LAST:event_hrRolebtnActionPerformed
 
     private void timeOutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeOutbtnActionPerformed
