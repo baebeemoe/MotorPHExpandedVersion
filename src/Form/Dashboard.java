@@ -423,15 +423,35 @@ public class Dashboard extends javax.swing.JFrame {
 
         viewbtn400003.setText("View");
         viewbtn400003.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        viewbtn400003.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbtn400003ActionPerformed(evt);
+            }
+        });
 
         viewbtn400004.setText("View");
         viewbtn400004.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        viewbtn400004.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbtn400004ActionPerformed(evt);
+            }
+        });
 
         viewbtn400005.setText("View");
         viewbtn400005.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        viewbtn400005.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbtn400005ActionPerformed(evt);
+            }
+        });
 
         viewbtn400006.setText("View");
         viewbtn400006.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        viewbtn400006.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewbtn400006ActionPerformed(evt);
+            }
+        });
 
         jLabel61.setBackground(new java.awt.Color(255, 255, 255));
         jLabel61.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -1698,7 +1718,7 @@ Attendance att = new Attendance();
     private void viewbtn400001ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtn400001ActionPerformed
 
                
-Payslip payslip = new Payslip(this);
+Payslip payslip = new Payslip();
 
 dbManager = new DatabaseManager();
         //logIn Code
@@ -1751,6 +1771,123 @@ dbManager = new DatabaseManager();
                 payslip.setSetstardate(startdate);
                 payslip.setSetendDate(enddate);
                 payslip.setSetposition(position);
+                payslip.setSetbasicsalary(monthlyrate);
+                payslip.setSetdailyrate(dailyrate);
+                payslip.setSetdaysworked(daysworked);
+                payslip.setSetovertime(overtime);
+                payslip.setSetgrossincome(grosssalary);
+                payslip.setSetrice(rice);
+                payslip.setSetphone(phone);
+                payslip.setSetclothing(clothing);
+                payslip.setSettotalbenefit(totalben);
+                payslip.setSetsss(sss);
+                payslip.setSetphilhealth(philhealth);
+                payslip.setSetpagibig(pagibig);
+                payslip.setSettax(tax);
+                payslip.setSettotalDeduction(totaldeduction);
+                payslip.setSettotaldeduction(totaldeduction);
+                payslip.setSetgrossIncome(grosssalary);
+                payslip.setSettotalBenefit(totalben);
+                payslip.setSetnetPay(netpay);
+                
+                payslip.show(true);
+                
+                
+                
+                
+               
+              
+                
+            }else{
+                JOptionPane.showMessageDialog(this, "unmatched data");
+            }
+            
+            
+            con.close();
+            
+        }catch(Exception e){
+            
+        }
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewbtn400001ActionPerformed
+
+    private void viewbtn400002ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtn400002ActionPerformed
+
+               
+Payslip payslip = new Payslip();
+
+dbManager = new DatabaseManager();
+        //logIn Code
+        try{
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            con = dbManager.getConnection();
+            String empID = dashboardempNolbl.getText();
+            String view402 = "400002";
+           
+            
+            stmt = con.createStatement();
+             
+            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view402+"'and employeeID='"+empID+"'" ; 
+            rs = stmt.executeQuery(query);
+            if(rs.next()){
+                
+                
+                String payperiodID = rs.getString("payPeriodID");
+                String employeeID = rs.getString("employeeID");
+                String name  = rs.getString("name");
+                String startdate = rs.getString("startDate");
+                String enddate = rs.getString("endDate");
+                String position = rs.getString("position_department");
+                
+                
+                String monthlyrate = rs.getString("basicSalary");
+                String dailyrate = rs.getString("dailyrate");
+                String daysworked = rs.getString("DaysWorked");
+                String overtime = rs.getString("accumulatedOvertime");
+                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                
+                
+                String rice = rs.getString("Rice");
+                String clothing = rs.getString("Clothing");
+                String phone = rs.getString("Phone");
+                String totalben = rs.getString("TotalIndividualBenefits");
+                
+                String sss = rs.getString("SSS");
+                String pagibig = rs.getString("PagIBIG");
+                String philhealth = rs.getString("PhilHealth");
+                String tax = rs.getString("Tax");
+                String totaldeduction = rs.getString("TotalDeduction");
+                
+                
+                String netpay = rs.getString("netpay");
+                
+                payslip.setPayslipNo(payperiodID);
+                payslip.setEmpNo(employeeID);
+                payslip.setSetemployeeName(name);
+                payslip.setSetstardate(startdate);
+                payslip.setSetendDate(enddate);
+                payslip.setSetposition(position);
+                payslip.setSetbasicsalary(monthlyrate);
+                payslip.setSetdailyrate(dailyrate);
+                payslip.setSetdaysworked(daysworked);
+                payslip.setSetovertime(overtime);
+                payslip.setSetgrossincome(grosssalary);
+                payslip.setSetrice(rice);
+                payslip.setSetphone(phone);
+                payslip.setSetclothing(clothing);
+                payslip.setSettotalbenefit(totalben);
+                payslip.setSetsss(sss);
+                payslip.setSetphilhealth(philhealth);
+                payslip.setSetpagibig(pagibig);
+                payslip.setSettax(tax);
+                payslip.setSettotalDeduction(totaldeduction);
+                payslip.setSettotaldeduction(totaldeduction);
+                payslip.setSetgrossIncome(grosssalary);
+                payslip.setSettotalBenefit(totalben);
+                payslip.setSetnetPay(netpay);
+                
+                payslip.show(true);
                 
                 
                 
@@ -1770,17 +1907,7 @@ dbManager = new DatabaseManager();
         }
 
 
-
-
-
-payslip.show(true);
-
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_viewbtn400001ActionPerformed
-
-    private void viewbtn400002ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtn400002ActionPerformed
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_viewbtn400002ActionPerformed
 
     private void btnPayslipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPayslipActionPerformed
@@ -1790,6 +1917,396 @@ payslip.show(true);
     LeavePanel.show(false);   
     PayslipPanel.show(true); 
     }//GEN-LAST:event_btnPayslipActionPerformed
+
+    private void viewbtn400003ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtn400003ActionPerformed
+      
+                       
+Payslip payslip = new Payslip();
+
+dbManager = new DatabaseManager();
+        //logIn Code
+        try{
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            con = dbManager.getConnection();
+            String empID = dashboardempNolbl.getText();
+            String view403 = "400003";
+           
+            
+            stmt = con.createStatement();
+             
+            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view403+"'and employeeID='"+empID+"'" ; 
+            rs = stmt.executeQuery(query);
+            if(rs.next()){
+                
+                
+                String payperiodID = rs.getString("payPeriodID");
+                String employeeID = rs.getString("employeeID");
+                String name  = rs.getString("name");
+                String startdate = rs.getString("startDate");
+                String enddate = rs.getString("endDate");
+                String position = rs.getString("position_department");
+                
+                
+                String monthlyrate = rs.getString("basicSalary");
+                String dailyrate = rs.getString("dailyrate");
+                String daysworked = rs.getString("DaysWorked");
+                String overtime = rs.getString("accumulatedOvertime");
+                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                
+                
+                String rice = rs.getString("Rice");
+                String clothing = rs.getString("Clothing");
+                String phone = rs.getString("Phone");
+                String totalben = rs.getString("TotalIndividualBenefits");
+                
+                String sss = rs.getString("SSS");
+                String pagibig = rs.getString("PagIBIG");
+                String philhealth = rs.getString("PhilHealth");
+                String tax = rs.getString("Tax");
+                String totaldeduction = rs.getString("TotalDeduction");
+                
+                
+                String netpay = rs.getString("netpay");
+                
+                payslip.setPayslipNo(payperiodID);
+                payslip.setEmpNo(employeeID);
+                payslip.setSetemployeeName(name);
+                payslip.setSetstardate(startdate);
+                payslip.setSetendDate(enddate);
+                payslip.setSetposition(position);
+                payslip.setSetbasicsalary(monthlyrate);
+                payslip.setSetdailyrate(dailyrate);
+                payslip.setSetdaysworked(daysworked);
+                payslip.setSetovertime(overtime);
+                payslip.setSetgrossincome(grosssalary);
+                payslip.setSetrice(rice);
+                payslip.setSetphone(phone);
+                payslip.setSetclothing(clothing);
+                payslip.setSettotalbenefit(totalben);
+                payslip.setSetsss(sss);
+                payslip.setSetphilhealth(philhealth);
+                payslip.setSetpagibig(pagibig);
+                payslip.setSettax(tax);
+                payslip.setSettotalDeduction(totaldeduction);
+                payslip.setSettotaldeduction(totaldeduction);
+                payslip.setSetgrossIncome(grosssalary);
+                payslip.setSettotalBenefit(totalben);
+                payslip.setSetnetPay(netpay);
+                
+                payslip.show(true);
+                
+                
+                
+                
+               
+              
+                
+            }else{
+                JOptionPane.showMessageDialog(this, "unmatched data");
+            }
+            
+            
+            con.close();
+            
+        }catch(Exception e){
+            
+        }
+
+        
+        
+    }//GEN-LAST:event_viewbtn400003ActionPerformed
+
+    private void viewbtn400004ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtn400004ActionPerformed
+                      
+Payslip payslip = new Payslip();
+
+dbManager = new DatabaseManager();
+        //logIn Code
+        try{
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            con = dbManager.getConnection();
+            String empID = dashboardempNolbl.getText();
+            String view404 = "400004";
+           
+            
+            stmt = con.createStatement();
+             
+            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view404+"'and employeeID='"+empID+"'" ; 
+            rs = stmt.executeQuery(query);
+            if(rs.next()){
+                
+                
+                String payperiodID = rs.getString("payPeriodID");
+                String employeeID = rs.getString("employeeID");
+                String name  = rs.getString("name");
+                String startdate = rs.getString("startDate");
+                String enddate = rs.getString("endDate");
+                String position = rs.getString("position_department");
+                
+                
+                String monthlyrate = rs.getString("basicSalary");
+                String dailyrate = rs.getString("dailyrate");
+                String daysworked = rs.getString("DaysWorked");
+                String overtime = rs.getString("accumulatedOvertime");
+                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                
+                
+                String rice = rs.getString("Rice");
+                String clothing = rs.getString("Clothing");
+                String phone = rs.getString("Phone");
+                String totalben = rs.getString("TotalIndividualBenefits");
+                
+                String sss = rs.getString("SSS");
+                String pagibig = rs.getString("PagIBIG");
+                String philhealth = rs.getString("PhilHealth");
+                String tax = rs.getString("Tax");
+                String totaldeduction = rs.getString("TotalDeduction");
+                
+                
+                String netpay = rs.getString("netpay");
+                
+                payslip.setPayslipNo(payperiodID);
+                payslip.setEmpNo(employeeID);
+                payslip.setSetemployeeName(name);
+                payslip.setSetstardate(startdate);
+                payslip.setSetendDate(enddate);
+                payslip.setSetposition(position);
+                payslip.setSetbasicsalary(monthlyrate);
+                payslip.setSetdailyrate(dailyrate);
+                payslip.setSetdaysworked(daysworked);
+                payslip.setSetovertime(overtime);
+                payslip.setSetgrossincome(grosssalary);
+                payslip.setSetrice(rice);
+                payslip.setSetphone(phone);
+                payslip.setSetclothing(clothing);
+                payslip.setSettotalbenefit(totalben);
+                payslip.setSetsss(sss);
+                payslip.setSetphilhealth(philhealth);
+                payslip.setSetpagibig(pagibig);
+                payslip.setSettax(tax);
+                payslip.setSettotalDeduction(totaldeduction);
+                payslip.setSettotaldeduction(totaldeduction);
+                payslip.setSetgrossIncome(grosssalary);
+                payslip.setSettotalBenefit(totalben);
+                payslip.setSetnetPay(netpay);
+                
+                payslip.show(true);
+                
+                
+                
+                
+               
+              
+                
+            }else{
+                JOptionPane.showMessageDialog(this, "unmatched data");
+            }
+            
+            
+            con.close();
+            
+        }catch(Exception e){
+            
+        }
+
+        
+        
+    }//GEN-LAST:event_viewbtn400004ActionPerformed
+
+    private void viewbtn400005ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtn400005ActionPerformed
+       
+                       
+Payslip payslip = new Payslip();
+
+dbManager = new DatabaseManager();
+        //logIn Code
+        try{
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            con = dbManager.getConnection();
+            String empID = dashboardempNolbl.getText();
+            String view405 = "400005";
+           
+            
+            stmt = con.createStatement();
+             
+            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view405+"'and employeeID='"+empID+"'" ; 
+            rs = stmt.executeQuery(query);
+            if(rs.next()){
+                
+                
+                String payperiodID = rs.getString("payPeriodID");
+                String employeeID = rs.getString("employeeID");
+                String name  = rs.getString("name");
+                String startdate = rs.getString("startDate");
+                String enddate = rs.getString("endDate");
+                String position = rs.getString("position_department");
+                
+                
+                String monthlyrate = rs.getString("basicSalary");
+                String dailyrate = rs.getString("dailyrate");
+                String daysworked = rs.getString("DaysWorked");
+                String overtime = rs.getString("accumulatedOvertime");
+                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                
+                
+                String rice = rs.getString("Rice");
+                String clothing = rs.getString("Clothing");
+                String phone = rs.getString("Phone");
+                String totalben = rs.getString("TotalIndividualBenefits");
+                
+                String sss = rs.getString("SSS");
+                String pagibig = rs.getString("PagIBIG");
+                String philhealth = rs.getString("PhilHealth");
+                String tax = rs.getString("Tax");
+                String totaldeduction = rs.getString("TotalDeduction");
+                
+                
+                String netpay = rs.getString("netpay");
+                
+                payslip.setPayslipNo(payperiodID);
+                payslip.setEmpNo(employeeID);
+                payslip.setSetemployeeName(name);
+                payslip.setSetstardate(startdate);
+                payslip.setSetendDate(enddate);
+                payslip.setSetposition(position);
+                payslip.setSetbasicsalary(monthlyrate);
+                payslip.setSetdailyrate(dailyrate);
+                payslip.setSetdaysworked(daysworked);
+                payslip.setSetovertime(overtime);
+                payslip.setSetgrossincome(grosssalary);
+                payslip.setSetrice(rice);
+                payslip.setSetphone(phone);
+                payslip.setSetclothing(clothing);
+                payslip.setSettotalbenefit(totalben);
+                payslip.setSetsss(sss);
+                payslip.setSetphilhealth(philhealth);
+                payslip.setSetpagibig(pagibig);
+                payslip.setSettax(tax);
+                payslip.setSettotalDeduction(totaldeduction);
+                payslip.setSettotaldeduction(totaldeduction);
+                payslip.setSetgrossIncome(grosssalary);
+                payslip.setSettotalBenefit(totalben);
+                payslip.setSetnetPay(netpay);
+                
+                payslip.show(true);
+                
+                
+                
+                
+               
+              
+                
+            }else{
+                JOptionPane.showMessageDialog(this, "unmatched data");
+            }
+            
+            
+            con.close();
+            
+        }catch(Exception e){
+            
+        }
+
+        
+    }//GEN-LAST:event_viewbtn400005ActionPerformed
+
+    private void viewbtn400006ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewbtn400006ActionPerformed
+       
+                       
+Payslip payslip = new Payslip();
+
+dbManager = new DatabaseManager();
+        //logIn Code
+        try{
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            con = dbManager.getConnection();
+            String empID = dashboardempNolbl.getText();
+            String view406 = "400006";
+           
+            
+            stmt = con.createStatement();
+             
+            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view406+"'and employeeID='"+empID+"'" ; 
+            rs = stmt.executeQuery(query);
+            if(rs.next()){
+                
+                
+                String payperiodID = rs.getString("payPeriodID");
+                String employeeID = rs.getString("employeeID");
+                String name  = rs.getString("name");
+                String startdate = rs.getString("startDate");
+                String enddate = rs.getString("endDate");
+                String position = rs.getString("position_department");
+                
+                
+                String monthlyrate = rs.getString("basicSalary");
+                String dailyrate = rs.getString("dailyrate");
+                String daysworked = rs.getString("DaysWorked");
+                String overtime = rs.getString("accumulatedOvertime");
+                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                
+                
+                String rice = rs.getString("Rice");
+                String clothing = rs.getString("Clothing");
+                String phone = rs.getString("Phone");
+                String totalben = rs.getString("TotalIndividualBenefits");
+                
+                String sss = rs.getString("SSS");
+                String pagibig = rs.getString("PagIBIG");
+                String philhealth = rs.getString("PhilHealth");
+                String tax = rs.getString("Tax");
+                String totaldeduction = rs.getString("TotalDeduction");
+                
+                
+                String netpay = rs.getString("netpay");
+                
+                payslip.setPayslipNo(payperiodID);
+                payslip.setEmpNo(employeeID);
+                payslip.setSetemployeeName(name);
+                payslip.setSetstardate(startdate);
+                payslip.setSetendDate(enddate);
+                payslip.setSetposition(position);
+                payslip.setSetbasicsalary(monthlyrate);
+                payslip.setSetdailyrate(dailyrate);
+                payslip.setSetdaysworked(daysworked);
+                payslip.setSetovertime(overtime);
+                payslip.setSetgrossincome(grosssalary);
+                payslip.setSetrice(rice);
+                payslip.setSetphone(phone);
+                payslip.setSetclothing(clothing);
+                payslip.setSettotalbenefit(totalben);
+                payslip.setSetsss(sss);
+                payslip.setSetphilhealth(philhealth);
+                payslip.setSetpagibig(pagibig);
+                payslip.setSettax(tax);
+                payslip.setSettotalDeduction(totaldeduction);
+                payslip.setSettotaldeduction(totaldeduction);
+                payslip.setSetgrossIncome(grosssalary);
+                payslip.setSettotalBenefit(totalben);
+                payslip.setSetnetPay(netpay);
+                
+                payslip.show(true);
+                
+                
+                
+                
+               
+              
+                
+            }else{
+                JOptionPane.showMessageDialog(this, "unmatched data");
+            }
+            
+            
+            con.close();
+            
+        }catch(Exception e){
+            
+        }
+
+        
+        
+    }//GEN-LAST:event_viewbtn400006ActionPerformed
 
     /**
      * @param args the command line arguments

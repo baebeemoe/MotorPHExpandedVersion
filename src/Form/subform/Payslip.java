@@ -41,6 +41,129 @@ public class Payslip extends javax.swing.JFrame {
     private String endDate;
     private String position;
     
+    private String basicsalary;
+    private String dailyrate;   
+    private String daysworked;  
+    private String overtime;   
+    private String totalearnings;   
+    
+    private String rice;
+    private String clothing;   
+    private String phone;  
+    private String totalbenefit;
+    
+    private String sss;
+    private String pagibig;   
+    private String philhealth;  
+    private String tax;
+    private String totaldeduction;
+    
+    
+    private String grossIncome;
+    private String totalBenefit;
+    private String totalDeduction;
+    private String netpay;
+
+    public void setSetpagibig(String pagibig) {
+        this.pagibig = pagibig;
+        setpagibig.setText("Php" + " "+ pagibig);
+    }
+
+    public void setSetphilhealth(String philhealth) {
+        this.philhealth = philhealth;
+        setphilhealth.setText("Php" +" "+  philhealth);
+    }
+
+    public void setSetsss(String sss) {
+        this.sss = sss;
+        setsss.setText("Php" + " "+ sss);
+       
+    }
+
+    public void setSettax(String tax) {
+        this.tax = tax;
+        settax.setText("Php" +" "+ tax);
+    }
+
+    public void setSettotalDeduction(String totalDeduction) {
+        this.totaldeduction = totalDeduction;
+        settotaldeduction.setText("Php" + " "+ totalDeduction);
+    }
+
+    public void setSetgrossIncome(String grossIncome) {
+        this.grossIncome = grossIncome;
+        setgrossIncome.setText("Php" + " "+ grossIncome);
+    }
+
+    public void setSetnetPay(String netPay) {
+        this.netpay = netPay;
+        setnetPay.setText("Php" + " "+ netPay);
+    }
+
+    public void setSettotalBenefit(String totalBenefit) {
+        this.totalBenefit = totalBenefit;
+        settotalBenefit.setText("Php" + " "+ totalBenefit);
+    }
+
+    public void setSettotaldeduction(String totalDeduction) {
+        this.totalDeduction = totalDeduction;
+        settotalDeduction.setText("Php" + " "+totalDeduction);
+    }
+ 
+    
+    
+    
+    public void setSetclothing(String clothing) {
+        this.clothing = clothing;
+        setclothing.setText("Php" + " "+clothing);
+    }
+
+    public void setSetphone(String phone) {
+        this.phone = phone;
+        setphone.setText("Php" +" "+ phone);
+    }
+
+    public void setSetrice(String rice) {
+        this.rice = rice;
+        setrice.setText("Php" +" "+  rice);
+    }
+
+    public void setSettotalbenefit(String totalbenefit) {
+        this.totalbenefit = totalbenefit;
+        settotalbenefit.setText("Php" + " "+ totalbenefit);
+    }
+    
+    
+
+    public void setSetbasicsalary(String setbasicSalary) {
+        this.basicsalary = setbasicSalary;
+        setbasicsalary.setText("Php" + " "+ setbasicSalary);
+    }
+
+    public void setSetdailyrate(String dailyrate) {
+        this.dailyrate = dailyrate;
+        setdailyrate.setText("Php" + " "+ dailyrate);
+    }
+
+    public void setSetdaysworked(String daysworked) {
+        this.daysworked = daysworked;
+        setdaysworked.setText(daysworked);
+    }
+
+    public void setSetovertime(String overtime) {
+        this.overtime = overtime;
+        setovertime.setText("Php" + " "+ overtime);
+    }
+    
+    
+
+    public void setSetgrossincome(String grossincome) {
+        this.totalearnings = grossincome;
+        setgrossincome.setText("Php" + " "+grossincome);
+    }
+       
+    
+    
    public void setPayslipNo(String payslipNo) {
         this.payperiodID = payslipNo;
         setpayslipNo.setText(payslipNo);
@@ -73,13 +196,7 @@ public class Payslip extends javax.swing.JFrame {
     
     
     
-    
-
-    public Payslip(Dashboard dashboard) {
-        initComponents();
-        this.dashboard = dashboard;
-        
-    }
+  
     public Payslip() {
         initComponents();
     }
