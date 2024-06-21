@@ -272,8 +272,27 @@ private void importCSV(File file) {
 
     try {
         con = dbManager.getConnection();
+        // Step 1: Retrieve the maximum employee number
+        int maxEmployeeID = 0;
+        String maxQuery = "SELECT MAX(employeeID) FROM employee";
+        try (PreparedStatement maxStmt = con.prepareStatement(maxQuery);
+             ResultSet rs = maxStmt.executeQuery()) {
+            if (rs.next()) {
+                maxEmployeeID = rs.getInt(1); // Get the max employeeID
+            }
+        }
+        
+         // Step 2: Alter the auto-increment value
+        String alterQuery = "ALTER TABLE employee AUTO_INCREMENT = ?";
+        try (PreparedStatement alterStmt = con.prepareStatement(alterQuery)) {
+            alterStmt.setInt(1, maxEmployeeID + 1);
+            alterStmt.executeUpdate();
+        }
+        
         pstmt = con.prepareStatement("INSERT INTO employee (lastName, firstName, birthDate, streetAddress, city, province, zip, phoneNo, email, sssNo, philhealthNo, tin, pagibigNo, positionID, depID, status, supervisorID, basicSalaryID) " +
                                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        
+        
 
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line;
