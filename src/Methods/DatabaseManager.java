@@ -26,7 +26,7 @@ public class DatabaseManager {
 
     public DatabaseManager() {
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/dummy", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/newdummy", "root", "");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -38,55 +38,56 @@ public class DatabaseManager {
     
     public void refreshEmployeeDetailsView() {
         
-        employee_details emp = new employee_details();
-    DatabaseManager dbManager = new DatabaseManager();
-    try (Connection con = dbManager.getConnection();
-         Statement stmt = con.createStatement();
-         ResultSet resultSet = stmt.executeQuery("SELECT * FROM employee_details")) {
+    employee_details emp = new employee_details();
+     try {
+        // Refresh the JTable with the data from the employee table
+        String query = "SELECT * FROM employee";
+        try (Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+            DefaultTableModel model = (DefaultTableModel) emp.getEmployee_table().getModel();
+            model.setRowCount(0);
 
-        DefaultTableModel tableModel = (DefaultTableModel) emp.getEmployee_table().getModel();
-        tableModel.setRowCount(0); // Clear existing data
+            while (rs.next()) {
+                int employeeID = rs.getInt("employeeID");
+                String lastName = rs.getString("lastName");
+                String firstName = rs.getString("firstName");
+                Date birthDate = rs.getDate("birthDate");
+                String streetAddress = rs.getString("streetAddress");
+                String city = rs.getString("city");
+                String province = rs.getString("province");
+                String zip = rs.getString("zip");
+                String phoneNo = rs.getString("phoneNo");
+                String email = rs.getString("email");
+                String sssNo = rs.getString("sssNo");
+                String philhealthNo = rs.getString("philhealthNo");
+                String tin = rs.getString("tin");
+                String pagibigNo = rs.getString("pagibigNo");
+                String positionID = rs.getString("positionID");
+                String depID = rs.getString("depID");
+                String status = rs.getString("status");
+                Integer supervisorID = (Integer) rs.getObject("supervisorID");
+                String basicSalaryID = rs.getString("basicSalaryID");
 
-        // Get column names
-        if (tableModel.getColumnCount() == 0) {
-            int columnCount = resultSet.getMetaData().getColumnCount();
-            Vector<String> columnNames = new Vector<>();
-            for (int i = 1; i <= columnCount; i++) {
-                columnNames.add(resultSet.getMetaData().getColumnName(i));
+                model.addRow(new Object[]{employeeID, lastName, firstName, birthDate, streetAddress, city, province, zip, phoneNo, email, sssNo, philhealthNo, tin, pagibigNo, positionID, depID, status, supervisorID, basicSalaryID});
             }
-            tableModel.setColumnIdentifiers(columnNames);
         }
-
-        // Get rows
-        while (resultSet.next()) {
-            Vector<Object> row = new Vector<>();
-            row.add(resultSet.getString("employeeID"));
-            row.add(resultSet.getString("name"));
-            row.add(resultSet.getString("birthDate"));
-            row.add(resultSet.getString("address"));
-            row.add(resultSet.getString("phoneNo"));
-            row.add(resultSet.getString("sssNo"));
-            row.add(resultSet.getString("pagibigNo"));
-            row.add(resultSet.getString("philhealthNo"));
-            row.add(resultSet.getString("tin"));
-            row.add(resultSet.getString("position"));
-            row.add(resultSet.getString("department"));
-            row.add(resultSet.getString("status"));
-            tableModel.addRow(row);
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(emp, "Error refreshing data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }
-
-        // Log success message
-        System.out.println("Employee details view refreshed successfully.");
-        
-        
-        emp.getEmployee_table().repaint();
-        
-        
-    } catch (SQLException ex) {
-        ex.printStackTrace();
-        JOptionPane.showMessageDialog(emp, "Error refreshing employee details: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
-}
+     
+     emp.show(true);
+     
+    }
+    
+    
 
     
 }

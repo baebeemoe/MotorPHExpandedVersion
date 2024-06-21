@@ -21,6 +21,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.sql.PreparedStatement;
+import java.util.Date;
 import java.util.Vector;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
@@ -105,6 +106,7 @@ public class Dashboard extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jLabel20 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         PayslipPanel = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
@@ -137,6 +139,32 @@ public class Dashboard extends javax.swing.JFrame {
         viewbtn400005 = new javax.swing.JButton();
         viewbtn400006 = new javax.swing.JButton();
         jLabel61 = new javax.swing.JLabel();
+        HomePanel = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        timeInlbl = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        timeOutlbl = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        departmentNamelbl = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        scheduleStatuslbl = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        timeInbtn = new javax.swing.JButton();
+        timeOutbtn = new javax.swing.JButton();
+        itRolebtn = new javax.swing.JButton();
+        supervisorRolebtn = new javax.swing.JButton();
+        hrRolebtn = new javax.swing.JButton();
+        payrollRolebtn = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         ProfilePanel = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -207,38 +235,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel116 = new javax.swing.JLabel();
         jLabel115 = new javax.swing.JLabel();
         jLabel111 = new javax.swing.JLabel();
-        HomePanel = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        timeInlbl = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        timeOutlbl = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        departmentNamelbl = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        scheduleStatuslbl = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
-        timeInbtn = new javax.swing.JButton();
-        timeOutbtn = new javax.swing.JButton();
-        jPanel6 = new javax.swing.JPanel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jPanel7 = new javax.swing.JPanel();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
-        jLabel27 = new javax.swing.JLabel();
-        itRolebtn = new javax.swing.JButton();
-        supervisorRolebtn = new javax.swing.JButton();
-        hrRolebtn = new javax.swing.JButton();
-        payrollRolebtn = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -246,6 +242,8 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
+
+        jLabel20.setText("jLabel20");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -265,144 +263,144 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 102, 0)));
 
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("PayPeriod ID");
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setOpaque(true);
 
-        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Start Date");
+        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setOpaque(true);
 
-        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("End Date");
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setOpaque(true);
 
-        jLabel34.setBackground(new java.awt.Color(255, 255, 255));
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel34.setText("400002");
+        jLabel34.setBackground(new java.awt.Color(255, 255, 255));
         jLabel34.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel34.setOpaque(true);
 
-        jLabel43.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel43.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("2022-09-16");
+        jLabel43.setBackground(new java.awt.Color(255, 255, 255));
         jLabel43.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel43.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel43.setOpaque(true);
 
-        jLabel44.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("2022-09-30");
+        jLabel44.setBackground(new java.awt.Color(255, 255, 255));
         jLabel44.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel44.setOpaque(true);
 
-        jLabel45.setBackground(new java.awt.Color(255, 255, 255));
         jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel45.setText("400003");
+        jLabel45.setBackground(new java.awt.Color(255, 255, 255));
         jLabel45.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel45.setOpaque(true);
 
-        jLabel46.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel46.setText("2022-10-01");
+        jLabel46.setBackground(new java.awt.Color(255, 255, 255));
         jLabel46.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel46.setOpaque(true);
 
-        jLabel47.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel47.setText("2022-10-15");
+        jLabel47.setBackground(new java.awt.Color(255, 255, 255));
         jLabel47.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel47.setOpaque(true);
 
-        jLabel48.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel48.setText("2022-09-15");
+        jLabel48.setBackground(new java.awt.Color(255, 255, 255));
         jLabel48.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel48.setOpaque(true);
 
-        jLabel49.setBackground(new java.awt.Color(255, 255, 255));
         jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel49.setText("400001");
+        jLabel49.setBackground(new java.awt.Color(255, 255, 255));
         jLabel49.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel49.setOpaque(true);
 
-        jLabel50.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel50.setText("2022-09-01");
+        jLabel50.setBackground(new java.awt.Color(255, 255, 255));
         jLabel50.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel50.setOpaque(true);
 
-        jLabel51.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel51.setText("2022-10-31");
+        jLabel51.setBackground(new java.awt.Color(255, 255, 255));
         jLabel51.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel51.setOpaque(true);
 
-        jLabel52.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel52.setText("2022-10-16");
+        jLabel52.setBackground(new java.awt.Color(255, 255, 255));
         jLabel52.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel52.setOpaque(true);
 
-        jLabel53.setBackground(new java.awt.Color(255, 255, 255));
         jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel53.setText("400004");
+        jLabel53.setBackground(new java.awt.Color(255, 255, 255));
         jLabel53.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel53.setOpaque(true);
 
-        jLabel54.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel54.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel54.setText("2022-11-01");
+        jLabel54.setBackground(new java.awt.Color(255, 255, 255));
         jLabel54.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel54.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel54.setOpaque(true);
 
-        jLabel56.setBackground(new java.awt.Color(255, 255, 255));
         jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel56.setText("400005");
+        jLabel56.setBackground(new java.awt.Color(255, 255, 255));
         jLabel56.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel56.setOpaque(true);
 
-        jLabel57.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel57.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel57.setText("2022-11-15");
+        jLabel57.setBackground(new java.awt.Color(255, 255, 255));
         jLabel57.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel57.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel57.setOpaque(true);
 
-        jLabel58.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel58.setText("2022-11-30");
+        jLabel58.setBackground(new java.awt.Color(255, 255, 255));
         jLabel58.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel58.setOpaque(true);
 
-        jLabel59.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel59.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel59.setText("2022-11-16");
+        jLabel59.setBackground(new java.awt.Color(255, 255, 255));
         jLabel59.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        jLabel59.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel59.setOpaque(true);
 
-        jLabel60.setBackground(new java.awt.Color(255, 255, 255));
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel60.setText("400006");
+        jLabel60.setBackground(new java.awt.Color(255, 255, 255));
         jLabel60.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel60.setOpaque(true);
 
@@ -574,6 +572,166 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel3.add(PayslipPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 125, 971, 380));
 
+        HomePanel.setBackground(new java.awt.Color(0, 0, 0));
+        HomePanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, new java.awt.Color(255, 153, 51)));
+        HomePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0)));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Department :");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 69, 121, -1));
+
+        timeInlbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        timeInlbl.setForeground(new java.awt.Color(0, 204, 51));
+        jPanel5.add(timeInlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 104, 80));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Time In ");
+        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Time Out ");
+        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, -1, -1));
+
+        timeOutlbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        timeOutlbl.setForeground(new java.awt.Color(204, 51, 0));
+        jPanel5.add(timeOutlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 104, 80));
+
+        jSeparator2.setBackground(new java.awt.Color(255, 153, 51));
+        jSeparator2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        jPanel5.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 30, -1, 208));
+
+        departmentNamelbl.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(departmentNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 91, 121, 20));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Schedule :");
+        jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 119, 121, -1));
+
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 141, 121, 20));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Schedule Status :");
+        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 169, 121, -1));
+
+        scheduleStatuslbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        scheduleStatuslbl.setForeground(new java.awt.Color(102, 255, 0));
+        jPanel5.add(scheduleStatuslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 191, 121, 20));
+
+        jSeparator5.setBackground(new java.awt.Color(255, 153, 51));
+        jSeparator5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        jPanel5.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 30, 0, 208));
+
+        timeInbtn.setBackground(new java.awt.Color(0, 255, 0));
+        timeInbtn.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        timeInbtn.setText("Time In");
+        timeInbtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 255, 0), 1, true));
+        timeInbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeInbtnActionPerformed(evt);
+            }
+        });
+        jPanel5.add(timeInbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 320, 50));
+
+        timeOutbtn.setBackground(new java.awt.Color(255, 0, 0));
+        timeOutbtn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        timeOutbtn.setText("Time Out");
+        timeOutbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 0), 3));
+        timeOutbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeOutbtnActionPerformed(evt);
+            }
+        });
+        jPanel5.add(timeOutbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 320, 50));
+
+        HomePanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 578, 290));
+
+        itRolebtn.setText("System Records");
+        HomePanel.add(itRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
+
+        supervisorRolebtn.setText("Requests Records");
+        HomePanel.add(supervisorRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
+
+        hrRolebtn.setText("Employee Records");
+        hrRolebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hrRolebtnActionPerformed(evt);
+            }
+        });
+        HomePanel.add(hrRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
+
+        payrollRolebtn.setText("Payroll Reports");
+        HomePanel.add(payrollRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 578, 40));
+
+        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 51), new java.awt.Color(255, 51, 51)));
+
+        jLabel64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new.png"))); // NOI18N
+
+        jLabel18.setFont(new java.awt.Font("Lucida Bright", 1, 35)); // NOI18N
+        jLabel18.setText("Motor");
+        jLabel18.setIconTextGap(0);
+
+        jLabel19.setFont(new java.awt.Font("Lucida Bright", 1, 35)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel19.setText("PH");
+        jLabel19.setIconTextGap(0);
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel22.setText("The Filipino's Choice");
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trophy.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel18)
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel19))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(0, 0, 0)
+                                .addComponent(jLabel22)
+                                .addGap(12, 12, 12))
+                            .addComponent(jLabel64))))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel19))
+                .addComponent(jLabel64)
+                .addGap(0, 0, 0)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        HomePanel.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 360, 340));
+
+        jPanel3.add(HomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 125, 971, 380));
+
         ProfilePanel.setBackground(new java.awt.Color(0, 0, 0));
         ProfilePanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(255, 204, 51), null, null, java.awt.Color.white));
 
@@ -623,29 +781,29 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(153, 153, 153));
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "My Account Numbers", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jLabel35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel35.setText("SSS No");
+        jLabel35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel36.setText("TIN No");
+        jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel37.setText("Pagibig No");
+        jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel38.setText("Philhealth No");
+        jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel39.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel39.setText(":");
+        jLabel39.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel40.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel40.setText(":");
+        jLabel40.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel41.setText(":");
+        jLabel41.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel42.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel42.setText(":");
+        jLabel42.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         profileChangePasswordbtn.setText("Change Password");
         profileChangePasswordbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -718,14 +876,14 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(153, 153, 153));
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1)));
 
-        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel28.setText("Status");
+        jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel29.setText("Department");
+        jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel30.setText("Birth Date");
+        jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jLabel31.setText(":");
 
@@ -892,18 +1050,18 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0,10));
 
+        jLabel6.setText("Welcome, ");
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Welcome, ");
 
         dashboardfnamelbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         dashboardfnamelbl.setForeground(new java.awt.Color(255, 255, 255));
 
+        logoutbtn.setText("LogOut");
         logoutbtn.setBackground(new java.awt.Color(204, 0, 0));
+        logoutbtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 51, 0), 1, true));
         logoutbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         logoutbtn.setForeground(new java.awt.Color(255, 255, 255));
-        logoutbtn.setText("LogOut");
-        logoutbtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 51, 0), 1, true));
         logoutbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutbtnActionPerformed(evt);
@@ -977,9 +1135,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         jButton4.setText("Overtime Request List");
 
+        jLabel11.setText("Attendance Record");
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Attendance Record");
 
         javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
         AttendancePanel.setLayout(AttendancePanelLayout);
@@ -1018,23 +1176,23 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel11.setBackground(new java.awt.Color(153, 153, 153));
         jPanel11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 153, 0)));
 
-        jLabel112.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel112.setText("Leave Type");
+        jLabel112.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        LeavePanelLeaveSelector.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
         LeavePanelLeaveSelector.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        LeavePanelLeaveSelector.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
         LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
 
-        jLabel114.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel114.setText("Date");
+        jLabel114.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jLabel62.setText("Start Date");
 
         jLabel63.setText("End Date");
 
-        jLabel113.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel113.setText("Reason");
+        jLabel113.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         LeavePanelReason.setColumns(20);
         LeavePanelReason.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
@@ -1115,14 +1273,14 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel12.setBackground(new java.awt.Color(153, 153, 153));
         jPanel12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 153, 0)));
 
-        jLabel117.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel117.setText("Sick Leave");
+        jLabel117.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel116.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel116.setText("Vacation Leave");
+        jLabel116.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
-        jLabel115.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel115.setText("Leave Balance");
+        jLabel115.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
@@ -1159,9 +1317,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel111.setText("Leave Application");
         jLabel111.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel111.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel111.setText("Leave Application");
 
         javax.swing.GroupLayout LeavePanelLayout = new javax.swing.GroupLayout(LeavePanel);
         LeavePanel.setLayout(LeavePanelLayout);
@@ -1193,244 +1351,20 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel3.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 970, 390));
 
-        HomePanel.setBackground(new java.awt.Color(0, 0, 0));
-        HomePanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, new java.awt.Color(255, 153, 51)));
-        HomePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0)));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Department :");
-        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 69, 121, -1));
-
-        timeInlbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        timeInlbl.setForeground(new java.awt.Color(0, 204, 51));
-        timeInlbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.add(timeInlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 104, 80));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Time In ");
-        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Time Out ");
-        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, -1, -1));
-
-        timeOutlbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        timeOutlbl.setForeground(new java.awt.Color(204, 51, 0));
-        timeOutlbl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel5.add(timeOutlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 104, 80));
-
-        jSeparator2.setBackground(new java.awt.Color(255, 153, 51));
-        jSeparator2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
-        jPanel5.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 30, -1, 208));
-
-        departmentNamelbl.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel5.add(departmentNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 91, 121, 20));
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Schedule :");
-        jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 119, 121, -1));
-
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 141, 121, 20));
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Schedule Status :");
-        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 169, 121, -1));
-
-        scheduleStatuslbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        scheduleStatuslbl.setForeground(new java.awt.Color(102, 255, 0));
-        jPanel5.add(scheduleStatuslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 191, 121, 20));
-
-        jSeparator5.setBackground(new java.awt.Color(255, 153, 51));
-        jSeparator5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
-        jPanel5.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 30, 0, 208));
-
-        timeInbtn.setBackground(new java.awt.Color(0, 255, 0));
-        timeInbtn.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        timeInbtn.setText("Time In");
-        timeInbtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 255, 0), 1, true));
-        timeInbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timeInbtnActionPerformed(evt);
-            }
-        });
-        jPanel5.add(timeInbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 320, 50));
-
-        timeOutbtn.setBackground(new java.awt.Color(255, 0, 0));
-        timeOutbtn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        timeOutbtn.setText("Time Out");
-        timeOutbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 0), 3));
-        timeOutbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timeOutbtnActionPerformed(evt);
-            }
-        });
-        jPanel5.add(timeOutbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 320, 50));
-
-        HomePanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 578, 290));
-
-        jPanel6.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel6.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 153, 0)));
-
-        jLabel18.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel19.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel20.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel20.setText("Present");
-
-        jLabel21.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel21.setText("Absent");
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel22.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel22.setText("Payroll Health");
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(46, 46, 46))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel22)
-                .addGap(116, 116, 116))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel22)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel20)
-                    .addComponent(jLabel21))
-                .addGap(14, 14, 14))
-        );
-
-        HomePanel.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 12, -1, -1));
-
-        jPanel7.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel7.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 153, 0)));
-
-        jLabel23.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel24.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel25.setText("Requests");
-
-        jLabel26.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel26.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel26.setText("Leave Request");
-
-        jLabel27.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel27.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel27.setText("Overtime Request");
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jLabel25)
-                        .addGap(99, 99, 99))
-                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                            .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel27))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                            .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(49, 49, 49)
-                            .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(37, 37, 37))
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel25)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel26)
-                    .addComponent(jLabel27))
-                .addContainerGap(19, Short.MAX_VALUE))
-        );
-
-        HomePanel.add(jPanel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 185, 317, -1));
-
-        itRolebtn.setText("System Records");
-        HomePanel.add(itRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
-
-        supervisorRolebtn.setText("Requests Records");
-        HomePanel.add(supervisorRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
-
-        hrRolebtn.setText("Employee Records");
-        hrRolebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hrRolebtnActionPerformed(evt);
-            }
-        });
-        HomePanel.add(hrRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
-
-        payrollRolebtn.setText("Payroll Reports");
-        HomePanel.add(payrollRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 578, 40));
-
-        jPanel3.add(HomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 125, 971, 380));
-
         jLabel4.setFont(new java.awt.Font("Lucida Bright", 1, 21)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 75, -1, -1));
 
+        jLabel3.setText("PH");
         jLabel3.setFont(new java.awt.Font("Lucida Bright", 1, 30)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel3.setText("PH");
         jLabel3.setIconTextGap(0);
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 33, -1, -1));
 
+        jLabel2.setText("Motor");
         jLabel2.setFont(new java.awt.Font("Lucida Bright", 1, 30)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Motor");
         jLabel2.setIconTextGap(0);
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 33, -1, -1));
 
@@ -1493,61 +1427,53 @@ public class Dashboard extends javax.swing.JFrame {
     dbManager = new DatabaseManager();
     con = dbManager.getConnection();
     
-     try {
-            String query = "SELECT * FROM `employee_details`";
-            PreparedStatement pstmt = con.prepareStatement(query);
+    try {
+        // Refresh the JTable with the data from the employee table
+        String query = "SELECT * FROM employee";
+        try (Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
+            DefaultTableModel model = (DefaultTableModel) emp.getEmployee_table().getModel();
+            model.setRowCount(0);
 
-            // Execute the query
-            try (ResultSet resultSet = pstmt.executeQuery()) {
+            while (rs.next()) {
+                int employeeID = rs.getInt("employeeID");
+                String lastName = rs.getString("lastName");
+                String firstName = rs.getString("firstName");
+                Date birthDate = rs.getDate("birthDate");
+                String streetAddress = rs.getString("streetAddress");
+                String city = rs.getString("city");
+                String province = rs.getString("province");
+                String zip = rs.getString("zip");
+                String phoneNo = rs.getString("phoneNo");
+                String email = rs.getString("email");
+                String sssNo = rs.getString("sssNo");
+                String philhealthNo = rs.getString("philhealthNo");
+                String tin = rs.getString("tin");
+                String pagibigNo = rs.getString("pagibigNo");
+                String positionID = rs.getString("positionID");
+                String depID = rs.getString("depID");
+                String status = rs.getString("status");
+                Integer supervisorID = (Integer) rs.getObject("supervisorID");
+                String basicSalaryID = rs.getString("basicSalaryID");
 
-                DefaultTableModel tableModel = (DefaultTableModel) emp.getEmployee_table().getModel();
-
-                // Clear existing data
-                tableModel.setRowCount(0);
-
-                // Get column names
-                if (tableModel.getColumnCount() == 0) {
-                    int columnCount = resultSet.getMetaData().getColumnCount();
-                    Vector<String> columnNames = new Vector<>();
-                    for (int i = 1; i <= columnCount; i++) {
-                        columnNames.add(resultSet.getMetaData().getColumnName(i));
-                    }
-                    tableModel.setColumnIdentifiers(columnNames);
-                }
-
-                // Get rows
-                Vector<Vector<Object>> data = new Vector<>();
-                while (resultSet.next()) {
-                    Vector<Object> row = new Vector<>();
-                    row.add(resultSet.getString("employeeID"));
-                    row.add(resultSet.getString("name"));
-                    row.add(resultSet.getString("birthDate"));
-                    row.add(resultSet.getString("address"));
-                    row.add(resultSet.getString("phoneNo"));
-                    row.add(resultSet.getString("sssNo"));
-                    row.add(resultSet.getString("pagibigNo"));
-                    row.add(resultSet.getString("philhealthNo"));
-                    row.add(resultSet.getString("tin"));
-                    row.add(resultSet.getString("position"));
-                    row.add(resultSet.getString("department"));
-                    row.add(resultSet.getString("status"));
-                    data.add(row);
-                }
-
-                // Add rows to the table model
-                for (Vector<Object> rowData : data) {
-                    tableModel.addRow(rowData.toArray());
-                }
-
-                con.close();
-                emp.setVisible(true);
+                model.addRow(new Object[]{employeeID, lastName, firstName, birthDate, streetAddress, city, province, zip, phoneNo, email, sssNo, philhealthNo, tin, pagibigNo, positionID, depID, status, supervisorID, basicSalaryID});
             }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
-    
-    
+    } catch (Exception e) {
+        e.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error refreshing data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+    } finally {
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+                
+                
+            }
+        }
+    }
+     
+    emp.setVisible(true);
     
 
     }//GEN-LAST:event_hrRolebtnActionPerformed
@@ -1622,7 +1548,7 @@ Attendance att = new Attendance();
          con = dbManager.getConnection();
          
         try {
-       String query = "SELECT * FROM `employee_details` WHERE employeeID = ?";
+       String query = "SELECT * FROM `employeedetails_view` WHERE employeeID = ?";
         PreparedStatement pstmt = con.prepareStatement(query);
         pstmt.setString(1, empID);
         
@@ -1792,39 +1718,41 @@ dbManager = new DatabaseManager();
             
             stmt = con.createStatement();
              
-            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view401+"'and employeeID='"+empID+"'" ; 
+            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view401+"'and EmployeeID='"+empID+"'" ; 
             rs = stmt.executeQuery(query);
             if(rs.next()){
                 
                 
-                String payperiodID = rs.getString("payPeriodID");
-                String employeeID = rs.getString("employeeID");
-                String name  = rs.getString("name");
-                String startdate = rs.getString("startDate");
-                String enddate = rs.getString("endDate");
-                String position = rs.getString("position_department");
+                   
+                String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Departmet");
                 
                 
-                String monthlyrate = rs.getString("basicSalary");
-                String dailyrate = rs.getString("dailyrate");
+                String monthlyrate = rs.getString("BasicSalary");
+                String dailyrate = rs.getString("DailyRate");
                 String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("accumulatedOvertime");
-                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                String overtime = rs.getString("Overtime");
+                String grosssalary = rs.getString("GrossSalary");
                 
                 
                 String rice = rs.getString("Rice");
                 String clothing = rs.getString("Clothing");
                 String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalIndividualBenefits");
+                String totalben = rs.getString("TotalAllowance");
                 
                 String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIBIG");
-                String philhealth = rs.getString("PhilHealth");
+                String pagibig = rs.getString("PagIbig");
+                String philhealth = rs.getString("Philhealth");
                 String tax = rs.getString("Tax");
                 String totaldeduction = rs.getString("TotalDeduction");
                 
                 
-                String netpay = rs.getString("netpay");
+                String netpay = rs.getString("Netpay");
+                
                 
                 payslip.setPayslipNo(payperiodID);
                 payslip.setEmpNo(employeeID);
@@ -1889,39 +1817,40 @@ dbManager = new DatabaseManager();
             
             stmt = con.createStatement();
              
-            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view402+"'and employeeID='"+empID+"'" ; 
+            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view402+"'and EmployeeID='"+empID+"'" ; 
             rs = stmt.executeQuery(query);
             if(rs.next()){
                 
                 
-                String payperiodID = rs.getString("payPeriodID");
-                String employeeID = rs.getString("employeeID");
-                String name  = rs.getString("name");
-                String startdate = rs.getString("startDate");
-                String enddate = rs.getString("endDate");
-                String position = rs.getString("position_department");
+                     
+                 String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Departmet");
                 
                 
-                String monthlyrate = rs.getString("basicSalary");
-                String dailyrate = rs.getString("dailyrate");
+                String monthlyrate = rs.getString("BasicSalary");
+                String dailyrate = rs.getString("DailyRate");
                 String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("accumulatedOvertime");
-                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                String overtime = rs.getString("Overtime");
+                String grosssalary = rs.getString("GrossSalary");
                 
                 
                 String rice = rs.getString("Rice");
                 String clothing = rs.getString("Clothing");
                 String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalIndividualBenefits");
+                String totalben = rs.getString("TotalAllowance");
                 
                 String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIBIG");
-                String philhealth = rs.getString("PhilHealth");
+                String pagibig = rs.getString("PagIbig");
+                String philhealth = rs.getString("Philhealth");
                 String tax = rs.getString("Tax");
                 String totaldeduction = rs.getString("TotalDeduction");
                 
                 
-                String netpay = rs.getString("netpay");
+                String netpay = rs.getString("Netpay");
                 
                 payslip.setPayslipNo(payperiodID);
                 payslip.setEmpNo(employeeID);
@@ -1995,39 +1924,40 @@ dbManager = new DatabaseManager();
             
             stmt = con.createStatement();
              
-            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view403+"'and employeeID='"+empID+"'" ; 
+            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view403+"'and EmployeeID='"+empID+"'" ; 
             rs = stmt.executeQuery(query);
             if(rs.next()){
                 
                 
-                String payperiodID = rs.getString("payPeriodID");
-                String employeeID = rs.getString("employeeID");
-                String name  = rs.getString("name");
-                String startdate = rs.getString("startDate");
-                String enddate = rs.getString("endDate");
-                String position = rs.getString("position_department");
+                String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Departmet");
                 
                 
-                String monthlyrate = rs.getString("basicSalary");
-                String dailyrate = rs.getString("dailyrate");
+                String monthlyrate = rs.getString("BasicSalary");
+                String dailyrate = rs.getString("DailyRate");
                 String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("accumulatedOvertime");
-                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                String overtime = rs.getString("Overtime");
+                String grosssalary = rs.getString("GrossSalary");
                 
                 
                 String rice = rs.getString("Rice");
                 String clothing = rs.getString("Clothing");
                 String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalIndividualBenefits");
+                String totalben = rs.getString("TotalAllowance");
                 
                 String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIBIG");
-                String philhealth = rs.getString("PhilHealth");
+                String pagibig = rs.getString("PagIbig");
+                String philhealth = rs.getString("Philhealth");
                 String tax = rs.getString("Tax");
                 String totaldeduction = rs.getString("TotalDeduction");
                 
                 
-                String netpay = rs.getString("netpay");
+                String netpay = rs.getString("Netpay");
+                
                 
                 payslip.setPayslipNo(payperiodID);
                 payslip.setEmpNo(employeeID);
@@ -2092,39 +2022,38 @@ dbManager = new DatabaseManager();
             
             stmt = con.createStatement();
              
-            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view404+"'and employeeID='"+empID+"'" ; 
+            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view404+"'and EmployeeID='"+empID+"'" ; 
             rs = stmt.executeQuery(query);
             if(rs.next()){
                 
+       String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Departmet");
                 
-                String payperiodID = rs.getString("payPeriodID");
-                String employeeID = rs.getString("employeeID");
-                String name  = rs.getString("name");
-                String startdate = rs.getString("startDate");
-                String enddate = rs.getString("endDate");
-                String position = rs.getString("position_department");
                 
-                
-                String monthlyrate = rs.getString("basicSalary");
-                String dailyrate = rs.getString("dailyrate");
+                String monthlyrate = rs.getString("BasicSalary");
+                String dailyrate = rs.getString("DailyRate");
                 String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("accumulatedOvertime");
-                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                String overtime = rs.getString("Overtime");
+                String grosssalary = rs.getString("GrossSalary");
                 
                 
                 String rice = rs.getString("Rice");
                 String clothing = rs.getString("Clothing");
                 String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalIndividualBenefits");
+                String totalben = rs.getString("TotalAllowance");
                 
                 String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIBIG");
-                String philhealth = rs.getString("PhilHealth");
+                String pagibig = rs.getString("PagIbig");
+                String philhealth = rs.getString("Philhealth");
                 String tax = rs.getString("Tax");
                 String totaldeduction = rs.getString("TotalDeduction");
                 
                 
-                String netpay = rs.getString("netpay");
+                String netpay = rs.getString("Netpay");
                 
                 payslip.setPayslipNo(payperiodID);
                 payslip.setEmpNo(employeeID);
@@ -2190,39 +2119,39 @@ dbManager = new DatabaseManager();
             
             stmt = con.createStatement();
              
-            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view405+"'and employeeID='"+empID+"'" ; 
+            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view405+"'and EmployeeID='"+empID+"'" ; 
             rs = stmt.executeQuery(query);
             if(rs.next()){
                 
                 
-                String payperiodID = rs.getString("payPeriodID");
-                String employeeID = rs.getString("employeeID");
-                String name  = rs.getString("name");
-                String startdate = rs.getString("startDate");
-                String enddate = rs.getString("endDate");
-                String position = rs.getString("position_department");
+             String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Departmet");
                 
                 
-                String monthlyrate = rs.getString("basicSalary");
-                String dailyrate = rs.getString("dailyrate");
+                String monthlyrate = rs.getString("BasicSalary");
+                String dailyrate = rs.getString("DailyRate");
                 String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("accumulatedOvertime");
-                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                String overtime = rs.getString("Overtime");
+                String grosssalary = rs.getString("GrossSalary");
                 
                 
                 String rice = rs.getString("Rice");
                 String clothing = rs.getString("Clothing");
                 String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalIndividualBenefits");
+                String totalben = rs.getString("TotalAllowance");
                 
                 String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIBIG");
-                String philhealth = rs.getString("PhilHealth");
+                String pagibig = rs.getString("PagIbig");
+                String philhealth = rs.getString("Philhealth");
                 String tax = rs.getString("Tax");
                 String totaldeduction = rs.getString("TotalDeduction");
                 
                 
-                String netpay = rs.getString("netpay");
+                String netpay = rs.getString("Netpay");
                 
                 payslip.setPayslipNo(payperiodID);
                 payslip.setEmpNo(employeeID);
@@ -2287,39 +2216,39 @@ dbManager = new DatabaseManager();
             
             stmt = con.createStatement();
              
-            String query = "SELECT * FROM `payslip_view` where payPeriodID ='" +view406+"'and employeeID='"+empID+"'" ; 
+            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view406+"'and EmployeeID='"+empID+"'" ; 
             rs = stmt.executeQuery(query);
             if(rs.next()){
                 
                 
-                String payperiodID = rs.getString("payPeriodID");
-                String employeeID = rs.getString("employeeID");
-                String name  = rs.getString("name");
-                String startdate = rs.getString("startDate");
-                String enddate = rs.getString("endDate");
-                String position = rs.getString("position_department");
+              String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Departmet");
                 
                 
-                String monthlyrate = rs.getString("basicSalary");
-                String dailyrate = rs.getString("dailyrate");
+                String monthlyrate = rs.getString("BasicSalary");
+                String dailyrate = rs.getString("DailyRate");
                 String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("accumulatedOvertime");
-                String grosssalary = rs.getString("grossSalaryWithOvertime");
+                String overtime = rs.getString("Overtime");
+                String grosssalary = rs.getString("GrossSalary");
                 
                 
                 String rice = rs.getString("Rice");
                 String clothing = rs.getString("Clothing");
                 String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalIndividualBenefits");
+                String totalben = rs.getString("TotalAllowance");
                 
                 String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIBIG");
-                String philhealth = rs.getString("PhilHealth");
+                String pagibig = rs.getString("PagIbig");
+                String philhealth = rs.getString("Philhealth");
                 String tax = rs.getString("Tax");
                 String totaldeduction = rs.getString("TotalDeduction");
                 
                 
-                String netpay = rs.getString("netpay");
+                String netpay = rs.getString("Netpay");
                 
                 payslip.setPayslipNo(payperiodID);
                 payslip.setEmpNo(employeeID);
@@ -2453,11 +2382,6 @@ dbManager = new DatabaseManager();
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
@@ -2498,6 +2422,7 @@ dbManager = new DatabaseManager();
     private javax.swing.JLabel jLabel61;
     private javax.swing.JLabel jLabel62;
     private javax.swing.JLabel jLabel63;
+    private javax.swing.JLabel jLabel64;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -2505,12 +2430,11 @@ dbManager = new DatabaseManager();
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
