@@ -92,6 +92,11 @@ public class employee_details extends javax.swing.JFrame {
         });
 
         jButton3.setText("Delete");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         employee_table.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(204, 51, 0)));
         employee_table.setModel(new javax.swing.table.DefaultTableModel(
@@ -328,6 +333,54 @@ private void importCSV(File file) {
     
    
     }//GEN-LAST:event_AddbtnActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+ // Assuming this code is within a Swing ActionListener or similar event handler
+int selectedRow = employee_table.getSelectedRow();
+if (selectedRow != -1) {
+    // Get data from the selected row and handle types appropriately
+    Object empIDObj = employee_table.getValueAt(selectedRow, 0);
+    String empID = empIDObj != null ? empIDObj.toString() : null;
+
+    // Show confirmation dialog
+    int option = JOptionPane.showConfirmDialog(this, 
+        "Are you sure you want to delete the employee record?", 
+        "Confirmation", JOptionPane.YES_NO_OPTION);
+    
+    if (option == JOptionPane.YES_OPTION) {
+        dbManager = new DatabaseManager();
+        con = dbManager.getConnection();
+
+        try {
+            String query = "DELETE FROM `employee` WHERE employeeID = ?";
+            try (PreparedStatement pstmt = con.prepareStatement(query)) {
+                pstmt.setString(1, empID);
+                pstmt.executeUpdate(); // Execute the delete operation
+
+                // Optionally, you can add a message indicating success
+                JOptionPane.showMessageDialog(this, 
+                    "Employee with ID " + empID + " deleted successfully.");
+                dbManager.refreshEmployeeDetailsView();
+                this.show(false);
+                
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, "Error deleting employee", ex);
+            }
+        } finally {
+            // Close resources in a finally block
+            try {
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, "Error closing connection", ex);
+            }
+        }
+    }
+}
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
 
