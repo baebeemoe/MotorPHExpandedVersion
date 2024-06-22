@@ -21,8 +21,10 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.sql.PreparedStatement;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
+import java.util.concurrent.TimeUnit;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
@@ -39,11 +41,15 @@ public class Dashboard extends javax.swing.JFrame {
     private String employeefName;
     private String departmentName;
     
+
+   
+
     public Dashboard() {
         initComponents();
     }
     public String getEmployeeID() {
         return employeeID;
+      
     }
     public String getEmployeeName() {
         return employeefName;
@@ -77,6 +83,8 @@ public class Dashboard extends javax.swing.JFrame {
         return PayslipPanel;
     }
 
+ 
+  
     
     public void setEmployeeID(String employeeID) {
         this.employeeID = employeeID;
@@ -108,6 +116,25 @@ public class Dashboard extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        LeavePanel = new javax.swing.JPanel();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel112 = new javax.swing.JLabel();
+        LeavePanelLeaveSelector = new javax.swing.JComboBox<>();
+        jLabel114 = new javax.swing.JLabel();
+        jLabel62 = new javax.swing.JLabel();
+        jLabel63 = new javax.swing.JLabel();
+        jLabel113 = new javax.swing.JLabel();
+        LeavePanelReason = new javax.swing.JTextArea();
+        LeavePanelSubmitButton = new javax.swing.JButton();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jPanel12 = new javax.swing.JPanel();
+        jLabel117 = new javax.swing.JLabel();
+        leaveSickLeaveBalance = new javax.swing.JLabel();
+        leaveVacationLeaveBalance = new javax.swing.JLabel();
+        jLabel116 = new javax.swing.JLabel();
+        jLabel115 = new javax.swing.JLabel();
+        jLabel111 = new javax.swing.JLabel();
         PayslipPanel = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -216,25 +243,6 @@ public class Dashboard extends javax.swing.JFrame {
         attendanceRequestOvertimebtn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        LeavePanel = new javax.swing.JPanel();
-        jPanel11 = new javax.swing.JPanel();
-        jLabel112 = new javax.swing.JLabel();
-        LeavePanelLeaveSelector = new javax.swing.JComboBox<>();
-        jLabel114 = new javax.swing.JLabel();
-        jLabel62 = new javax.swing.JLabel();
-        jLabel63 = new javax.swing.JLabel();
-        jLabel113 = new javax.swing.JLabel();
-        LeavePanelReason = new javax.swing.JTextArea();
-        LeavePanelSubmitButton = new javax.swing.JButton();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel117 = new javax.swing.JLabel();
-        leaveSickLeaveBalance = new javax.swing.JLabel();
-        leaveVacationLeaveBalance = new javax.swing.JLabel();
-        jLabel116 = new javax.swing.JLabel();
-        jLabel115 = new javax.swing.JLabel();
-        jLabel111 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -251,6 +259,197 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(0, 0, 0,90));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        LeavePanel.setBackground(new java.awt.Color(0, 0, 0));
+        LeavePanel.setPreferredSize(new java.awt.Dimension(970, 370));
+
+        jPanel11.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 153, 0)));
+
+        jLabel112.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel112.setText("Leave Type");
+
+        LeavePanelLeaveSelector.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", " " }));
+        LeavePanelLeaveSelector.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
+
+        jLabel114.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel114.setText("Date");
+
+        jLabel62.setText("Start Date");
+
+        jLabel63.setText("End Date");
+
+        jLabel113.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel113.setText("Reason");
+
+        LeavePanelReason.setColumns(20);
+        LeavePanelReason.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        LeavePanelReason.setRows(5);
+        LeavePanelReason.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        LeavePanelSubmitButton.setText("Submit");
+        LeavePanelSubmitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LeavePanelSubmitButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
+        jPanel11.setLayout(jPanel11Layout);
+        jPanel11Layout.setHorizontalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel112)
+                            .addComponent(jLabel114))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                                            .addGap(0, 0, Short.MAX_VALUE)
+                                            .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel11Layout.createSequentialGroup()
+                                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jLabel113)
+                                                .addGroup(jPanel11Layout.createSequentialGroup()
+                                                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGap(18, 18, 18)
+                                                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                            .addGap(0, 0, Short.MAX_VALUE))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
+        );
+        jPanel11Layout.setVerticalGroup(
+            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(jLabel112)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel11Layout.createSequentialGroup()
+                        .addComponent(jLabel114)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel62)
+                    .addComponent(jLabel63))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addComponent(jLabel113)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LeavePanelSubmitButton)
+                .addContainerGap())
+        );
+
+        jPanel12.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 153, 0)));
+
+        jLabel117.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel117.setText("Sick Leave");
+
+        leaveSickLeaveBalance.setFont(new java.awt.Font("Segoe UI", 1, 80)); // NOI18N
+        leaveSickLeaveBalance.setForeground(new java.awt.Color(0, 0, 255));
+        leaveSickLeaveBalance.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        leaveVacationLeaveBalance.setFont(new java.awt.Font("Segoe UI", 1, 80)); // NOI18N
+        leaveVacationLeaveBalance.setForeground(new java.awt.Color(0, 255, 0));
+        leaveVacationLeaveBalance.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel116.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel116.setText("Vacation Leave");
+
+        jLabel115.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel115.setText("Leave Balance");
+
+        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
+        jPanel12.setLayout(jPanel12Layout);
+        jPanel12Layout.setHorizontalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel115)
+                    .addGroup(jPanel12Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(leaveSickLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(50, 50, 50)
+                        .addComponent(leaveVacationLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(51, Short.MAX_VALUE))
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(jLabel117)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel116)
+                .addGap(64, 64, 64))
+        );
+        jPanel12Layout.setVerticalGroup(
+            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jLabel115)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(leaveVacationLeaveBalance, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                    .addComponent(leaveSickLeaveBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel117, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel116))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel111.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel111.setText("Leave Application");
+
+        javax.swing.GroupLayout LeavePanelLayout = new javax.swing.GroupLayout(LeavePanel);
+        LeavePanel.setLayout(LeavePanelLayout);
+        LeavePanelLayout.setHorizontalGroup(
+            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(LeavePanelLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(LeavePanelLayout.createSequentialGroup()
+                        .addComponent(jLabel111)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(LeavePanelLayout.createSequentialGroup()
+                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
+                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(37, 37, 37))))
+        );
+        LeavePanelLayout.setVerticalGroup(
+            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeavePanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel111)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
+        );
+
+        jPanel3.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 970, 390));
+
         PayslipPanel.setBackground(new java.awt.Color(0, 0, 0));
         PayslipPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, new java.awt.Color(255, 153, 51)));
         PayslipPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -263,144 +462,144 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 102, 0)));
 
+        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("PayPeriod ID");
-        jLabel12.setBackground(new java.awt.Color(255, 255, 255));
         jLabel12.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setOpaque(true);
 
+        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Start Date");
-        jLabel16.setBackground(new java.awt.Color(255, 255, 255));
         jLabel16.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setOpaque(true);
 
+        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("End Date");
-        jLabel17.setBackground(new java.awt.Color(255, 255, 255));
         jLabel17.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setOpaque(true);
 
+        jLabel34.setBackground(new java.awt.Color(255, 255, 255));
         jLabel34.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel34.setText("400002");
-        jLabel34.setBackground(new java.awt.Color(255, 255, 255));
         jLabel34.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel34.setOpaque(true);
 
+        jLabel43.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel43.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel43.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel43.setText("2022-09-16");
-        jLabel43.setBackground(new java.awt.Color(255, 255, 255));
         jLabel43.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel43.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel43.setOpaque(true);
 
+        jLabel44.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("2022-09-30");
-        jLabel44.setBackground(new java.awt.Color(255, 255, 255));
         jLabel44.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel44.setOpaque(true);
 
+        jLabel45.setBackground(new java.awt.Color(255, 255, 255));
         jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel45.setText("400003");
-        jLabel45.setBackground(new java.awt.Color(255, 255, 255));
         jLabel45.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel45.setOpaque(true);
 
+        jLabel46.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel46.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel46.setText("2022-10-01");
-        jLabel46.setBackground(new java.awt.Color(255, 255, 255));
         jLabel46.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel46.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel46.setOpaque(true);
 
+        jLabel47.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel47.setText("2022-10-15");
-        jLabel47.setBackground(new java.awt.Color(255, 255, 255));
         jLabel47.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel47.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel47.setOpaque(true);
 
+        jLabel48.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel48.setText("2022-09-15");
-        jLabel48.setBackground(new java.awt.Color(255, 255, 255));
         jLabel48.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel48.setOpaque(true);
 
+        jLabel49.setBackground(new java.awt.Color(255, 255, 255));
         jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel49.setText("400001");
-        jLabel49.setBackground(new java.awt.Color(255, 255, 255));
         jLabel49.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel49.setOpaque(true);
 
+        jLabel50.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel50.setText("2022-09-01");
-        jLabel50.setBackground(new java.awt.Color(255, 255, 255));
         jLabel50.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel50.setOpaque(true);
 
+        jLabel51.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel51.setText("2022-10-31");
-        jLabel51.setBackground(new java.awt.Color(255, 255, 255));
         jLabel51.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel51.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel51.setOpaque(true);
 
+        jLabel52.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel52.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel52.setText("2022-10-16");
-        jLabel52.setBackground(new java.awt.Color(255, 255, 255));
         jLabel52.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel52.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel52.setOpaque(true);
 
+        jLabel53.setBackground(new java.awt.Color(255, 255, 255));
         jLabel53.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel53.setText("400004");
-        jLabel53.setBackground(new java.awt.Color(255, 255, 255));
         jLabel53.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel53.setOpaque(true);
 
+        jLabel54.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel54.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel54.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel54.setText("2022-11-01");
-        jLabel54.setBackground(new java.awt.Color(255, 255, 255));
         jLabel54.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel54.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel54.setOpaque(true);
 
+        jLabel56.setBackground(new java.awt.Color(255, 255, 255));
         jLabel56.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel56.setText("400005");
-        jLabel56.setBackground(new java.awt.Color(255, 255, 255));
         jLabel56.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel56.setOpaque(true);
 
+        jLabel57.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel57.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel57.setText("2022-11-15");
-        jLabel57.setBackground(new java.awt.Color(255, 255, 255));
         jLabel57.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel57.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel57.setOpaque(true);
 
+        jLabel58.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel58.setText("2022-11-30");
-        jLabel58.setBackground(new java.awt.Color(255, 255, 255));
         jLabel58.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel58.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel58.setOpaque(true);
 
+        jLabel59.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel59.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel59.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel59.setText("2022-11-16");
-        jLabel59.setBackground(new java.awt.Color(255, 255, 255));
         jLabel59.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        jLabel59.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel59.setOpaque(true);
 
+        jLabel60.setBackground(new java.awt.Color(255, 255, 255));
         jLabel60.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel60.setText("400006");
-        jLabel60.setBackground(new java.awt.Color(255, 255, 255));
         jLabel60.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jLabel60.setOpaque(true);
 
@@ -781,29 +980,29 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel9.setBackground(new java.awt.Color(153, 153, 153));
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "My Account Numbers", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jLabel35.setText("SSS No");
         jLabel35.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel35.setText("SSS No");
 
-        jLabel36.setText("TIN No");
         jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel36.setText("TIN No");
 
-        jLabel37.setText("Pagibig No");
         jLabel37.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel37.setText("Pagibig No");
 
-        jLabel38.setText("Philhealth No");
         jLabel38.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel38.setText("Philhealth No");
 
-        jLabel39.setText(":");
         jLabel39.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel39.setText(":");
 
-        jLabel40.setText(":");
         jLabel40.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel40.setText(":");
 
-        jLabel41.setText(":");
         jLabel41.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel41.setText(":");
 
-        jLabel42.setText(":");
         jLabel42.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel42.setText(":");
 
         profileChangePasswordbtn.setText("Change Password");
         profileChangePasswordbtn.addActionListener(new java.awt.event.ActionListener() {
@@ -876,14 +1075,14 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(153, 153, 153));
         jPanel10.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1)));
 
-        jLabel28.setText("Status");
         jLabel28.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel28.setText("Status");
 
-        jLabel29.setText("Department");
         jLabel29.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel29.setText("Department");
 
-        jLabel30.setText("Birth Date");
         jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel30.setText("Birth Date");
 
         jLabel31.setText(":");
 
@@ -1050,18 +1249,18 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(0, 0, 0,10));
 
-        jLabel6.setText("Welcome, ");
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Welcome, ");
 
         dashboardfnamelbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         dashboardfnamelbl.setForeground(new java.awt.Color(255, 255, 255));
 
-        logoutbtn.setText("LogOut");
         logoutbtn.setBackground(new java.awt.Color(204, 0, 0));
-        logoutbtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 51, 0), 1, true));
         logoutbtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         logoutbtn.setForeground(new java.awt.Color(255, 255, 255));
+        logoutbtn.setText("LogOut");
+        logoutbtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 51, 0), 1, true));
         logoutbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 logoutbtnActionPerformed(evt);
@@ -1135,9 +1334,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         jButton4.setText("Overtime Request List");
 
-        jLabel11.setText("Attendance Record");
         jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Attendance Record");
 
         javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
         AttendancePanel.setLayout(AttendancePanelLayout);
@@ -1169,187 +1368,6 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         jPanel3.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 970, 380));
-
-        LeavePanel.setBackground(new java.awt.Color(0, 0, 0));
-        LeavePanel.setPreferredSize(new java.awt.Dimension(970, 370));
-
-        jPanel11.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel11.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 153, 0)));
-
-        jLabel112.setText("Leave Type");
-        jLabel112.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        LeavePanelLeaveSelector.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Leave Type", "Vacation Leave", "Sick Leave", "Emergency Leave" }));
-        LeavePanelLeaveSelector.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        LeavePanelLeaveSelector.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        LeavePanelLeaveSelector.setName("Choose the Type of Leave"); // NOI18N
-
-        jLabel114.setText("Date");
-        jLabel114.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        jLabel62.setText("Start Date");
-
-        jLabel63.setText("End Date");
-
-        jLabel113.setText("Reason");
-        jLabel113.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        LeavePanelReason.setColumns(20);
-        LeavePanelReason.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
-        LeavePanelReason.setRows(5);
-        LeavePanelReason.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        LeavePanelSubmitButton.setText("Submit");
-        LeavePanelSubmitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LeavePanelSubmitButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel112)
-                            .addComponent(jLabel114))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                                            .addGap(0, 0, Short.MAX_VALUE)
-                                            .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(jPanel11Layout.createSequentialGroup()
-                                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel113)
-                                                .addGroup(jPanel11Layout.createSequentialGroup()
-                                                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGap(18, 18, 18)
-                                                    .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addGap(0, 0, Short.MAX_VALUE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 212, Short.MAX_VALUE)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel112)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(LeavePanelLeaveSelector, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel11Layout.createSequentialGroup()
-                        .addComponent(jLabel114)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel62)
-                    .addComponent(jLabel63))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
-                .addComponent(jLabel113)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(LeavePanelSubmitButton)
-                .addContainerGap())
-        );
-
-        jPanel12.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel12.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 153, 0)));
-
-        jLabel117.setText("Sick Leave");
-        jLabel117.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        jLabel116.setText("Vacation Leave");
-        jLabel116.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        jLabel115.setText("Leave Balance");
-        jLabel115.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel115)
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addComponent(leaveSickLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(61, 61, 61)
-                        .addComponent(leaveVacationLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jLabel117)
-                        .addGap(106, 106, 106)
-                        .addComponent(jLabel116)))
-                .addContainerGap(51, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel115)
-                .addGap(31, 31, 31)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(leaveSickLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(leaveVacationLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel117)
-                    .addComponent(jLabel116))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jLabel111.setText("Leave Application");
-        jLabel111.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel111.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout LeavePanelLayout = new javax.swing.GroupLayout(LeavePanel);
-        LeavePanel.setLayout(LeavePanelLayout);
-        LeavePanelLayout.setHorizontalGroup(
-            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(LeavePanelLayout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(LeavePanelLayout.createSequentialGroup()
-                        .addComponent(jLabel111)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(LeavePanelLayout.createSequentialGroup()
-                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                        .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(37, 37, 37))))
-        );
-        LeavePanelLayout.setVerticalGroup(
-            LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, LeavePanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel111)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(LeavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(43, 43, 43))
-        );
-
-        jPanel3.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 970, 390));
 
         jLabel4.setFont(new java.awt.Font("Lucida Bright", 1, 21)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -1614,9 +1632,212 @@ Attendance att = new Attendance();
     }//GEN-LAST:event_btnHomeActionPerformed
 
     private void LeavePanelSubmitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LeavePanelSubmitButtonActionPerformed
+      
+         dbManager = new DatabaseManager();
+         con = dbManager.getConnection();
+
+try {
+    // Assuming these variables are already defined and initialized:
+    String leaveType = (String) LeavePanelLeaveSelector.getSelectedItem();
+    Date startDate = jDateChooser1.getDate();
+    Date endDate = jDateChooser2.getDate();
+    String reason = LeavePanelReason.getText();
+    String empID = dashboardempNolbl.getText();
+    String remarks = "Pending";
+    // Validate constraints
+    Date currentDate = new Date(); // Current date
+    
+    // Check for Sick Leave specific constraints
+        if (leaveType.equalsIgnoreCase("Sick Leave")) {
+            // Start date should not be equal to or greater than date applied
+            if (startDate.after(currentDate) || startDate.equals(currentDate)) {
+                JOptionPane.showMessageDialog(this, "For Sick Leave, start date cannot be on or after today's date.");
+                return;
+            }
+        } else {
+            // General date constraints for non-Sick Leave types
+            if (startDate.before(currentDate) || startDate.equals(currentDate)) {
+                JOptionPane.showMessageDialog(this, "Start date cannot be before or equal to today's date.");
+                return;
+            }
+        }
+
+    if (endDate.before(startDate) || endDate.equals(startDate)) {
+        JOptionPane.showMessageDialog(this, "End date cannot be before or equal to start date.");
+        return; // Exit method or handle accordingly
+    }
+ 
+    // Format dates for SQL
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+    String formattedStartDate = dateFormat.format(startDate);
+    String formattedEndDate = dateFormat.format(endDate);
+    String formattedDateApplied = dateFormat.format(currentDate); // Current date as dateapplied
+
+    // Prepare SQL statement
+     String sql = "INSERT INTO leaveapplication (employeeID, datefiled, leavetype, startdate, enddate, reason, remarks) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    
+    // Create prepared statement
+    try (PreparedStatement pstmt = con.prepareStatement(sql)) {
+        pstmt.setString(1, empID);
+        pstmt.setString(2, formattedDateApplied); // Set dateapplied
+        pstmt.setString(3, leaveType);
+        pstmt.setString(4, formattedStartDate);
+        pstmt.setString(5, formattedEndDate);
+        pstmt.setString(6, reason);
+        pstmt.setString(7, remarks);
+        
+        // Execute SQL query
+        int rowsAffected = pstmt.executeUpdate();
+        
+        System.out.print(leaveType);
+        
+        
      
+     // Calculate number of days between startDate and endDate
+    long diffInMillies = Math.abs(endDate.getTime() - startDate.getTime());
+    long diffInDays = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+
+    
+    
+    // Add 1 to include both start and end dates in the count (if counting calendar days)
+    diffInDays += 1;
+    
+    // Retrieve leavetypeID from leavetype table based on leaveType
+    String leavetypeID = getLeaveTypeID(leaveType); // Implement this method to fetch leavetypeID
+    if (leavetypeID == null) {
+        JOptionPane.showMessageDialog(this, "Leave type not found in database.");
+        return; // Exit method or handle accordingly
+       
+    }
+    
+    
+        // Retrieve current leave balance from leavebalance table
+    int currentBalance = getCurrentLeaveBalance(empID, leavetypeID); // Implement this method to fetch current leave balance
+            System.out.println("employeeID: " + empID); // Debug statement
+            System.out.println("leavetypeID: " + leavetypeID); // Debug statement
+            System.out.println("currentBalance: " + currentBalance); // Debug statement
+    if (currentBalance == -1) {
+        JOptionPane.showMessageDialog(this, "Leave balance not found for employee and leave type.");
+        return; // Exit method or handle accordingly
+    }
+
+    // Deduct from currentBalance based on leave type and number of days
+    int deduction = calculateDeduction(leavetypeID, diffInDays); // Implement this method to calculate deduction
+
+    // Ensure deduction does not exceed currentBalance
+    deduction = Math.min(deduction, currentBalance);
+    int newBalance = currentBalance - deduction;
+    
+    
+    // Update leave balance in the database
+    boolean updateSuccessful = updateLeaveBalance(empID, leavetypeID, newBalance); // Implement this method to update leave balance
+
+    if (updateSuccessful) {
+        JOptionPane.showMessageDialog(this, "Leave balance updated successfully.");
+      
+    } else {
+        JOptionPane.showMessageDialog(this, "Failed to update leave balance.");
+    }
+
+        if (rowsAffected > 0) {
+            JOptionPane.showMessageDialog(this, "Leave application submitted successfully.");
+        
+        dbManager.updateLeaveBalances(empID, leaveSickLeaveBalance, leaveVacationLeaveBalance);
+        LeavePanelLeaveSelector.setSelectedIndex(0);
+        jDateChooser1.setDate(null);
+        jDateChooser2.setDate(null);
+        LeavePanelReason.setText("");
+        } else {
+            JOptionPane.showMessageDialog(this, "Leave application submission failed.");
+        }
+    
+        
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Error submitting leave application: " + ex.getMessage());
+    }
+} catch (Exception ex) {
+    ex.printStackTrace();
+    JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+} finally {
+    // Close database connection
+    try {
+        if (con != null) {
+            con.close();
+        }
+    } catch (SQLException ex) {
+        ex.printStackTrace();
+    }
+}
+
+
+
+             
     }//GEN-LAST:event_LeavePanelSubmitButtonActionPerformed
 
+    // Method to update leave balance in leavebalance table
+private boolean updateLeaveBalance(String empID, String leavetypeID, int newBalance) throws SQLException {
+    String updateQuery = "UPDATE leavebalance SET leavebalance = ? WHERE employeeID = ? AND leavetypeID = ?";
+    try (PreparedStatement updateStmt = con.prepareStatement(updateQuery)) {
+        updateStmt.setInt(1, newBalance);
+        updateStmt.setString(2, empID);
+        updateStmt.setString(3, leavetypeID);
+        
+        int rowsUpdated = updateStmt.executeUpdate();
+        return rowsUpdated > 0;
+    }
+}
+    
+  // Method to retrieve current leave balance from leavebalance table
+private int getCurrentLeaveBalance(String empID, String leavetypeID) throws SQLException {
+   String query = "SELECT leavebalance FROM leavebalance WHERE employeeID = ? AND leavetypeID = ?";
+    System.out.println("Executing query: " + query); // Debug statement
+    try (PreparedStatement pstmt = con.prepareStatement(query)) {
+        pstmt.setString(1, empID);
+        pstmt.setString(2, leavetypeID);
+        try (ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                return rs.getInt("leavebalance");
+            } else {
+                // No record found for the specified employee and leavetype
+                return -1; // Or handle this case based on your application logic
+            }
+        }
+    }
+}
+  
+ // Method to calculate deduction based on leavetypeID and number of days
+private int calculateDeduction(String leavetypeID, long diffInDays) {
+    // Implement your deduction logic based on leavetypeID and diffInDays
+    // Example logic:
+    // Assuming leavetypeID "10001" is for Sick Leave and "10002" is for Vacation Leave
+    switch (leavetypeID) {
+        case "1001": // leavetypeID for Sick Leave
+            return (int) diffInDays; // Deduct all days for sick leave
+        case "1002": // leavetypeID for Vacation Leave
+            return (int) diffInDays; // Deduct all days for vacation leave
+        // Add cases for other leavetypes as needed
+        default:
+            return 0; // Default to 0 deduction if no matching leavetypeID
+    }
+}  
+
+
+   // Method to retrieve leavetypeID from leavetype table based on leaveType
+private String getLeaveTypeID(String leaveType) throws SQLException {
+    String query = "SELECT leavetypeID FROM leavetype WHERE leavename = ?";
+    try (PreparedStatement pstmt = con.prepareStatement(query)) {
+        pstmt.setString(1, leaveType);
+        try (ResultSet rs = pstmt.executeQuery()) {
+            if (rs.next()) {
+                return rs.getString("leavetypeID");
+            }
+        }
+    }
+    return null;
+}
+ 
+    
     private void btnAttendanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAttendanceActionPerformed
     String empID = dashboardempNolbl.getText();
     dbManager = new DatabaseManager();
@@ -1681,7 +1902,45 @@ Attendance att = new Attendance();
     }//GEN-LAST:event_btnAttendanceActionPerformed
 
     private void btnLeaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLeaveActionPerformed
-    // Show and Hide Panels
+   String empID = dashboardempNolbl.getText();
+   dbManager = new DatabaseManager();
+   con = dbManager.getConnection();
+   PreparedStatement pstmt = null;
+   
+    try {
+       String query = "SELECT * FROM `leavebalance` WHERE employeeID = ? AND leavetypeID = ?";
+       
+       // Retrieve Sick Leave balance (leavetypeID 1001)
+            pstmt = con.prepareStatement(query);
+            pstmt.setInt(1, Integer.parseInt (empID));
+            pstmt.setInt(2, 1001);  // Sick Leave leavetypeID
+            rs = pstmt.executeQuery();
+            if (rs.next()) {
+                String sickLeaveBalance = rs.getString("leavebalance");
+                leaveSickLeaveBalance.setText(sickLeaveBalance);
+            } else {
+                leaveSickLeaveBalance.setText("0");
+            }
+       
+             // Retrieve Vacation Leave balance (leavetypeID 1002)
+        pstmt.setInt(2, 1002);  // Vacation Leave leavetypeID
+        rs = pstmt.executeQuery();
+        if (rs.next()) {
+            String vacationLeaveBalance = rs.getString("leavebalance");
+            leaveVacationLeaveBalance.setText(vacationLeaveBalance);
+        } else {
+            leaveVacationLeaveBalance.setText("0");
+        }
+            
+            
+            con.close();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+         
+        
+
     HomePanel.show(false);
     ProfilePanel.show(false);
     AttendancePanel.show(false);

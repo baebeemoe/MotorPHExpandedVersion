@@ -4,6 +4,7 @@
  */
 package Methods;
 
+import Form.Dashboard;
 import Form.subform.employee_details;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,6 +16,9 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import java.sql.Statement;
 import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 /**
  *
@@ -87,7 +91,45 @@ public class DatabaseManager {
      
     }
     
-    
+     public void updateLeaveBalances(String empID, JLabel leaveSickLeaveBalance, JLabel leaveVacationLeaveBalance) {
+        Connection con = getConnection();
+        PreparedStatement pstmt = null;
+
+        try {
+            String query = "SELECT * FROM `leavebalance` WHERE employeeID = ? AND leavetypeID = ?";
+            pstmt = con.prepareStatement(query);
+
+            // Retrieve and set leave balance for Sick Leave
+            updateLeaveBalance(empID, pstmt, 1001, leaveSickLeaveBalance);
+
+            // Retrieve and set leave balance for Vacation Leave
+            updateLeaveBalance(empID, pstmt, 1002, leaveVacationLeaveBalance);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            // Ensure resources are closed properly
+            try {
+                if (pstmt != null) pstmt.close();
+                if (con != null) con.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(DatabaseManager.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+
+    private void updateLeaveBalance(String empID, PreparedStatement pstmt, int leaveTypeID, JLabel leaveBalanceLabel) throws SQLException {
+        pstmt.setInt(1, Integer.parseInt(empID));
+        pstmt.setInt(2, leaveTypeID);
+        ResultSet rs = pstmt.executeQuery();
+        if (rs.next()) {
+            String leaveBalance = rs.getString("leavebalance");
+            leaveBalanceLabel.setText(leaveBalance);
+        } else {
+            leaveBalanceLabel.setText("0");
+        }
+        rs.close(); // Close the ResultSet after processing
+    }
 
     
 }

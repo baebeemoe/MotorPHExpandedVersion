@@ -7,33 +7,26 @@ package Form.subform;
 import Form.Dashboard;
 import Form.subform.UpdateForm;
 import Methods.DatabaseManager;
-import com.mysql.cj.xdevapi.Statement;
-import com.sun.jdi.connect.spi.Connection;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import javax.swing.JFileChooser;
 import javax.swing.JTable;
-import java.sql.PreparedStatement;
-import java.time.LocalDate;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
-import java.sql.Types;
-import java.sql.SQLException;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import javax.swing.JOptionPane;
-import javax.swing.JFileChooser;
 import javax.swing.table.DefaultTableModel;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.time.LocalDate;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.DriverManager;
+import java.sql.Types;
+import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+
 /**
  *
  * @author Default
@@ -41,6 +34,8 @@ import java.util.logging.Logger;
 public class employee_details extends javax.swing.JFrame {
     java.sql.Connection con = null;
     PreparedStatement pstmt = null;
+    PreparedStatement pstmt1 = null;
+    PreparedStatement pstmtLeaveBalance = null;
     private DatabaseManager dbManager;
     ResultSet rs = null;  
     
@@ -289,10 +284,27 @@ private void importCSV(File file) {
             alterStmt.executeUpdate();
         }
         
+        
+        int maxleavebalanceID = 0;
+        String maxQuery1 = "SELECT MAX(leaveBalanceID) FROM leavebalance";
+        try (PreparedStatement maxStmt = con.prepareStatement(maxQuery1);
+             ResultSet rs = maxStmt.executeQuery()) {
+            if (rs.next()) {
+                maxleavebalanceID = rs.getInt(1); // Get the max employeeID
+            }
+        }
+        
+         // Step 2: Alter the auto-increment value
+        String alterQuery1 = "ALTER TABLE leavebalance AUTO_INCREMENT = ?";
+        try (PreparedStatement alterStmt = con.prepareStatement(alterQuery1)) {
+            alterStmt.setInt(1, maxEmployeeID + 1);
+            alterStmt.executeUpdate();
+        }
+        
         pstmt = con.prepareStatement("INSERT INTO employee (lastName, firstName, birthDate, streetAddress, city, province, zip, phoneNo, email, sssNo, philhealthNo, tin, pagibigNo, positionID, depID, status, supervisorID, basicSalaryID) " +
-                                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+                                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",Statement.RETURN_GENERATED_KEYS);
         
-        
+         pstmtLeaveBalance = con.prepareStatement("INSERT INTO leavebalance (employeeID, leavetypeID, leavebalance) VALUES (?, ?, ?)");
 
         BufferedReader br = new BufferedReader(new FileReader(file));
         String line;
@@ -328,6 +340,27 @@ private void importCSV(File file) {
             pstmt.setString(18, data[18]);   // basicSalaryID
 
             pstmt.executeUpdate();
+            
+            
+            // Retrieve the generated employeeID
+            try (ResultSet generatedKeys = pstmt.getGeneratedKeys()) {
+                if (generatedKeys.next()) {
+                    int newEmployeeID = generatedKeys.getInt(1);
+
+                    // Step 4: Insert leave balance records for the new employee
+                    pstmtLeaveBalance.setInt(1, newEmployeeID);  // employeeID
+                    pstmtLeaveBalance.setInt(2, 1001);  // leavetypeID 1001
+                    pstmtLeaveBalance.setInt(3, 15);    // leavebalance 15
+                    pstmtLeaveBalance.executeUpdate();
+
+                    pstmtLeaveBalance.setInt(1, newEmployeeID);  // employeeID
+                    pstmtLeaveBalance.setInt(2, 1002);  // leavetypeID 1002
+                    pstmtLeaveBalance.setInt(3, 10);    // leavebalance 10
+                    pstmtLeaveBalance.executeUpdate();
+                }
+            }
+            
+           
         }
 
         JOptionPane.showMessageDialog(this, "CSV data imported successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
@@ -383,10 +416,29 @@ if (selectedRow != -1) {
                 dbManager.refreshEmployeeDetailsView();
                 this.show(false);
                 
+          
+            
+             
+            String query1 = "DELETE FROM `leavebalance` WHERE employeeID = ?";
+            try (PreparedStatement pstmt1 = con.prepareStatement(query1)) {
+                pstmt.setString(1, empID);
+                pstmt.executeUpdate(); // Execute the delete operation
+
+                // Optionally, you can add a message indicating success
+                JOptionPane.showMessageDialog(this, 
+                    "Employee with ID " + empID + " deleted successfully.");
+                dbManager.refreshEmployeeDetailsView();
+                this.show(false);
+                
                 
             } catch (SQLException ex) {
                 Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, "Error deleting employee", ex);
             }
+            
+              } catch (SQLException ex) {
+                Logger.getLogger(employee_details.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         } finally {
             // Close resources in a finally block
             try {

@@ -228,7 +228,7 @@ public void setBasicSalaryComboBox(String basicSalaryID) {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("Update Form");
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel6.setText("Employee Personal Information");
 
         lastName.setPlaceHolder("Last Name");
@@ -259,10 +259,10 @@ public void setBasicSalaryComboBox(String basicSalaryID) {
 
         Email.setPlaceHolder("Email Address");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setText("Employee Company Information");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setText("Employee Government ID's");
 
         sss.setPlaceHolder("SSS Number");
@@ -312,7 +312,7 @@ public void setBasicSalaryComboBox(String basicSalaryID) {
                             .addComponent(jLabel5)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGap(21, 21, 21)
                                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
