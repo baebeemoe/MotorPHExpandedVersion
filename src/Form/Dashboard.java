@@ -5,6 +5,7 @@
 package Form;
 
 import Form.subform.ChangePassword;
+import Form.subform.LeavelistEmployeeview;
 import Form.subform.OvertimeRequestForm;
 import Form.subform.Payslip;
 import Form.subform.employee_details;
@@ -134,6 +135,7 @@ public class Dashboard extends javax.swing.JFrame {
         leaveVacationLeaveBalance = new javax.swing.JLabel();
         jLabel116 = new javax.swing.JLabel();
         jLabel115 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
         jLabel111 = new javax.swing.JLabel();
         PayslipPanel = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
@@ -379,6 +381,13 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel115.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel115.setText("Leave Balance");
 
+        jButton2.setText("Leave List");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
@@ -399,6 +408,10 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel116)
                 .addGap(64, 64, 64))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -413,7 +426,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel117, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel116))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2)
+                .addContainerGap())
         );
 
         jLabel111.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -2557,6 +2572,59 @@ dbManager = new DatabaseManager();
         
     }//GEN-LAST:event_viewbtn400006ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+  LeavelistEmployeeview leavelist = new LeavelistEmployeeview();
+    String empID = dashboardempNolbl.getText();
+    dbManager = new DatabaseManager();
+    con = dbManager.getConnection();
+        
+    
+     try {
+       String query = "SELECT * FROM leaveapplication WHERE employeeID = ?";
+        PreparedStatement pstmt = con.prepareStatement(query);
+        pstmt.setString(1, empID);
+        
+        // Execute the query
+      
+             
+           try (ResultSet resultSet = pstmt.executeQuery()) {
+            DefaultTableModel tableModel = (DefaultTableModel) leavelist.getLeaveListTable().getModel();
+            
+            // Clear existing data
+            tableModel.setRowCount(0);
+            
+            // Get column names if not already set
+            if (tableModel.getColumnCount() == 0) {
+                int columnCount = resultSet.getMetaData().getColumnCount();
+                Vector<String> columnNames = new Vector<>();
+                for (int i = 1; i <= columnCount; i++) {
+                    columnNames.add(resultSet.getMetaData().getColumnName(i));
+                }
+                tableModel.setColumnIdentifiers(columnNames);
+            }
+
+            // Get rows
+            while (resultSet.next()) {
+                Vector<Object> row = new Vector<>();
+                row.add(resultSet.getInt("leaveapplicationID")); // Assuming leaveapplicationID is an int
+                row.add(resultSet.getString("employeeID"));
+                row.add(resultSet.getDate("datefiled")); // Assuming datefiled is a Date type in your database
+                row.add(resultSet.getString("leavetype"));
+                row.add(resultSet.getDate("startdate")); // Assuming startdate is a Date type in your database
+                row.add(resultSet.getDate("enddate")); // Assuming enddate is a Date type in your database
+                row.add(resultSet.getString("reason"));
+                row.add(resultSet.getString("remarks"));
+                tableModel.addRow(row);
+            }
+            
+            leavelist.setVisible(true);
+        }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2616,6 +2684,7 @@ dbManager = new DatabaseManager();
     private javax.swing.JButton hrRolebtn;
     private javax.swing.JButton itRolebtn;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton4;
     private com.toedter.calendar.JDateChooser jDateChooser1;
     private com.toedter.calendar.JDateChooser jDateChooser2;
