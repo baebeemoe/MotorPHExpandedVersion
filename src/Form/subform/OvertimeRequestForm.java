@@ -6,8 +6,24 @@ package Form.subform;
 
 import Form.Dashboard;
 import Methods.DatabaseManager;
-import java.sql.Statement;
-
+import com.mysql.cj.xdevapi.Statement;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.time.Duration;
+import java.time.LocalTime;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 /**
  *
  * @author Default
@@ -18,7 +34,16 @@ public class OvertimeRequestForm extends javax.swing.JFrame {
     private java.sql.Connection con = null;
     private  Statement stmt = null;
     private Dashboard dashboard;
-     
+    private String empID;
+
+    public void setEmployeeid(String employeeiD) {
+        empID = employeeiD;
+        employeeid.setText(employeeiD);
+    }
+    
+    
+    
+    
      
      public OvertimeRequestForm(Dashboard dashboard) {
         initComponents();
@@ -50,12 +75,14 @@ public class OvertimeRequestForm extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
         Submitbtn = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        employeeid = new javax.swing.JLabel();
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 153, 51)), "Overtime Request Form", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 18), new java.awt.Color(255, 255, 255))); // NOI18N
@@ -75,6 +102,13 @@ public class OvertimeRequestForm extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTextPane1);
 
         Submitbtn.setText("Submit Request");
+        Submitbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitbtnActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Employee ID:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -102,19 +136,26 @@ public class OvertimeRequestForm extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(endTime, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(employeeid, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(1, 1, 1)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Submitbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(Submitbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE))))
                 .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(employeeid, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(requestDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -130,9 +171,9 @@ public class OvertimeRequestForm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(Submitbtn)
-                .addGap(39, 39, 39))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -150,6 +191,81 @@ public class OvertimeRequestForm extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void SubmitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbtnActionPerformed
+
+   // Get input values from components
+   Dashboard dashboard = new Dashboard();
+        dbManager = new DatabaseManager();
+        con = dbManager.getConnection();
+   
+   
+    // Get input values from components
+      Date dateFiled = (Date) requestDate.getDate(); // Assuming jdatepicker returns a Date object
+    String starttime = (String) startTime.getSelectedItem();
+    String endtime = (String) endTime.getSelectedItem();
+    String reason = jTextPane1.getText();
+    String remarks = "Pending"; // Initial value for remarks
+    
+     if (isValidTime(starttime, endtime)) {  
+    // Calculate accumulated overtime hours
+    Duration duration = Duration.between(LocalTime.parse(starttime), LocalTime.parse(endtime));
+    long accumulatedOvertime = duration.toHours();
+    
+    // Get employee ID from dashboardempNolbl (assuming it's a JLabel displaying employee ID)
+    int employeeID = Integer.parseInt(empID);// Assuming it's an integer
+    
+    
+    // Display confirmation dialog before inserting into database
+    int option = JOptionPane.showConfirmDialog(this, 
+            "Are you sure you want to submit the overtime application?", 
+            "Confirmation", JOptionPane.YES_NO_OPTION);
+    if (option == JOptionPane.YES_OPTION) {
+    // Insert into database
+    String sql = "INSERT INTO overtimeapplication (employeeID, datefiled, date, starttime, endtime, accumulatedovertime, reason, remarks) "
+               + "VALUES (?, CURDATE(), ?, ?, ?, ?, ?, ?)";
+    try (PreparedStatement stmt = con.prepareStatement(sql)) {
+        stmt.setInt(1, employeeID);
+        stmt.setDate(2, new java.sql.Date(dateFiled.getTime()));
+        stmt.setString(3, starttime);
+        stmt.setString(4, endtime);
+        stmt.setLong(5, accumulatedOvertime);
+        stmt.setString(6, reason);
+        stmt.setString(7, remarks);
+        
+        int rowsAffected = stmt.executeUpdate();
+        if (rowsAffected > 0) {
+            System.out.println("Overtime application inserted successfully.");
+           requestDate.setDate(null); // Clear date picker
+           startTime.setSelectedIndex(0); // Reset combobox to first item
+           endTime.setSelectedIndex(0); // Reset combobox to first item
+           jTextPane1.setText(""); 
+        } else {
+            System.out.println("Failed to insert overtime application.");
+            // Handle failure scenario
+        }
+    } catch (SQLException ex) {
+        Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+    }
+    
+    } else {
+        System.out.println("Overtime application submission cancelled.");
+        // Optionally, provide feedback or perform actions if submission is cancelled
+    }
+    
+    } else {
+        // Show error message for invalid time range
+        JOptionPane.showMessageDialog(this, "End time should be after start time.", "Error", JOptionPane.ERROR_MESSAGE);
+    }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubmitbtnActionPerformed
+
+    private boolean isValidTime(String startTime, String endTime) {
+    LocalTime start = LocalTime.parse(startTime);
+    LocalTime end = LocalTime.parse(endTime);
+    return end.isAfter(start); // End time should be after start time
+}
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -187,11 +303,13 @@ public class OvertimeRequestForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Submitbtn;
+    private javax.swing.JLabel employeeid;
     private javax.swing.JComboBox<String> endTime;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

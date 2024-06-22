@@ -7,6 +7,7 @@ package Form;
 import Form.subform.ChangePassword;
 import Form.subform.LeavelistEmployeeview;
 import Form.subform.OvertimeRequestForm;
+import Form.subform.OvertimelistEmpView;
 import Form.subform.Payslip;
 import Form.subform.employee_details;
 import Methods.Attendance;
@@ -117,6 +118,12 @@ public class Dashboard extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        AttendancePanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        attendanceTable = new javax.swing.JTable();
+        attendanceRequestOvertimebtn = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jLabel11 = new javax.swing.JLabel();
         LeavePanel = new javax.swing.JPanel();
         jPanel11 = new javax.swing.JPanel();
         jLabel112 = new javax.swing.JLabel();
@@ -239,12 +246,6 @@ public class Dashboard extends javax.swing.JFrame {
         dashboardfnamelbl = new javax.swing.JLabel();
         logoutbtn = new javax.swing.JButton();
         dashboardempNolbl = new javax.swing.JLabel();
-        AttendancePanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        attendanceTable = new javax.swing.JTable();
-        attendanceRequestOvertimebtn = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel11 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -260,6 +261,75 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0,90));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0));
+
+        attendanceTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 153, 0)));
+        attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Date", "Time In", "Time Out", "Overtime"
+            }
+        ));
+        attendanceTable.setShowGrid(true);
+        attendanceTable.setShowHorizontalLines(false);
+        attendanceTable.setShowVerticalLines(false);
+        attendanceTable.setSurrendersFocusOnKeystroke(true);
+        jScrollPane1.setViewportView(attendanceTable);
+
+        attendanceRequestOvertimebtn.setText("Request Overtime");
+        attendanceRequestOvertimebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                attendanceRequestOvertimebtnActionPerformed(evt);
+            }
+        });
+
+        jButton4.setText("Overtime Request List");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Attendance Record");
+
+        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
+        AttendancePanel.setLayout(AttendancePanelLayout);
+        AttendancePanelLayout.setHorizontalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AttendancePanelLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 916, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AttendancePanelLayout.createSequentialGroup()
+                        .addComponent(attendanceRequestOvertimebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton4))
+                    .addComponent(jLabel11))
+                .addContainerGap(27, Short.MAX_VALUE))
+        );
+        AttendancePanelLayout.setVerticalGroup(
+            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AttendancePanelLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton4)
+                    .addComponent(attendanceRequestOvertimebtn))
+                .addGap(9, 9, 9))
+        );
+
+        jPanel3.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 970, 380));
 
         LeavePanel.setBackground(new java.awt.Color(0, 0, 0));
         LeavePanel.setPreferredSize(new java.awt.Dimension(970, 370));
@@ -1320,70 +1390,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel3.add(DashboardPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 19, 971, -1));
 
-        AttendancePanel.setBackground(new java.awt.Color(0, 0, 0));
-
-        attendanceTable.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(255, 153, 0)));
-        attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Date", "Time In", "Time Out", "Overtime"
-            }
-        ));
-        attendanceTable.setShowGrid(true);
-        attendanceTable.setShowHorizontalLines(false);
-        attendanceTable.setShowVerticalLines(false);
-        attendanceTable.setSurrendersFocusOnKeystroke(true);
-        jScrollPane1.setViewportView(attendanceTable);
-
-        attendanceRequestOvertimebtn.setText("Request Overtime");
-        attendanceRequestOvertimebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                attendanceRequestOvertimebtnActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Overtime Request List");
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Attendance Record");
-
-        javax.swing.GroupLayout AttendancePanelLayout = new javax.swing.GroupLayout(AttendancePanel);
-        AttendancePanel.setLayout(AttendancePanelLayout);
-        AttendancePanelLayout.setHorizontalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 916, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addComponent(attendanceRequestOvertimebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4))
-                    .addComponent(jLabel11))
-                .addContainerGap(27, Short.MAX_VALUE))
-        );
-        AttendancePanelLayout.setVerticalGroup(
-            AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4)
-                    .addComponent(attendanceRequestOvertimebtn))
-                .addGap(9, 9, 9))
-        );
-
-        jPanel3.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 970, 380));
-
         jLabel4.setFont(new java.awt.Font("Lucida Bright", 1, 21)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
@@ -1971,8 +1977,10 @@ private String getLeaveTypeID(String leaveType) throws SQLException {
     }//GEN-LAST:event_profileChangePasswordbtnActionPerformed
 
     private void attendanceRequestOvertimebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_attendanceRequestOvertimebtnActionPerformed
-      OvertimeRequestForm overtimeform = new OvertimeRequestForm(this);
-      overtimeform.setVisible(true);
+      String empID = dashboardempNolbl.getText();
+        OvertimeRequestForm overtimeform = new OvertimeRequestForm(this);
+       overtimeform.setEmployeeid(empID);
+       overtimeform.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_attendanceRequestOvertimebtnActionPerformed
 
@@ -2624,6 +2632,65 @@ dbManager = new DatabaseManager();
             Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+  
+        OvertimelistEmpView overtimelist = new OvertimelistEmpView();
+    String empID = dashboardempNolbl.getText();
+    dbManager = new DatabaseManager();
+    con = dbManager.getConnection();
+        
+    
+     try {
+       String query = "SELECT * FROM overtimeapplication WHERE employeeID = ?";
+        PreparedStatement pstmt = con.prepareStatement(query);
+        pstmt.setString(1, empID);
+        
+        // Execute the query
+      
+             
+           try (ResultSet resultSet = pstmt.executeQuery()) {
+            DefaultTableModel tableModel = (DefaultTableModel) overtimelist.getOvertimeTable().getModel();
+            
+            // Clear existing data
+            tableModel.setRowCount(0);
+            
+            // Get column names if not already set
+            if (tableModel.getColumnCount() == 0) {
+                int columnCount = resultSet.getMetaData().getColumnCount();
+                Vector<String> columnNames = new Vector<>();
+                for (int i = 1; i <= columnCount; i++) {
+                    columnNames.add(resultSet.getMetaData().getColumnName(i));
+                }
+                tableModel.setColumnIdentifiers(columnNames);
+            }
+
+            // Get rows
+            while (resultSet.next()) {
+                Vector<Object> row = new Vector<>();
+                row.add(resultSet.getInt("overtimerequestID")); // Assuming leaveapplicationID is an int
+                row.add(resultSet.getString("employeeID"));
+                row.add(resultSet.getDate("datefiled")); // Assuming datefiled is a Date type in your database
+                row.add(resultSet.getString("date"));
+                row.add(resultSet.getDate("starttime")); // Assuming startdate is a Date type in your database
+                row.add(resultSet.getDate("endtime")); // Assuming enddate is a Date type in your database
+                row.add(resultSet.getString("accumulatedovertime"));
+                row.add(resultSet.getString("reason"));
+                row.add(resultSet.getString("remarks"));
+                tableModel.addRow(row);
+            }
+            
+            overtimelist.setVisible(true);
+        }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
