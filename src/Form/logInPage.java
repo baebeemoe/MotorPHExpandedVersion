@@ -170,7 +170,7 @@ public class logInPage extends javax.swing.JFrame {
             
             stmt = con.createStatement();
              
-            String query = "SELECT * FROM `login_credentials` where userID ='" +userID+"'and password='"+password+"'" ; 
+            String query = "SELECT * FROM `user` where userID ='" +userID+"'and password='"+password+"'" ; 
             rs = stmt.executeQuery(query);
             if(rs.next()){
                 

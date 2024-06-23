@@ -30,7 +30,7 @@ public class DatabaseManager {
 
     public DatabaseManager() {
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/newdummy", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/newdummy", "root", "");
         } catch (SQLException e) {
             e.printStackTrace();
         }
