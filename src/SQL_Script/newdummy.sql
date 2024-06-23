@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3307
--- Generation Time: Jun 21, 2024 at 04:26 PM
+-- Generation Time: Jun 23, 2024 at 11:57 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -3001,7 +3001,8 @@ INSERT INTO `attendancerecord` (`attRecordID`, `employeeID`, `date`, `timeIn`, `
 (5219, 10034, '2022-12-27', '08:00:00.000000', '17:00:00.000000'),
 (5220, 10034, '2022-12-28', '08:00:00.000000', '17:00:00.000000'),
 (5221, 10034, '2022-12-29', '08:00:00.000000', '17:00:00.000000'),
-(5222, 10034, '2022-12-30', '12:00:00.000000', '17:00:00.000000');
+(5222, 10034, '2022-12-30', '12:00:00.000000', '17:00:00.000000'),
+(5223, 10001, '2024-06-23', '07:56:00.000000', '07:57:00.000000');
 
 -- --------------------------------------------------------
 
@@ -3347,7 +3348,8 @@ INSERT INTO `employee` (`employeeID`, `lastName`, `firstName`, `birthDate`, `str
 (10033, 'Martinez', 'Carlos Ian', '1990-11-16', 'Bulala', 'Camalaniugan', 'Cagayan', '3510', '078-854-208', 'cimartinez33@motorph', '11-5062972-7', '380685387212', '256-436-296-000', '993372963726', 417, 504, 'Regular', 10004, 20009),
 (10034, 'Santos', 'Beatriz', '1990-08-07', 'Agapita Building', 'Makati City', 'Metro Manila', '1226', '526-639-511', 'bsantos34@motorph.co', '20-2987501-5', '918460050077', '911-529-713-000', '874042259378', 418, 504, 'Regular', 10004, 20009),
 (10035, 'Garcia', 'Manuel III', '1983-10-11', 'Valero Carpark Build', 'Makati City', 'Metro Manila', '1227', '966-860-270', 'mgarcia01@motorph.co', '44-4506057-3', '820126853951', '442-605-657-000', '691295330870', 401, 501, 'Regular', NULL, 20001),
-(10036, 'Lim', 'Antonia', '1996-12-24', 'San Antonio De Padua', 'Dasmarinas', 'Cavite', '4114', '171-867-411', 'alim02@motorph.com', '52-2061274-9', '331735646338', '683-102-776-000', '663904995411', 402, 502, 'Regular', 10001, 20002);
+(10036, 'Garcia', 'Manuel III', '1983-10-11', 'Valero Carpark Build', 'Makati City', 'Metro Manila', '1227', '966-860-270', 'mgarcia01@motorph.co', '44-4506057-3', '820126853951', '442-605-657-000', '691295330870', 401, 501, 'Regular', NULL, 20001),
+(10037, 'Lim', 'Antonio', '1988-06-19', 'San Antonio De Padua', 'Dasmarinas', 'Cavite', '4114', '171-867-411', 'alim02@motorph.com', '52-2061274-9', '331735646338', '683-102-776-000', '663904995411', 402, 502, 'Regular', 10001, 20002);
 
 -- --------------------------------------------------------
 
@@ -3396,6 +3398,177 @@ CREATE TABLE `employeedetails_view` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `incidentreports`
+--
+
+CREATE TABLE `incidentreports` (
+  `incidentreportID` int(40) NOT NULL,
+  `employeeID` int(10) NOT NULL,
+  `date` date NOT NULL,
+  `issue` varchar(50) NOT NULL,
+  `description` varchar(50) NOT NULL,
+  `status` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `incidentreports`
+--
+
+INSERT INTO `incidentreports` (`incidentreportID`, `employeeID`, `date`, `issue`, `description`, `status`) VALUES
+(70001, 10001, '2024-06-23', 'forgot password', 'Cant remember my password', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leaveapplication`
+--
+
+CREATE TABLE `leaveapplication` (
+  `leaveapplicationID` int(20) NOT NULL,
+  `employeeID` int(20) NOT NULL,
+  `datefiled` date NOT NULL,
+  `leavetype` varchar(20) NOT NULL,
+  `startdate` date NOT NULL,
+  `enddate` date NOT NULL,
+  `reason` varchar(500) NOT NULL,
+  `remarks` varchar(255) DEFAULT 'Pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `leaveapplication`
+--
+
+INSERT INTO `leaveapplication` (`leaveapplicationID`, `employeeID`, `datefiled`, `leavetype`, `startdate`, `enddate`, `reason`, `remarks`) VALUES
+(900001, 10001, '2024-06-22', 'Vacation Leave', '2024-06-24', '2024-06-24', 'Gala lang lods', 'Pending'),
+(900002, 10001, '2024-06-22', 'Vacation Leave', '2024-06-25', '2024-06-25', 'Gala ulit', 'Approved'),
+(900003, 10001, '2024-06-22', 'Vacation Leave', '2024-06-25', '2024-06-25', 'New', 'Denied'),
+(900004, 10001, '2024-06-22', 'Vacation Leave', '2024-06-26', '2024-06-26', 'bakasyon', 'Approved'),
+(900005, 10001, '2024-06-22', 'Sick Leave', '2024-06-10', '2024-06-11', 'may sakit', 'Pending'),
+(900006, 10001, '2024-06-22', 'Sick Leave', '2024-06-28', '2024-06-28', 'may sakit', 'Approved'),
+(900007, 10006, '2024-06-22', 'Vacation Leave', '2024-06-27', '2024-06-28', 'Mmamoblue', 'Pending'),
+(900008, 10001, '2024-06-22', 'Sick Leave', '2024-06-11', '2024-06-11', 'may sakit po', 'Approved');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leavebalance`
+--
+
+CREATE TABLE `leavebalance` (
+  `leaveBalanceID` int(20) NOT NULL,
+  `employeeID` int(20) NOT NULL,
+  `leavetypeID` int(20) NOT NULL,
+  `leavebalance` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `leavebalance`
+--
+
+INSERT INTO `leavebalance` (`leaveBalanceID`, `employeeID`, `leavetypeID`, `leavebalance`) VALUES
+(300001, 10001, 1001, 11),
+(300002, 10002, 1001, 15),
+(300003, 10003, 1001, 15),
+(300004, 10004, 1001, 15),
+(300005, 10005, 1001, 15),
+(300006, 10006, 1001, 15),
+(300007, 10007, 1001, 15),
+(300008, 10008, 1001, 15),
+(300009, 10009, 1001, 15),
+(300010, 10010, 1001, 15),
+(300011, 10011, 1001, 15),
+(300012, 10012, 1001, 15),
+(300013, 10013, 1001, 15),
+(300014, 10014, 1001, 15),
+(300015, 10015, 1001, 15),
+(300016, 10016, 1001, 15),
+(300017, 10017, 1001, 15),
+(300018, 10018, 1001, 15),
+(300019, 10019, 1001, 15),
+(300020, 10020, 1001, 15),
+(300021, 10021, 1001, 15),
+(300022, 10022, 1001, 15),
+(300023, 10023, 1001, 15),
+(300024, 10024, 1001, 15),
+(300025, 10025, 1001, 15),
+(300026, 10026, 1001, 15),
+(300027, 10027, 1001, 15),
+(300028, 10028, 1001, 15),
+(300029, 10029, 1001, 15),
+(300030, 10030, 1001, 15),
+(300031, 10031, 1001, 15),
+(300032, 10032, 1001, 15),
+(300033, 10033, 1001, 15),
+(300034, 10034, 1001, 15),
+(300035, 10001, 1002, 6),
+(300036, 10002, 1002, 10),
+(300037, 10003, 1002, 10),
+(300038, 10004, 1002, 10),
+(300039, 10005, 1002, 10),
+(300040, 10006, 1002, 8),
+(300041, 10007, 1002, 10),
+(300042, 10008, 1002, 10),
+(300043, 10009, 1002, 10),
+(300044, 10010, 1002, 10),
+(300045, 10011, 1002, 10),
+(300046, 10012, 1002, 10),
+(300047, 10013, 1002, 10),
+(300048, 10014, 1002, 10),
+(300049, 10015, 1002, 10),
+(300050, 10016, 1002, 10),
+(300051, 10017, 1002, 10),
+(300052, 10018, 1002, 10),
+(300053, 10019, 1002, 10),
+(300054, 10020, 1002, 10),
+(300055, 10021, 1002, 10),
+(300056, 10022, 1002, 10),
+(300057, 10023, 1002, 10),
+(300058, 10024, 1002, 10),
+(300059, 10025, 1002, 10),
+(300060, 10026, 1002, 10),
+(300061, 10027, 1002, 10),
+(300062, 10028, 1002, 10),
+(300063, 10029, 1002, 10),
+(300064, 10030, 1002, 10),
+(300065, 10031, 1002, 10),
+(300066, 10032, 1002, 10),
+(300067, 10033, 1002, 10),
+(300068, 10034, 1002, 10),
+(300069, 10035, 1001, 15),
+(300070, 10035, 1002, 10),
+(300071, 10036, 1001, 15),
+(300072, 10036, 1002, 10),
+(300073, 10037, 1001, 15),
+(300074, 10037, 1002, 10),
+(300075, 10038, 1001, 15),
+(300076, 10038, 1002, 10),
+(300077, 10036, 1001, 15),
+(300078, 10036, 1002, 10),
+(300079, 10037, 1001, 15),
+(300080, 10037, 1002, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `leavetype`
+--
+
+CREATE TABLE `leavetype` (
+  `leavetypeID` varchar(10) NOT NULL,
+  `leavename` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `leavetype`
+--
+
+INSERT INTO `leavetype` (`leavetypeID`, `leavename`) VALUES
+('1001', 'Sick Leave'),
+('1002', 'Vacation Leave');
+
+-- --------------------------------------------------------
+
+--
 -- Stand-in structure for view `login_credentials`
 -- (See below for the actual view)
 --
@@ -3415,6 +3588,21 @@ CREATE TABLE `login_credentials` (
 -- (See below for the actual view)
 --
 CREATE TABLE `monhtlyperiod_view` (
+`MonthlyPeriodID` int(20)
+,`EmployeeID` int(10)
+,`FullName` varchar(41)
+,`Position` varchar(40)
+,`Department` varchar(40)
+,`GrossIncome` double(19,2)
+,`SSSNo` varchar(40)
+,`SSS_Contribution` decimal(10,2)
+,`PhilhealthNo` varchar(40)
+,`Philhealth_Contribution` decimal(13,4)
+,`PagIbigNo` varchar(40)
+,`PagIbig_Contribution` decimal(10,2)
+,`TIN` varchar(40)
+,`Withholding_Tax` decimal(20,4)
+,`NetPay` double(21,4)
 );
 
 -- --------------------------------------------------------
@@ -3446,6 +3634,15 @@ INSERT INTO `monthlyperiod` (`monthlyPeriodID`, `startDate`, `endDate`) VALUES
 -- (See below for the actual view)
 --
 CREATE TABLE `monthlyperiod_summary` (
+`MonthlyPeriodID` int(20)
+,`employeeID` int(20)
+,`TotalWorkedHours` decimal(32,0)
+,`TotalOvertime` decimal(32,0)
+,`AcuOvertime` double(19,2)
+,`DaysWorked` bigint(21)
+,`DailyRate` double(19,2)
+,`Salary` double(19,2)
+,`Grossalary` double(19,2)
 );
 
 -- --------------------------------------------------------
@@ -3455,23 +3652,41 @@ CREATE TABLE `monthlyperiod_summary` (
 -- (See below for the actual view)
 --
 CREATE TABLE `monthlytotal_view` (
+`MonthlyPeriodID` int(20)
+,`TotalGrossIncome` double(19,2)
+,`TotalSSS_Contribution` decimal(32,2)
+,`TotalPhilhealth_Contribution` decimal(35,4)
+,`TotalPagIbig_Contribution` decimal(32,2)
+,`TotalWithholding_Tax` decimal(42,4)
+,`TotalNetPay` double(21,4)
 );
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `overtimerequest`
+-- Table structure for table `overtimeapplication`
 --
 
-CREATE TABLE `overtimerequest` (
-  `overtimerequestID` int(20) NOT NULL,
-  `employeeID` int(20) NOT NULL,
-  `datefiled` date NOT NULL,
-  `requestdate` date NOT NULL,
-  `accOvertime` int(20) NOT NULL,
-  `reason` varchar(4) NOT NULL,
-  `remarks` varchar(40) NOT NULL
+CREATE TABLE `overtimeapplication` (
+  `overtimerequestID` int(11) NOT NULL,
+  `employeeID` int(11) DEFAULT NULL,
+  `datefiled` date DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `starttime` time DEFAULT NULL,
+  `endtime` time DEFAULT NULL,
+  `accumulatedovertime` int(20) NOT NULL,
+  `reason` varchar(255) DEFAULT NULL,
+  `remarks` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `overtimeapplication`
+--
+
+INSERT INTO `overtimeapplication` (`overtimerequestID`, `employeeID`, `datefiled`, `date`, `starttime`, `endtime`, `accumulatedovertime`, `reason`, `remarks`) VALUES
+(200001, 10001, '2024-06-22', '2024-06-04', '00:00:00', '00:00:00', 1, 'ot', 'Approved'),
+(200002, 10001, '2024-06-22', '2024-06-04', '00:00:00', '00:00:00', 1, 'new', 'Approved'),
+(200003, 10006, '2024-06-22', '2024-06-19', '00:00:00', '00:00:00', 3, 'asd', 'Approved');
 
 -- --------------------------------------------------------
 
@@ -3753,7 +3968,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`userID`, `employeeID`, `password`, `roleID`) VALUES
 (101, 10001, 'password01', 702),
 (102, 10002, 'password02', 702),
-(103, 10003, 'mamamoblue', 704),
+(103, 10003, 'password03', 704),
 (104, 10004, 'password04', 702),
 (105, 10005, 'password05', 705),
 (106, 10006, 'password06', 703),
@@ -3874,7 +4089,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `monthlyperiod_summary`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `monthlyperiod_summary`  AS SELECT `m`.`monthlyPeriodID` AS `MonthlyPeriodID`, `a`.`employeeID` AS `employeeID`, sum(`a`.`workHours`) AS `TotalWorkedHours`, sum(`a`.`overtime`) AS `TotalOvertime`, sum(`a`.`overtime`) * `b`.`hourlyrate` AS `AcuOvertime`, count(distinct `a`.`date`) AS `DaysWorked`, `b`.`hourlyrate`* 8 AS `DailyRate`, count(distinct `a`.`date`) * (`b`.`hourlyrate` * 8) AS `Salary`, sum(`a`.`overtime`) * `b`.`hourlyrate` + count(distinct `a`.`date`) * (`b`.`hourlyrate` * 8) AS `Grossalary` FROM ((`attendance_details` `a` join `monthlyperiod` `m` on(`a`.`date` between `m`.`startDate` and `m`.`endDate`)) join `basicsalary` `b` on(`a`.`employeeID` = `b`.`employeeID`)) GROUP BY `m`.`monthlyPeriodID`, `a`.`employeeID` ORDER BY `m`.`monthlyPeriodID` ASC, `a`.`employeeID` ASC ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `monthlyperiod_summary`  AS SELECT `m`.`monthlyPeriodID` AS `MonthlyPeriodID`, `a`.`employeeID` AS `employeeID`, sum(`a`.`workHours`) AS `TotalWorkedHours`, sum(`a`.`overtime`) AS `TotalOvertime`, sum(`a`.`overtime`) * `b`.`hourlyrate` AS `AcuOvertime`, count(distinct `a`.`date`) AS `DaysWorked`, `b`.`hourlyrate`* 8 AS `DailyRate`, count(distinct `a`.`date`) * (`b`.`hourlyrate` * 8) AS `Salary`, sum(`a`.`overtime`) * `b`.`hourlyrate` + count(distinct `a`.`date`) * (`b`.`hourlyrate` * 8) AS `Grossalary` FROM (((`attendance_details` `a` join `monthlyperiod` `m` on(`a`.`date` between `m`.`startDate` and `m`.`endDate`)) join `employee` `e` on(`a`.`employeeID` = `e`.`employeeID`)) join `basicsalary` `b` on(`e`.`basicSalaryID` = `b`.`basicSalaryID`)) GROUP BY `m`.`monthlyPeriodID`, `a`.`employeeID` ORDER BY `m`.`monthlyPeriodID` ASC, `a`.`employeeID` ASC ;
 
 -- --------------------------------------------------------
 
@@ -3949,17 +4164,40 @@ ALTER TABLE `employee`
   ADD KEY `fk_basicsalaryID` (`basicSalaryID`);
 
 --
+-- Indexes for table `incidentreports`
+--
+ALTER TABLE `incidentreports`
+  ADD PRIMARY KEY (`incidentreportID`);
+
+--
+-- Indexes for table `leaveapplication`
+--
+ALTER TABLE `leaveapplication`
+  ADD PRIMARY KEY (`leaveapplicationID`);
+
+--
+-- Indexes for table `leavebalance`
+--
+ALTER TABLE `leavebalance`
+  ADD PRIMARY KEY (`leaveBalanceID`);
+
+--
+-- Indexes for table `leavetype`
+--
+ALTER TABLE `leavetype`
+  ADD PRIMARY KEY (`leavetypeID`);
+
+--
 -- Indexes for table `monthlyperiod`
 --
 ALTER TABLE `monthlyperiod`
   ADD PRIMARY KEY (`monthlyPeriodID`);
 
 --
--- Indexes for table `overtimerequest`
+-- Indexes for table `overtimeapplication`
 --
-ALTER TABLE `overtimerequest`
-  ADD PRIMARY KEY (`overtimerequestID`),
-  ADD KEY `fk_oemployeeID` (`employeeID`);
+ALTER TABLE `overtimeapplication`
+  ADD PRIMARY KEY (`overtimerequestID`);
 
 --
 -- Indexes for table `pagibig`
@@ -4019,7 +4257,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `attendancerecord`
 --
 ALTER TABLE `attendancerecord`
-  MODIFY `attRecordID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5223;
+  MODIFY `attRecordID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5224;
 
 --
 -- AUTO_INCREMENT for table `basicsalary`
@@ -4043,7 +4281,25 @@ ALTER TABLE `department`
 -- AUTO_INCREMENT for table `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `employeeID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10037;
+  MODIFY `employeeID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10038;
+
+--
+-- AUTO_INCREMENT for table `incidentreports`
+--
+ALTER TABLE `incidentreports`
+  MODIFY `incidentreportID` int(40) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70002;
+
+--
+-- AUTO_INCREMENT for table `leaveapplication`
+--
+ALTER TABLE `leaveapplication`
+  MODIFY `leaveapplicationID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=900009;
+
+--
+-- AUTO_INCREMENT for table `leavebalance`
+--
+ALTER TABLE `leavebalance`
+  MODIFY `leaveBalanceID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=300081;
 
 --
 -- AUTO_INCREMENT for table `monthlyperiod`
@@ -4052,10 +4308,10 @@ ALTER TABLE `monthlyperiod`
   MODIFY `monthlyPeriodID` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=500005;
 
 --
--- AUTO_INCREMENT for table `overtimerequest`
+-- AUTO_INCREMENT for table `overtimeapplication`
 --
-ALTER TABLE `overtimerequest`
-  MODIFY `overtimerequestID` int(20) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `overtimeapplication`
+  MODIFY `overtimerequestID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=200004;
 
 --
 -- AUTO_INCREMENT for table `pagibig`
@@ -4129,12 +4385,6 @@ ALTER TABLE `employee`
   ADD CONSTRAINT `fk_basicsalaryID` FOREIGN KEY (`basicSalaryID`) REFERENCES `basicsalary` (`basicSalaryID`),
   ADD CONSTRAINT `fk_depID` FOREIGN KEY (`depID`) REFERENCES `department` (`depID`),
   ADD CONSTRAINT `fk_positionID` FOREIGN KEY (`positionID`) REFERENCES `position` (`positionID`);
-
---
--- Constraints for table `overtimerequest`
---
-ALTER TABLE `overtimerequest`
-  ADD CONSTRAINT `fk_oemployeeID` FOREIGN KEY (`employeeID`) REFERENCES `employee` (`employeeID`);
 
 --
 -- Constraints for table `user`
