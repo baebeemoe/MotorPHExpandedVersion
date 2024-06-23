@@ -40,6 +40,22 @@ public class DatabaseManager {
         return con;
     }
     
+    public boolean employeeExists(String employeeID) {
+        String sql = "SELECT COUNT(*) FROM employee WHERE employeeID = ?";
+        try {
+            PreparedStatement pst = con.prepareStatement(sql);
+            pst.setString(1, employeeID);
+            ResultSet rs = pst.executeQuery();
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                return count > 0;
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    
     public void refreshEmployeeDetailsView() {
         
     employee_details emp = new employee_details();

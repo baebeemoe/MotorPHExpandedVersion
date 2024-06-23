@@ -4,6 +4,7 @@
  */
 package Form;
 
+import Form.subform.IncedentForm;
 import Methods.DatabaseManager;
 import com.sun.jdi.connect.spi.Connection;
 import java.sql.DriverManager;
@@ -119,6 +120,11 @@ public class logInPage extends javax.swing.JFrame {
         jButton3.setForeground(new java.awt.Color(51, 153, 255));
         jButton3.setText("Forgotten your password?");
         jButton3.setBorder(null);
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -204,6 +210,13 @@ public class logInPage extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+    IncedentForm in = new IncedentForm();
+    in.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments

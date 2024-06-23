@@ -5,6 +5,7 @@
 package Form;
 
 import Form.subform.ChangePassword;
+import Form.subform.IncidentReportsForm;
 import Form.subform.LeavelistEmployeeview;
 import Form.subform.OvertimeRequestForm;
 import Form.subform.OvertimelistEmpView;
@@ -29,6 +30,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
 import java.util.concurrent.TimeUnit;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.table.DefaultTableModel;
 
@@ -941,7 +944,12 @@ public class Dashboard extends javax.swing.JFrame {
 
         HomePanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 578, 290));
 
-        itRolebtn.setText("System Records");
+        itRolebtn.setText("Incident Reports");
+        itRolebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itRolebtnActionPerformed(evt);
+            }
+        });
         HomePanel.add(itRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
 
         supervisorRolebtn.setText("Requests Records");
@@ -1474,42 +1482,62 @@ public class Dashboard extends javax.swing.JFrame {
 
     
     private void hrRolebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hrRolebtnActionPerformed
-   employee_details emp = new employee_details();
-    dbManager = new DatabaseManager();
-    con = dbManager.getConnection();
+  employee_details emp = new employee_details();
+    DefaultTableModel model = new DefaultTableModel(); // Create a new model instance
     
     try {
-        // Refresh the JTable with the data from the employee table
+        dbManager = new DatabaseManager();
+        con = dbManager.getConnection();
+
         String query = "SELECT * FROM employee";
         try (Statement stmt = con.createStatement(); ResultSet rs = stmt.executeQuery(query)) {
-            DefaultTableModel model = (DefaultTableModel) emp.getEmployee_table().getModel();
-            model.setRowCount(0);
+            // Define table columns
+            model.addColumn("Employee ID");
+            model.addColumn("Last Name");
+            model.addColumn("First Name");
+            model.addColumn("Birth Date");
+            model.addColumn("Street Address");
+            model.addColumn("City");
+            model.addColumn("Province");
+            model.addColumn("Zip");
+            model.addColumn("Phone No");
+            model.addColumn("Email");
+            model.addColumn("SSS No");
+            model.addColumn("Philhealth No");
+            model.addColumn("TIN");
+            model.addColumn("Pagibig No");
+            model.addColumn("Position ID");
+            model.addColumn("Dep ID");
+            model.addColumn("Status");
+            model.addColumn("Supervisor ID");
+            model.addColumn("Basic Salary ID");
 
+            // Add rows from result set
             while (rs.next()) {
-                int employeeID = rs.getInt("employeeID");
-                String lastName = rs.getString("lastName");
-                String firstName = rs.getString("firstName");
-                Date birthDate = rs.getDate("birthDate");
-                String streetAddress = rs.getString("streetAddress");
-                String city = rs.getString("city");
-                String province = rs.getString("province");
-                String zip = rs.getString("zip");
-                String phoneNo = rs.getString("phoneNo");
-                String email = rs.getString("email");
-                String sssNo = rs.getString("sssNo");
-                String philhealthNo = rs.getString("philhealthNo");
-                String tin = rs.getString("tin");
-                String pagibigNo = rs.getString("pagibigNo");
-                String positionID = rs.getString("positionID");
-                String depID = rs.getString("depID");
-                String status = rs.getString("status");
-                Integer supervisorID = (Integer) rs.getObject("supervisorID");
-                String basicSalaryID = rs.getString("basicSalaryID");
-
-                model.addRow(new Object[]{employeeID, lastName, firstName, birthDate, streetAddress, city, province, zip, phoneNo, email, sssNo, philhealthNo, tin, pagibigNo, positionID, depID, status, supervisorID, basicSalaryID});
+                model.addRow(new Object[]{
+                    rs.getInt("employeeID"),
+                    rs.getString("lastName"),
+                    rs.getString("firstName"),
+                    rs.getDate("birthDate"),
+                    rs.getString("streetAddress"),
+                    rs.getString("city"),
+                    rs.getString("province"),
+                    rs.getString("zip"),
+                    rs.getString("phoneNo"),
+                    rs.getString("email"),
+                    rs.getString("sssNo"),
+                    rs.getString("philhealthNo"),
+                    rs.getString("tin"),
+                    rs.getString("pagibigNo"),
+                    rs.getString("positionID"),
+                    rs.getString("depID"),
+                    rs.getString("status"),
+                    rs.getObject("supervisorID"),
+                    rs.getString("basicSalaryID")
+                });
             }
         }
-    } catch (Exception e) {
+    } catch (SQLException e) {
         e.printStackTrace();
         JOptionPane.showMessageDialog(this, "Error refreshing data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     } finally {
@@ -1518,17 +1546,24 @@ public class Dashboard extends javax.swing.JFrame {
                 con.close();
             } catch (SQLException ex) {
                 ex.printStackTrace();
-                
-                
             }
         }
     }
+    
+    // Pass the model to employee_details
+    emp.populateEmployeeTable(model);
      
     emp.setVisible(true);
-    
 
     }//GEN-LAST:event_hrRolebtnActionPerformed
 
+    
+    private DefaultTableModel fetchDataFromDatabase() {
+    DefaultTableModel model = new DefaultTableModel();
+    // Your database fetching logic to populate 'model' goes here
+    return model;
+}
+    
     private void timeOutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeOutbtnActionPerformed
        String empID = dashboardempNolbl.getText();
     Attendance punchManager = new Attendance();
@@ -2716,6 +2751,62 @@ req.setVisible(true);
       pay.setVisible(true);
     }//GEN-LAST:event_payrollRolebtnActionPerformed
 
+    private void itRolebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itRolebtnActionPerformed
+                                         
+ IncidentReportsForm inc = new IncidentReportsForm();
+    // Get database connection
+    dbManager = new DatabaseManager();
+    con = dbManager.getConnection();
+// SQL query to retrieve data from the incidentreports table
+        String sql = "SELECT incidentreportID, employeeID, date, issue, description, status FROM incidentreports";
+
+        try (Statement stmt = con.createStatement();
+             ResultSet rs = stmt.executeQuery(sql)) {
+
+            // Get the table model for jTable2
+            DefaultTableModel model = (DefaultTableModel) inc.getjTable2().getModel();
+
+            // Clear existing rows
+            model.setRowCount(0);
+
+            // Iterate through the result set and populate the table model
+            while (rs.next()) {
+                int incidentreportID = rs.getInt("incidentreportID");
+                String employeeID = rs.getString("employeeID");
+                String date = rs.getString("date");
+                String issue = rs.getString("issue");
+                String description = rs.getString("description");
+                String status = rs.getString("status");
+
+                // Add row to the table model
+                model.addRow(new Object[]{incidentreportID, employeeID, date, issue, description, status});
+                
+                // Debug statement to verify row addition
+                System.out.println("Added row: " + incidentreportID + ", " + employeeID + ", " + date + ", " + issue + ", " + description + ", " + status);
+            }
+
+            // Set the custom cell editor for the "Status" column
+            JComboBox<String> comboBox = new JComboBox<>(new String[]{"pending", "resolved"});
+            inc.getjTable2().getColumnModel().getColumn(5).setCellEditor(new DefaultCellEditor(comboBox));
+
+            // Refresh the table view
+            inc.getjTable2().repaint();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+   
+
+    // Ensure the form is visible after data population
+    inc.setVisible(true);
+        
+    
+    }//GEN-LAST:event_itRolebtnActionPerformed
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
