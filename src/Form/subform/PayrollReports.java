@@ -431,6 +431,11 @@ public class PayrollReports extends javax.swing.JFrame {
         jLabel11.setText("View");
         jLabel11.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel11.setOpaque(true);
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel11MouseClicked(evt);
+            }
+        });
 
         jLabel14.setBackground(new java.awt.Color(255, 255, 255));
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -438,6 +443,11 @@ public class PayrollReports extends javax.swing.JFrame {
         jLabel14.setText("View");
         jLabel14.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel14.setOpaque(true);
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel14MouseClicked(evt);
+            }
+        });
 
         jLabel15.setBackground(new java.awt.Color(153, 255, 255));
         jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -445,6 +455,11 @@ public class PayrollReports extends javax.swing.JFrame {
         jLabel15.setText("View");
         jLabel15.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel15.setOpaque(true);
+        jLabel15.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel15MouseClicked(evt);
+            }
+        });
 
         jLabel20.setBackground(new java.awt.Color(255, 255, 255));
         jLabel20.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -452,6 +467,11 @@ public class PayrollReports extends javax.swing.JFrame {
         jLabel20.setText("View");
         jLabel20.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLabel20.setOpaque(true);
+        jLabel20.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel20MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -679,7 +699,6 @@ public class PayrollReports extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    // Method to retrieve and display payslip details
     public void displayPayslipDetails(String payslipNo, PayslipReports payslipr) {
         dbManager = new DatabaseManager();
         con = dbManager.getConnection();
@@ -742,7 +761,126 @@ public class PayrollReports extends javax.swing.JFrame {
                 }
             }
         }
+    }// Method to retrieve and display payslip details
+    
+    
+    public void displayMonthlyDetails(String monthlyID, MonthlySummaryReport mreport) {
+        dbManager = new DatabaseManager();
+        con = dbManager.getConnection();
+
+        try {
+            String query = "SELECT MonthlyPeriodID, EmployeeID, FullName, Position, Department, GrossIncome, SSS_Contribution, Philhealth_Contribution, PagIbig_Contribution, Withholding_Tax, NetPay " +
+                           "FROM monhtlyperiod_view " +
+                           "WHERE MonthlyPeriodID = ? " +
+                           "GROUP BY EmployeeID, MonthlyPeriodID";
+            
+            PreparedStatement pstmt = con.prepareStatement(query);
+            pstmt.setString(1, monthlyID);
+
+            // Execute the query
+            try (ResultSet resultSet = pstmt.executeQuery()) {
+                DefaultTableModel tableModel = (DefaultTableModel) mreport.getMonthlySummarytbl().getModel();
+
+                // Clear existing data
+                tableModel.setRowCount(0);
+
+                // Get column names
+                if (tableModel.getColumnCount() == 0) {
+                    int columnCount = resultSet.getMetaData().getColumnCount();
+                    Vector<String> columnNames = new Vector<>();
+                    for (int i = 1; i <= columnCount; i++) {
+                        columnNames.add(resultSet.getMetaData().getColumnName(i));
+                    }
+                    tableModel.setColumnIdentifiers(columnNames);
+                }
+
+                // Get rows
+                Vector<Vector<Object>> data = new Vector<>();
+                while (resultSet.next()) {
+                    Vector<Object> row = new Vector<>();
+                    row.add(resultSet.getString("MonthlyPeriodID"));
+                    row.add(resultSet.getString("EmployeeID"));
+                    row.add(resultSet.getString("FullName"));
+                    row.add(resultSet.getString("Position"));
+                    row.add(resultSet.getString("Department"));
+                    row.add(resultSet.getString("GrossIncome"));
+                    row.add(resultSet.getString("SSS_Contribution"));
+                    row.add(resultSet.getString("Philhealth_Contribution"));
+                    row.add(resultSet.getString("PagIbig_Contribution"));
+                    row.add(resultSet.getString("Withholding_Tax"));
+                    row.add(resultSet.getString("Netpay"));
+                    data.add(row);
+                }
+
+                // Add rows to the table model
+                for (Vector<Object> rowData : data) {
+                    tableModel.addRow(rowData.toArray());
+                }
+
+                mreport.setVisible(true);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            // Close connection
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
     }
+    
+    
+   // Method to populate JLabels with data from monthlytotal_view
+    public void populateMonthlyTotal(String monthlyPeriodID, MonthlySummaryReport report) {
+        dbManager = new DatabaseManager();
+        con = dbManager.getConnection();
+
+        String query = "SELECT TotalGrossIncome, TotalSSS_Contribution, TotalPhilhealth_Contribution, TotalPagIbig_Contribution, TotalWithholding_Tax, TotalNetPay " +
+                       "FROM monthlytotal_view WHERE MonthlyPeriodID = ?";
+
+        try (PreparedStatement pstmt = con.prepareStatement(query)) {
+            pstmt.setString(1, monthlyPeriodID);
+
+            try (ResultSet resultSet = pstmt.executeQuery()) {
+                if (resultSet.next()) {
+                    double totalGrossIncome = resultSet.getDouble("TotalGrossIncome"); // Retrieve as double
+                    double phealth = resultSet.getDouble("TotalPhilhealth_Contribution"); 
+                    double tax = resultSet.getDouble("TotalWithholding_Tax"); 
+                    
+                    report.getGrossSalary().setText("Php" +" "+ String.format("%.2f", totalGrossIncome));
+                    report.getSss().setText("Php" +" "+resultSet.getString("TotalSSS_Contribution"));
+                    report.getPhilhealth().setText("Php" +" "+ String.format("%.2f", phealth));
+                    report.getPagibig().setText("Php" +" "+ resultSet.getString("TotalPagIbig_Contribution"));
+                    report.getTax().setText("Php" + " "+String.format("%.2f", tax));
+                    report.getNetpay().setText("Php" + " "+resultSet.getString("TotalNetPay"));
+                } else {
+                    // Handle the case where no data is found
+                    report.getGrossSalary().setText("N/A");
+                    report.getSss().setText("N/A");
+                    report.getPhilhealth().setText("N/A");
+                    report.getPagibig().setText("N/A");
+                    report.getTax().setText("N/A");
+                    report.getNetpay().setText("N/A");
+                }
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(PayrollReports.class.getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            if (con != null) {
+                try {
+                    con.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+    
+    
     
     
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
@@ -780,6 +918,35 @@ displayPayslipDetails(payslipNo, payslipr);        // TODO add your handling cod
 PayslipReports payslipr = new PayslipReports();
 displayPayslipDetails(payslipNo, payslipr);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        String month = "500001";
+        MonthlySummaryReport monthly = new MonthlySummaryReport();
+        displayMonthlyDetails(month,monthly); 
+        populateMonthlyTotal(month,monthly);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
+         String month = "500002";
+        MonthlySummaryReport monthly = new MonthlySummaryReport();
+        displayMonthlyDetails(month,monthly); 
+       populateMonthlyTotal(month,monthly);        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel14MouseClicked
+
+    private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
+       String month = "500003";
+        MonthlySummaryReport monthly = new MonthlySummaryReport();
+        displayMonthlyDetails(month,monthly); 
+        populateMonthlyTotal(month,monthly);
+    }//GEN-LAST:event_jLabel15MouseClicked
+
+    private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
+        String month = "500004";
+        MonthlySummaryReport monthly = new MonthlySummaryReport();
+        displayMonthlyDetails(month,monthly); 
+        populateMonthlyTotal(month,monthly);
+    }//GEN-LAST:event_jLabel20MouseClicked
 
     
     /**

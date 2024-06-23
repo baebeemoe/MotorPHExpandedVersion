@@ -93,7 +93,6 @@ public class employee_details extends javax.swing.JFrame {
             }
         });
 
-        employee_table.setBackground(new java.awt.Color(153, 255, 255));
         employee_table.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.white, new java.awt.Color(204, 51, 0)));
         employee_table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
