@@ -85,7 +85,7 @@ public class PayslipReports extends javax.swing.JFrame {
             String name = rs.getString("Name");
             String startdate = rs.getString("StartDate");
             String enddate = rs.getString("EndDate");
-            String position = rs.getString("Position_Departmet");
+            String position = rs.getString("Position_Department");
             String monthlyrate = rs.getString("BasicSalary");
             String dailyrate = rs.getString("DailyRate");
             String daysworked = rs.getString("DaysWorked");

@@ -2068,7 +2068,7 @@ dbManager = new DatabaseManager();
                 String name  = rs.getString("Name");
                 String startdate = rs.getString("StartDate");
                 String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Departmet");
+                String position = rs.getString("Position_Department");
                 
                 
                 String monthlyrate = rs.getString("BasicSalary");
@@ -2167,7 +2167,7 @@ dbManager = new DatabaseManager();
                 String name  = rs.getString("Name");
                 String startdate = rs.getString("StartDate");
                 String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Departmet");
+                String position = rs.getString("Position_Department");
                 
                 
                 String monthlyrate = rs.getString("BasicSalary");
@@ -2273,7 +2273,7 @@ dbManager = new DatabaseManager();
                 String name  = rs.getString("Name");
                 String startdate = rs.getString("StartDate");
                 String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Departmet");
+                String position = rs.getString("Position_Department");
                 
                 
                 String monthlyrate = rs.getString("BasicSalary");
@@ -2370,7 +2370,7 @@ dbManager = new DatabaseManager();
                 String name  = rs.getString("Name");
                 String startdate = rs.getString("StartDate");
                 String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Departmet");
+                String position = rs.getString("Position_Department");
                 
                 
                 String monthlyrate = rs.getString("BasicSalary");
