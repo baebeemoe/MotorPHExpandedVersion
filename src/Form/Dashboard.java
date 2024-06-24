@@ -2144,89 +2144,29 @@ dbManager = new DatabaseManager();
         try{
             //Class.forName("com.mysql.cj.jdbc.Driver");
             con = dbManager.getConnection();
-            String empID = dashboardempNolbl.getText();
-            String view403 = "400003";
-           
+            int empID = Integer.parseInt(dashboardempNolbl.getText());
+            int view403 = 400003;
             
-            stmt = con.createStatement();
-             
-            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view403+"'and EmployeeID='"+empID+"'" ; 
-            rs = stmt.executeQuery(query);
-            if(rs.next()){
+            // Get the application's directory
+                File currentDir = new File(System.getProperty("user.dir"));
                 
+                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
-                String payperiodID = rs.getString("PayslipNo");
-                String employeeID = rs.getString("EmployeeID");
-                String name  = rs.getString("Name");
-                String startdate = rs.getString("StartDate");
-                String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Departmet");
+                // Set the path to the image
+                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
                 
+                Map<String, Object> parameters = new HashMap<>();
+                parameters.put("EmployeeID", empID);
+                parameters.put("PayslipNo", view403);
+                parameters.put("IMAGE_PATH", imagePath); // Pass the image path as a parameter
                 
-                String monthlyrate = rs.getString("BasicSalary");
-                String dailyrate = rs.getString("DailyRate");
-                String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("Overtime");
-                String grosssalary = rs.getString("GrossSalary");
+                JasperPrint jp = JasperFillManager.fillReport(jr, parameters, con);
+                JasperViewer.viewReport(jp, false);
                 
-                
-                String rice = rs.getString("Rice");
-                String clothing = rs.getString("Clothing");
-                String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalAllowance");
-                
-                String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIbig");
-                String philhealth = rs.getString("Philhealth");
-                String tax = rs.getString("Tax");
-                String totaldeduction = rs.getString("TotalDeduction");
-                
-                
-                String netpay = rs.getString("Netpay");
-                
-                
-                payslip.setPayslipNo(payperiodID);
-                payslip.setEmpNo(employeeID);
-                payslip.setSetemployeeName(name);
-                payslip.setSetstardate(startdate);
-                payslip.setSetendDate(enddate);
-                payslip.setSetposition(position);
-                payslip.setSetbasicsalary(monthlyrate);
-                payslip.setSetdailyrate(dailyrate);
-                payslip.setSetdaysworked(daysworked);
-                payslip.setSetovertime(overtime);
-                payslip.setSetgrossincome(grosssalary);
-                payslip.setSetrice(rice);
-                payslip.setSetphone(phone);
-                payslip.setSetclothing(clothing);
-                payslip.setSettotalbenefit(totalben);
-                payslip.setSetsss(sss);
-                payslip.setSetphilhealth(philhealth);
-                payslip.setSetpagibig(pagibig);
-                payslip.setSettax(tax);
-                payslip.setSettotalDeduction(totaldeduction);
-                payslip.setSettotaldeduction(totaldeduction);
-                payslip.setSetgrossIncome(grosssalary);
-                payslip.setSettotalBenefit(totalben);
-                payslip.setSetnetPay(netpay);
-                
-                payslip.show(true);
-                
-                
-                
-                
-               
-              
-                
-            }else{
-                JOptionPane.showMessageDialog(this, "unmatched data");
-            }
-            
-            
-            con.close();
-            
+//            
         }catch(Exception e){
-            
+            e.printStackTrace();
         }
 
         
@@ -2242,87 +2182,29 @@ dbManager = new DatabaseManager();
         try{
             //Class.forName("com.mysql.cj.jdbc.Driver");
             con = dbManager.getConnection();
-            String empID = dashboardempNolbl.getText();
-            String view404 = "400004";
-           
+            int empID = Integer.parseInt(dashboardempNolbl.getText());
+            int view404 = 400004;
             
-            stmt = con.createStatement();
-             
-            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view404+"'and EmployeeID='"+empID+"'" ; 
-            rs = stmt.executeQuery(query);
-            if(rs.next()){
+            // Get the application's directory
+                File currentDir = new File(System.getProperty("user.dir"));
                 
-       String payperiodID = rs.getString("PayslipNo");
-                String employeeID = rs.getString("EmployeeID");
-                String name  = rs.getString("Name");
-                String startdate = rs.getString("StartDate");
-                String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Departmet");
+                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
+                // Set the path to the image
+                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
                 
-                String monthlyrate = rs.getString("BasicSalary");
-                String dailyrate = rs.getString("DailyRate");
-                String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("Overtime");
-                String grosssalary = rs.getString("GrossSalary");
+                Map<String, Object> parameters = new HashMap<>();
+                parameters.put("EmployeeID", empID);
+                parameters.put("PayslipNo", view404);
+                parameters.put("IMAGE_PATH", imagePath); // Pass the image path as a parameter
                 
+                JasperPrint jp = JasperFillManager.fillReport(jr, parameters, con);
+                JasperViewer.viewReport(jp, false);
                 
-                String rice = rs.getString("Rice");
-                String clothing = rs.getString("Clothing");
-                String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalAllowance");
-                
-                String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIbig");
-                String philhealth = rs.getString("Philhealth");
-                String tax = rs.getString("Tax");
-                String totaldeduction = rs.getString("TotalDeduction");
-                
-                
-                String netpay = rs.getString("Netpay");
-                
-                payslip.setPayslipNo(payperiodID);
-                payslip.setEmpNo(employeeID);
-                payslip.setSetemployeeName(name);
-                payslip.setSetstardate(startdate);
-                payslip.setSetendDate(enddate);
-                payslip.setSetposition(position);
-                payslip.setSetbasicsalary(monthlyrate);
-                payslip.setSetdailyrate(dailyrate);
-                payslip.setSetdaysworked(daysworked);
-                payslip.setSetovertime(overtime);
-                payslip.setSetgrossincome(grosssalary);
-                payslip.setSetrice(rice);
-                payslip.setSetphone(phone);
-                payslip.setSetclothing(clothing);
-                payslip.setSettotalbenefit(totalben);
-                payslip.setSetsss(sss);
-                payslip.setSetphilhealth(philhealth);
-                payslip.setSetpagibig(pagibig);
-                payslip.setSettax(tax);
-                payslip.setSettotalDeduction(totaldeduction);
-                payslip.setSettotaldeduction(totaldeduction);
-                payslip.setSetgrossIncome(grosssalary);
-                payslip.setSettotalBenefit(totalben);
-                payslip.setSetnetPay(netpay);
-                
-                payslip.show(true);
-                
-                
-                
-                
-               
-              
-                
-            }else{
-                JOptionPane.showMessageDialog(this, "unmatched data");
-            }
-            
-            
-            con.close();
-            
+//            
         }catch(Exception e){
-            
+            e.printStackTrace();
         }
 
         
@@ -2339,88 +2221,29 @@ dbManager = new DatabaseManager();
         try{
             //Class.forName("com.mysql.cj.jdbc.Driver");
             con = dbManager.getConnection();
-            String empID = dashboardempNolbl.getText();
-            String view405 = "400005";
-           
+            int empID = Integer.parseInt(dashboardempNolbl.getText());
+            int view405 = 400005;
             
-            stmt = con.createStatement();
-             
-            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view405+"'and EmployeeID='"+empID+"'" ; 
-            rs = stmt.executeQuery(query);
-            if(rs.next()){
+            // Get the application's directory
+                File currentDir = new File(System.getProperty("user.dir"));
                 
+                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
-             String payperiodID = rs.getString("PayslipNo");
-                String employeeID = rs.getString("EmployeeID");
-                String name  = rs.getString("Name");
-                String startdate = rs.getString("StartDate");
-                String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Departmet");
+                // Set the path to the image
+                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
                 
+                Map<String, Object> parameters = new HashMap<>();
+                parameters.put("EmployeeID", empID);
+                parameters.put("PayslipNo", view405);
+                parameters.put("IMAGE_PATH", imagePath); // Pass the image path as a parameter
                 
-                String monthlyrate = rs.getString("BasicSalary");
-                String dailyrate = rs.getString("DailyRate");
-                String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("Overtime");
-                String grosssalary = rs.getString("GrossSalary");
+                JasperPrint jp = JasperFillManager.fillReport(jr, parameters, con);
+                JasperViewer.viewReport(jp, false);
                 
-                
-                String rice = rs.getString("Rice");
-                String clothing = rs.getString("Clothing");
-                String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalAllowance");
-                
-                String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIbig");
-                String philhealth = rs.getString("Philhealth");
-                String tax = rs.getString("Tax");
-                String totaldeduction = rs.getString("TotalDeduction");
-                
-                
-                String netpay = rs.getString("Netpay");
-                
-                payslip.setPayslipNo(payperiodID);
-                payslip.setEmpNo(employeeID);
-                payslip.setSetemployeeName(name);
-                payslip.setSetstardate(startdate);
-                payslip.setSetendDate(enddate);
-                payslip.setSetposition(position);
-                payslip.setSetbasicsalary(monthlyrate);
-                payslip.setSetdailyrate(dailyrate);
-                payslip.setSetdaysworked(daysworked);
-                payslip.setSetovertime(overtime);
-                payslip.setSetgrossincome(grosssalary);
-                payslip.setSetrice(rice);
-                payslip.setSetphone(phone);
-                payslip.setSetclothing(clothing);
-                payslip.setSettotalbenefit(totalben);
-                payslip.setSetsss(sss);
-                payslip.setSetphilhealth(philhealth);
-                payslip.setSetpagibig(pagibig);
-                payslip.setSettax(tax);
-                payslip.setSettotalDeduction(totaldeduction);
-                payslip.setSettotaldeduction(totaldeduction);
-                payslip.setSetgrossIncome(grosssalary);
-                payslip.setSettotalBenefit(totalben);
-                payslip.setSetnetPay(netpay);
-                
-                payslip.show(true);
-                
-                
-                
-                
-               
-              
-                
-            }else{
-                JOptionPane.showMessageDialog(this, "unmatched data");
-            }
-            
-            
-            con.close();
-            
+//            
         }catch(Exception e){
-            
+            e.printStackTrace();
         }
 
         
@@ -2436,88 +2259,29 @@ dbManager = new DatabaseManager();
         try{
             //Class.forName("com.mysql.cj.jdbc.Driver");
             con = dbManager.getConnection();
-            String empID = dashboardempNolbl.getText();
-            String view406 = "400006";
-           
+            int empID = Integer.parseInt(dashboardempNolbl.getText());
+            int view406 = 400006;
             
-            stmt = con.createStatement();
-             
-            String query = "SELECT * FROM `payslip_view` where PayslipNo ='" +view406+"'and EmployeeID='"+empID+"'" ; 
-            rs = stmt.executeQuery(query);
-            if(rs.next()){
+            // Get the application's directory
+                File currentDir = new File(System.getProperty("user.dir"));
                 
+                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
-              String payperiodID = rs.getString("PayslipNo");
-                String employeeID = rs.getString("EmployeeID");
-                String name  = rs.getString("Name");
-                String startdate = rs.getString("StartDate");
-                String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Departmet");
+                // Set the path to the image
+                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
                 
+                Map<String, Object> parameters = new HashMap<>();
+                parameters.put("EmployeeID", empID);
+                parameters.put("PayslipNo", view406);
+                parameters.put("IMAGE_PATH", imagePath); // Pass the image path as a parameter
                 
-                String monthlyrate = rs.getString("BasicSalary");
-                String dailyrate = rs.getString("DailyRate");
-                String daysworked = rs.getString("DaysWorked");
-                String overtime = rs.getString("Overtime");
-                String grosssalary = rs.getString("GrossSalary");
+                JasperPrint jp = JasperFillManager.fillReport(jr, parameters, con);
+                JasperViewer.viewReport(jp, false);
                 
-                
-                String rice = rs.getString("Rice");
-                String clothing = rs.getString("Clothing");
-                String phone = rs.getString("Phone");
-                String totalben = rs.getString("TotalAllowance");
-                
-                String sss = rs.getString("SSS");
-                String pagibig = rs.getString("PagIbig");
-                String philhealth = rs.getString("Philhealth");
-                String tax = rs.getString("Tax");
-                String totaldeduction = rs.getString("TotalDeduction");
-                
-                
-                String netpay = rs.getString("Netpay");
-                
-                payslip.setPayslipNo(payperiodID);
-                payslip.setEmpNo(employeeID);
-                payslip.setSetemployeeName(name);
-                payslip.setSetstardate(startdate);
-                payslip.setSetendDate(enddate);
-                payslip.setSetposition(position);
-                payslip.setSetbasicsalary(monthlyrate);
-                payslip.setSetdailyrate(dailyrate);
-                payslip.setSetdaysworked(daysworked);
-                payslip.setSetovertime(overtime);
-                payslip.setSetgrossincome(grosssalary);
-                payslip.setSetrice(rice);
-                payslip.setSetphone(phone);
-                payslip.setSetclothing(clothing);
-                payslip.setSettotalbenefit(totalben);
-                payslip.setSetsss(sss);
-                payslip.setSetphilhealth(philhealth);
-                payslip.setSetpagibig(pagibig);
-                payslip.setSettax(tax);
-                payslip.setSettotalDeduction(totaldeduction);
-                payslip.setSettotaldeduction(totaldeduction);
-                payslip.setSetgrossIncome(grosssalary);
-                payslip.setSettotalBenefit(totalben);
-                payslip.setSetnetPay(netpay);
-                
-                payslip.show(true);
-                
-                
-                
-                
-               
-              
-                
-            }else{
-                JOptionPane.showMessageDialog(this, "unmatched data");
-            }
-            
-            
-            con.close();
-            
+//            
         }catch(Exception e){
-            
+            e.printStackTrace();
         }
 
         
