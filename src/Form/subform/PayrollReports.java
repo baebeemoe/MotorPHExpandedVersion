@@ -704,7 +704,7 @@ public class PayrollReports extends javax.swing.JFrame {
         con = dbManager.getConnection();
 
         try {
-            String query = "SELECT PayslipNo, EmployeeID, Name, Position_Departmet, TotalAllowance, TotalDeduction, Netpay " +
+            String query = "SELECT PayslipNo, EmployeeID, Name, Position_Department, TotalAllowance, TotalDeduction, Netpay " +
                            "FROM payslip_view " +
                            "WHERE PayslipNo = ? " +
                            "GROUP BY EmployeeID, PayslipNo";
@@ -735,7 +735,7 @@ public class PayrollReports extends javax.swing.JFrame {
                     row.add(resultSet.getString("PayslipNo"));
                     row.add(resultSet.getString("EmployeeID"));
                     row.add(resultSet.getString("Name"));
-                    row.add(resultSet.getString("Position_Departmet"));
+                    row.add(resultSet.getString("Position_Department"));
                     row.add(resultSet.getString("TotalAllowance"));
                     row.add(resultSet.getString("TotalDeduction"));
                     row.add(resultSet.getString("Netpay"));
