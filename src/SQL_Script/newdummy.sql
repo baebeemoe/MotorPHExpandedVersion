@@ -4017,7 +4017,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `benefit_details`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `benefit_details`  AS SELECT `benefit_summary`.`employeeID` AS `EmployeeID`, `benefit_summary`.`position` AS `position`, max(case when `benefit_summary`.`benefitType` = 'Rice' then `benefit_summary`.`amount` else 0 end) AS `Rice`, max(case when `benefit_summary`.`benefitType` = 'Phone' then `benefit_summary`.`amount` else 0 end) AS `Phone`, max(case when `benefit_summary`.`benefitType` = 'Clothing' then `benefit_summary`.`amount` else 0 end) AS `Clothing` FROM `dummy`.`benefit_summary` GROUP BY `benefit_summary`.`employeeID` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `benefit_details`  AS SELECT `benefit_summary`.`employeeID` AS `EmployeeID`, `benefit_summary`.`position` AS `position`, max(case when `benefit_summary`.`benefitType` = 'Rice' then `benefit_summary`.`amount` else 0 end) AS `Rice`, max(case when `benefit_summary`.`benefitType` = 'Phone' then `benefit_summary`.`amount` else 0 end) AS `Phone`, max(case when `benefit_summary`.`benefitType` = 'Clothing' then `benefit_summary`.`amount` else 0 end) AS `Clothing` FROM `newdummy`.`benefit_summary` GROUP BY `benefit_summary`.`employeeID` ;
 
 -- --------------------------------------------------------
 
@@ -4026,7 +4026,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW 
 --
 DROP TABLE IF EXISTS `benefit_summary`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `benefit_summary`  AS SELECT `e`.`employeeID` AS `employeeID`, `p`.`position` AS `position`, `bt`.`benefitType` AS `benefitType`, `ba`.`amount` AS `amount` FROM (((`dummy`.`employee` `e` join `dummy`.`benefitamount` `ba` on(`e`.`positionID` = `ba`.`postitionID`)) join `dummy`.`benefittype` `bt` on(`bt`.`benefitTypeID` = `ba`.`benefitTypeID`)) join `dummy`.`position` `p` on(`e`.`positionID` = `p`.`positionID`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `benefit_summary`  AS SELECT `e`.`employeeID` AS `employeeID`, `p`.`position` AS `position`, `bt`.`benefitType` AS `benefitType`, `ba`.`amount` AS `amount` FROM (((`newdummy`.`employee` `e` join `newdummy`.`benefitamount` `ba` on(`e`.`positionID` = `ba`.`positionID`)) join `newdummy`.`benefittype` `bt` on(`bt`.`benefitTypeID` = `ba`.`benefitTypeID`)) join `newdummy`.`position` `p` on(`e`.`positionID` = `p`.`positionID`)) ;
 
 -- --------------------------------------------------------
 
