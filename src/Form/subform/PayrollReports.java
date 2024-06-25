@@ -6,14 +6,22 @@ package Form.subform;
 
 import Form.Dashboard;
 import Methods.DatabaseManager;
+import java.io.File;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
 
 /**
  *
@@ -919,33 +927,121 @@ PayslipReports payslipr = new PayslipReports();
 displayPayslipDetails(payslipNo, payslipr);        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel9MouseClicked
 
+    
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        String month = "500001";
-        MonthlySummaryReport monthly = new MonthlySummaryReport();
-        displayMonthlyDetails(month,monthly); 
-        populateMonthlyTotal(month,monthly);
-        // TODO add your handling code here:
+        try{
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            dbManager = new DatabaseManager();
+            con = dbManager.getConnection();
+            int month = 500001;
+            
+            // Get the application's directory
+                File currentDir = new File(System.getProperty("user.dir"));
+                
+                String reportPath = new File(currentDir, "src/Reports/payroll_summary.jrxml").getAbsolutePath();
+                JasperReport jr = JasperCompileManager.compileReport(reportPath);
+                
+                // Set the path to the image
+                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                
+                Map<String, Object> parameters = new HashMap<>();                
+                parameters.put("MonthlyPeriodID", month);
+                parameters.put("IMAGE_PATH", imagePath); // Pass the image path as a parameter
+                
+                JasperPrint jp = JasperFillManager.fillReport(jr, parameters, con);
+                JasperViewer.viewReport(jp, false);
+                
+//            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-         String month = "500002";
-        MonthlySummaryReport monthly = new MonthlySummaryReport();
-        displayMonthlyDetails(month,monthly); 
-       populateMonthlyTotal(month,monthly);        // TODO add your handling code here:
+         try{
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            dbManager = new DatabaseManager();
+            con = dbManager.getConnection();
+            int month = 500002;
+            
+            // Get the application's directory
+                File currentDir = new File(System.getProperty("user.dir"));
+                
+                String reportPath = new File(currentDir, "src/Reports/payroll_summary.jrxml").getAbsolutePath();
+                JasperReport jr = JasperCompileManager.compileReport(reportPath);
+                
+                // Set the path to the image
+                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                
+                Map<String, Object> parameters = new HashMap<>();                
+                parameters.put("MonthlyPeriodID", month);
+                parameters.put("IMAGE_PATH", imagePath); // Pass the image path as a parameter
+                
+                JasperPrint jp = JasperFillManager.fillReport(jr, parameters, con);
+                JasperViewer.viewReport(jp, false);
+                
+//            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
-       String month = "500003";
-        MonthlySummaryReport monthly = new MonthlySummaryReport();
-        displayMonthlyDetails(month,monthly); 
-        populateMonthlyTotal(month,monthly);
+       try{
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            dbManager = new DatabaseManager();
+            con = dbManager.getConnection();
+            int month = 500003;
+            
+            // Get the application's directory
+                File currentDir = new File(System.getProperty("user.dir"));
+                
+                String reportPath = new File(currentDir, "src/Reports/payroll_summary.jrxml").getAbsolutePath();
+                JasperReport jr = JasperCompileManager.compileReport(reportPath);
+                
+                // Set the path to the image
+                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                
+                Map<String, Object> parameters = new HashMap<>();                
+                parameters.put("MonthlyPeriodID", month);
+                parameters.put("IMAGE_PATH", imagePath); // Pass the image path as a parameter
+                
+                JasperPrint jp = JasperFillManager.fillReport(jr, parameters, con);
+                JasperViewer.viewReport(jp, false);
+                
+//            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jLabel15MouseClicked
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
-        String month = "500004";
-        MonthlySummaryReport monthly = new MonthlySummaryReport();
-        displayMonthlyDetails(month,monthly); 
-        populateMonthlyTotal(month,monthly);
+        try{
+            //Class.forName("com.mysql.cj.jdbc.Driver");
+            dbManager = new DatabaseManager();
+            con = dbManager.getConnection();
+            int month = 500004;
+            
+            // Get the application's directory
+                File currentDir = new File(System.getProperty("user.dir"));
+                
+                String reportPath = new File(currentDir, "src/Reports/payroll_summary.jrxml").getAbsolutePath();
+                JasperReport jr = JasperCompileManager.compileReport(reportPath);
+                
+                // Set the path to the image
+                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                
+                Map<String, Object> parameters = new HashMap<>();                
+                parameters.put("MonthlyPeriodID", month);
+                parameters.put("IMAGE_PATH", imagePath); // Pass the image path as a parameter
+                
+                JasperPrint jp = JasperFillManager.fillReport(jr, parameters, con);
+                JasperViewer.viewReport(jp, false);
+                
+//            
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_jLabel20MouseClicked
 
     
