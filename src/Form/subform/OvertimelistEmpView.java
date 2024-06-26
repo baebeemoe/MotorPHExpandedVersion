@@ -40,13 +40,13 @@ public class OvertimelistEmpView extends javax.swing.JFrame {
 
         overtimeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Request ID", "Employee ID", "Date Filed", "Start Time", "End Time", "Acc Overtime", "Reason", "Remarks"
+                "Request ID", "Employee ID", "Date Filed", "Request Date", "Start Time", "End Time", "Acc Overtime", "Reason", "Remarks"
             }
         ));
         jScrollPane1.setViewportView(overtimeTable);

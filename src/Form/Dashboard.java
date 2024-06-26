@@ -849,11 +849,11 @@ public class Dashboard extends javax.swing.JFrame {
         AttendancePanelLayout.setVerticalGroup(
             AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4)
                     .addComponent(attendanceRequestOvertimebtn))
@@ -2728,9 +2728,9 @@ dbManager = new DatabaseManager();
                 row.add(resultSet.getInt("overtimerequestID")); // Assuming leaveapplicationID is an int
                 row.add(resultSet.getString("employeeID"));
                 row.add(resultSet.getDate("datefiled")); // Assuming datefiled is a Date type in your database
-                row.add(resultSet.getString("date"));
-                row.add(resultSet.getDate("starttime")); // Assuming startdate is a Date type in your database
-                row.add(resultSet.getDate("endtime")); // Assuming enddate is a Date type in your database
+                row.add(resultSet.getDate("date"));
+                row.add(resultSet.getTime("starttime")); // Assuming startdate is a Date type in your database
+                row.add(resultSet.getTime("endtime")); // Assuming enddate is a Date type in your database
                 row.add(resultSet.getString("accumulatedovertime"));
                 row.add(resultSet.getString("reason"));
                 row.add(resultSet.getString("remarks"));
