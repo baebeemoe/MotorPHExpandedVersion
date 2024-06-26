@@ -193,65 +193,72 @@ public class OvertimeRequestForm extends javax.swing.JFrame {
 
     private void SubmitbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitbtnActionPerformed
 
-   // Get input values from components
    Dashboard dashboard = new Dashboard();
-        dbManager = new DatabaseManager();
-        con = dbManager.getConnection();
-   
+     // Assuming you have initialized your DB connection and other variables properly
+    dbManager = new DatabaseManager();
+    con = dbManager.getConnection();
    
     // Get input values from components
-      Date dateFiled = (Date) requestDate.getDate(); // Assuming jdatepicker returns a Date object
+    Date dateFiled = new Date(); // datefiled should be current date
+    Date chosenDate = (Date) requestDate.getDate(); // Assuming jdatepicker returns a Date object
     String starttime = (String) startTime.getSelectedItem();
     String endtime = (String) endTime.getSelectedItem();
     String reason = jTextPane1.getText();
     String remarks = "Pending"; // Initial value for remarks
     
-     if (isValidTime(starttime, endtime)) {  
-    // Calculate accumulated overtime hours
-    Duration duration = Duration.between(LocalTime.parse(starttime), LocalTime.parse(endtime));
-    long accumulatedOvertime = duration.toHours();
-    
-    // Get employee ID from dashboardempNolbl (assuming it's a JLabel displaying employee ID)
-    int employeeID = Integer.parseInt(empID);// Assuming it's an integer
-    
-    
-    // Display confirmation dialog before inserting into database
-    int option = JOptionPane.showConfirmDialog(this, 
-            "Are you sure you want to submit the overtime application?", 
-            "Confirmation", JOptionPane.YES_NO_OPTION);
-    if (option == JOptionPane.YES_OPTION) {
-    // Insert into database
-    String sql = "INSERT INTO overtimeapplication (employeeID, datefiled, date, starttime, endtime, accumulatedovertime, reason, remarks) "
-               + "VALUES (?, CURDATE(), ?, ?, ?, ?, ?, ?)";
-    try (PreparedStatement stmt = con.prepareStatement(sql)) {
-        stmt.setInt(1, employeeID);
-        stmt.setDate(2, new java.sql.Date(dateFiled.getTime()));
-        stmt.setString(3, starttime);
-        stmt.setString(4, endtime);
-        stmt.setLong(5, accumulatedOvertime);
-        stmt.setString(6, reason);
-        stmt.setString(7, remarks);
+    if (isValidTime(starttime, endtime)) {  
+        // Convert starttime and endtime to LocalTime
+        LocalTime startTimeValue = LocalTime.parse(starttime);
+        LocalTime endTimeValue = LocalTime.parse(endtime);
         
-        int rowsAffected = stmt.executeUpdate();
-        if (rowsAffected > 0) {
-            System.out.println("Overtime application inserted successfully.");
-           requestDate.setDate(null); // Clear date picker
-           startTime.setSelectedIndex(0); // Reset combobox to first item
-           endTime.setSelectedIndex(0); // Reset combobox to first item
-           jTextPane1.setText(""); 
+        // Calculate accumulated overtime hours
+        Duration duration = Duration.between(startTimeValue, endTimeValue);
+        long accumulatedOvertime = duration.toHours();
+        
+        // Get employee ID from dashboardempNolbl (assuming it's a JLabel displaying employee ID)
+        int employeeID = Integer.parseInt(empID); // Assuming it's an integer
+        
+        // Display confirmation dialog before inserting into database
+        int option = JOptionPane.showConfirmDialog(this, 
+                "Are you sure you want to submit the overtime application?", 
+                "Confirmation", JOptionPane.YES_NO_OPTION);
+        
+        if (option == JOptionPane.YES_OPTION) {
+            // Insert into database
+            String sql = "INSERT INTO overtimeapplication (employeeID, datefiled, date, starttime, endtime, accumulatedovertime, reason, remarks) "
+                       + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+            
+            try (PreparedStatement stmt = con.prepareStatement(sql)) {
+                stmt.setInt(1, employeeID);
+                stmt.setDate(2, new java.sql.Date(dateFiled.getTime())); // datefiled (current date)
+                stmt.setDate(3, new java.sql.Date(chosenDate.getTime())); // date (chosen date from requestDate)
+                stmt.setTime(4, java.sql.Time.valueOf(startTimeValue));
+                stmt.setTime(5, java.sql.Time.valueOf(endTimeValue));
+                stmt.setLong(6, accumulatedOvertime);
+                stmt.setString(7, reason);
+                stmt.setString(8, remarks);
+                
+                int rowsAffected = stmt.executeUpdate();
+                
+                if (rowsAffected > 0) {
+                    System.out.println("Overtime application inserted successfully.");
+                    requestDate.setDate(null); // Clear date picker
+                    startTime.setSelectedIndex(0); // Reset combobox to first item
+                    endTime.setSelectedIndex(0); // Reset combobox to first item
+                    jTextPane1.setText(""); 
+                } else {
+                    System.out.println("Failed to insert overtime application.");
+                    // Handle failure scenario
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
         } else {
-            System.out.println("Failed to insert overtime application.");
-            // Handle failure scenario
+            System.out.println("Overtime application submission cancelled.");
+            // Optionally, provide feedback or perform actions if submission is cancelled
         }
-    } catch (SQLException ex) {
-        Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-    }
-    
-    } else {
-        System.out.println("Overtime application submission cancelled.");
-        // Optionally, provide feedback or perform actions if submission is cancelled
-    }
-    
+        
     } else {
         // Show error message for invalid time range
         JOptionPane.showMessageDialog(this, "End time should be after start time.", "Error", JOptionPane.ERROR_MESSAGE);

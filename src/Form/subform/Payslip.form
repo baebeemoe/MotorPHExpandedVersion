@@ -35,22 +35,23 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton2" min="-2" pref="105" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jButton2" min="-2" pref="105" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jScrollPane1" min="-2" pref="747" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jScrollPane1" pref="760" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="668" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="jButton2" min="-2" pref="28" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -98,7 +99,7 @@
                                   <Component id="setgrossIncome" max="32767" attributes="0"/>
                                   <Component id="settotalBenefit" alignment="0" max="32767" attributes="0"/>
                                   <Component id="settotalDeduction" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="setnetPay" pref="559" max="32767" attributes="0"/>
+                                  <Component id="setnetPay" max="32767" attributes="0"/>
                                   <Component id="setsss" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -112,10 +113,13 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="setclothing" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="setphone" alignment="0" max="32767" attributes="0"/>
                                   <Component id="settotalbenefit" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="setclothing" min="-2" pref="454" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
                                   <Component id="setrice" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setphone" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Component id="jLabel36" alignment="0" max="32767" attributes="0"/>
@@ -129,11 +133,11 @@
                               </Group>
                               <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="setdaysworked" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="setdailyrate" max="32767" attributes="0"/>
-                                  <Component id="setovertime" alignment="0" max="32767" attributes="0"/>
                                   <Component id="setgrossincome" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setdailyrate" alignment="0" pref="681" max="32767" attributes="0"/>
                                   <Component id="setbasicsalary" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setovertime" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="setdaysworked" alignment="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" attributes="0">
@@ -163,7 +167,7 @@
                           </Group>
                           <Component id="jLabel19" alignment="1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="268" max="-2" attributes="0"/>
@@ -182,7 +186,7 @@
                           </Group>
                           <Component id="jLabel5" min="-2" pref="266" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="198" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -344,7 +348,7 @@
                           <Component id="setnetPay" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                           <Component id="jLabel50" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="12" max="32767" attributes="0"/>
+                      <EmptySpace pref="60" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -432,7 +436,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" PAYSLIP NO.:"/>
+                <Property name="text" type="java.lang.String" value="  PAYSLIP NO.:"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
@@ -447,7 +451,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" EMPLOYEE ID:"/>
+                <Property name="text" type="java.lang.String" value="  EMPLOYEE ID:"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
@@ -462,7 +466,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value=" EMPLOYEE NAME:"/>
+                <Property name="text" type="java.lang.String" value="  EMPLOYEE NAME:"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
@@ -579,28 +583,28 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="EARNINGS"/>
+                <Property name="text" type="java.lang.String" value="  EARNINGS"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel20">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Monthly Rate"/>
+                <Property name="text" type="java.lang.String" value="  Monthly Rate"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel21">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Daily Rate"/>
+                <Property name="text" type="java.lang.String" value="  Daily Rate"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel22">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Days Worked"/>
+                <Property name="text" type="java.lang.String" value="  Days Worked"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel23">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Overtime"/>
+                <Property name="text" type="java.lang.String" value="  Overtime"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="setbasicsalary">
@@ -616,7 +620,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="GROSS INCOME"/>
+                <Property name="text" type="java.lang.String" value="  GROSS INCOME"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
@@ -655,7 +659,7 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="TOTAL"/>
+                <Property name="text" type="java.lang.String" value="  TOTAL"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
@@ -673,17 +677,17 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel33">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Clothing Allowance"/>
+                <Property name="text" type="java.lang.String" value="  Clothing Allowance"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Phone Allowance"/>
+                <Property name="text" type="java.lang.String" value="  Phone Allowance"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel35">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Rice Subsidy"/>
+                <Property name="text" type="java.lang.String" value="  Rice Subsidy"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel36">
@@ -698,7 +702,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="BENEFITS"/>
+                <Property name="text" type="java.lang.String" value="  BENEFITS"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
@@ -737,28 +741,28 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="TOTAL DEDUCTIONS"/>
+                <Property name="text" type="java.lang.String" value="  TOTAL DEDUCTIONS"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel41">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Withholding Tax"/>
+                <Property name="text" type="java.lang.String" value="  Withholding Tax"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel42">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Pag-Ibig"/>
+                <Property name="text" type="java.lang.String" value="  Pag-Ibig"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel43">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Philhealth"/>
+                <Property name="text" type="java.lang.String" value="  Philhealth"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel44">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Social Security System"/>
+                <Property name="text" type="java.lang.String" value="  Social Security System"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel45">
@@ -773,7 +777,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="DEDUCTIONS"/>
+                <Property name="text" type="java.lang.String" value="  DEDUCTIONS"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
@@ -805,23 +809,23 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="12" style="1"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="TAKE HOME PAY"/>
+                <Property name="text" type="java.lang.String" value="  TAKE HOME PAY"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel52">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Deducations"/>
+                <Property name="text" type="java.lang.String" value="  Deducations"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel53">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Benefits"/>
+                <Property name="text" type="java.lang.String" value="  Benefits"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel54">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Gross Income"/>
+                <Property name="text" type="java.lang.String" value="  Gross Income"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel55">
@@ -836,7 +840,7 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
-                <Property name="text" type="java.lang.String" value="SUMMARY"/>
+                <Property name="text" type="java.lang.String" value="  SUMMARY"/>
                 <Property name="opaque" type="boolean" value="true"/>
               </Properties>
             </Component>

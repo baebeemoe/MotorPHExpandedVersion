@@ -191,10 +191,9 @@ public class IncidentReportsForm extends javax.swing.JFrame {
             int rowsUpdated = stmt.executeUpdate();
 
              if (rowsUpdated > 0) {
-                System.out.println("Record updated successfully for incidentreportID: " + incidentreportID);
                 JOptionPane.showMessageDialog(this, "Record updated successfully for incidentreportID: " + incidentreportID);
             } else {
-                System.out.println("No records updated for incidentreportID: " + incidentreportID);
+               JOptionPane.showMessageDialog(this, "No records updated for incidentreportID: " + incidentreportID, "Update Status", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -230,9 +229,8 @@ UserForm inc = new UserForm();
 
                 // Add row to the table model
                 model.addRow(new Object[]{incidentreportID, employeeID, date, issue});
-                
-                // Debug statement to verify row addition
-                System.out.println("Added row: " + incidentreportID + ", " + employeeID + ", " + date + ", " + issue );
+               
+              
             }
 
             // Set the custom cell editor for the "Status" column

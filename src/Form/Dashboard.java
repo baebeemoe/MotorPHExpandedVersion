@@ -131,6 +131,32 @@ public class Dashboard extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        HomePanel = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        timeInlbl = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        timeOutlbl = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        departmentNamelbl = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        scheduleStatuslbl = new javax.swing.JLabel();
+        jSeparator5 = new javax.swing.JSeparator();
+        timeInbtn = new javax.swing.JButton();
+        timeOutbtn = new javax.swing.JButton();
+        itRolebtn = new javax.swing.JButton();
+        supervisorRolebtn = new javax.swing.JButton();
+        hrRolebtn = new javax.swing.JButton();
+        payrollRolebtn = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        jLabel64 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         PayslipPanel = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -188,32 +214,6 @@ public class Dashboard extends javax.swing.JFrame {
         attendanceRequestOvertimebtn = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        HomePanel = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        timeInlbl = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        timeOutlbl = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
-        departmentNamelbl = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        scheduleStatuslbl = new javax.swing.JLabel();
-        jSeparator5 = new javax.swing.JSeparator();
-        timeInbtn = new javax.swing.JButton();
-        timeOutbtn = new javax.swing.JButton();
-        itRolebtn = new javax.swing.JButton();
-        supervisorRolebtn = new javax.swing.JButton();
-        hrRolebtn = new javax.swing.JButton();
-        payrollRolebtn = new javax.swing.JButton();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel64 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
         ProfilePanel = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
@@ -275,6 +275,181 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(0, 0, 0,90));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        HomePanel.setBackground(new java.awt.Color(0, 0, 0));
+        HomePanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, new java.awt.Color(255, 153, 51)));
+        HomePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0)));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("Department :");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 69, 121, -1));
+
+        timeInlbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        timeInlbl.setForeground(new java.awt.Color(0, 204, 51));
+        jPanel5.add(timeInlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 104, 80));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Time In ");
+        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Time Out ");
+        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, -1, -1));
+
+        timeOutlbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        timeOutlbl.setForeground(new java.awt.Color(204, 51, 0));
+        jPanel5.add(timeOutlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 104, 80));
+
+        jSeparator2.setBackground(new java.awt.Color(255, 153, 51));
+        jSeparator2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        jPanel5.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 30, -1, 208));
+
+        departmentNamelbl.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(departmentNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 91, 121, 20));
+
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("Schedule :");
+        jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 119, 121, -1));
+
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 141, 121, 20));
+
+        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Schedule Status :");
+        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 169, 121, -1));
+
+        scheduleStatuslbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        scheduleStatuslbl.setForeground(new java.awt.Color(102, 255, 0));
+        jPanel5.add(scheduleStatuslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 191, 121, 20));
+
+        jSeparator5.setBackground(new java.awt.Color(255, 153, 51));
+        jSeparator5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
+        jPanel5.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 30, 0, 208));
+
+        timeInbtn.setBackground(new java.awt.Color(0, 153, 102));
+        timeInbtn.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        timeInbtn.setText("Time In");
+        timeInbtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 153, 0), 1, true));
+        timeInbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeInbtnActionPerformed(evt);
+            }
+        });
+        jPanel5.add(timeInbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 320, 50));
+
+        timeOutbtn.setBackground(new java.awt.Color(153, 0, 0));
+        timeOutbtn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        timeOutbtn.setText("Time Out");
+        timeOutbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 0), 3));
+        timeOutbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeOutbtnActionPerformed(evt);
+            }
+        });
+        jPanel5.add(timeOutbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 320, 50));
+
+        HomePanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 578, 290));
+
+        itRolebtn.setText("Incident Reports");
+        itRolebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itRolebtnActionPerformed(evt);
+            }
+        });
+        HomePanel.add(itRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
+
+        supervisorRolebtn.setText("Requests Records");
+        supervisorRolebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                supervisorRolebtnActionPerformed(evt);
+            }
+        });
+        HomePanel.add(supervisorRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
+
+        hrRolebtn.setText("Employee Records");
+        hrRolebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hrRolebtnActionPerformed(evt);
+            }
+        });
+        HomePanel.add(hrRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
+
+        payrollRolebtn.setText("Payroll Reports");
+        payrollRolebtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                payrollRolebtnActionPerformed(evt);
+            }
+        });
+        HomePanel.add(payrollRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 578, 40));
+
+        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 51), new java.awt.Color(255, 51, 51)));
+
+        jLabel64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new.png"))); // NOI18N
+
+        jLabel18.setFont(new java.awt.Font("Lucida Bright", 1, 35)); // NOI18N
+        jLabel18.setText("Motor");
+        jLabel18.setIconTextGap(0);
+
+        jLabel19.setFont(new java.awt.Font("Lucida Bright", 1, 35)); // NOI18N
+        jLabel19.setForeground(new java.awt.Color(255, 153, 0));
+        jLabel19.setText("PH");
+        jLabel19.setIconTextGap(0);
+
+        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel22.setText("The Filipino's Choice");
+
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trophy.png"))); // NOI18N
+
+        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
+        jPanel13.setLayout(jPanel13Layout);
+        jPanel13Layout.setHorizontalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(103, 103, 103)
+                        .addComponent(jLabel18)
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel19))
+                    .addGroup(jPanel13Layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                                .addComponent(jLabel21)
+                                .addGap(0, 0, 0)
+                                .addComponent(jLabel22)
+                                .addGap(12, 12, 12))
+                            .addComponent(jLabel64))))
+                .addContainerGap(37, Short.MAX_VALUE))
+        );
+        jPanel13Layout.setVerticalGroup(
+            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel18)
+                    .addComponent(jLabel19))
+                .addComponent(jLabel64)
+                .addGap(0, 0, 0)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        HomePanel.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 360, 340));
+
+        jPanel3.add(HomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 125, 971, 380));
 
         PayslipPanel.setBackground(new java.awt.Color(0, 0, 0));
         PayslipPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, new java.awt.Color(255, 153, 51)));
@@ -857,11 +1032,11 @@ public class Dashboard extends javax.swing.JFrame {
         AttendancePanelLayout.setVerticalGroup(
             AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AttendancePanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
+                .addContainerGap(12, Short.MAX_VALUE)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton4)
                     .addComponent(attendanceRequestOvertimebtn))
@@ -869,181 +1044,6 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         jPanel3.add(AttendancePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 120, 970, 380));
-
-        HomePanel.setBackground(new java.awt.Color(0, 0, 0));
-        HomePanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, new java.awt.Color(255, 153, 51)));
-        HomePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel5.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, null, new java.awt.Color(255, 153, 0), new java.awt.Color(255, 102, 0)));
-        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Department :");
-        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 69, 121, -1));
-
-        timeInlbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        timeInlbl.setForeground(new java.awt.Color(0, 204, 51));
-        jPanel5.add(timeInlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 110, 104, 80));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Time In ");
-        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 200, -1, -1));
-
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("Time Out ");
-        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 200, -1, -1));
-
-        timeOutlbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        timeOutlbl.setForeground(new java.awt.Color(204, 51, 0));
-        jPanel5.add(timeOutlbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 104, 80));
-
-        jSeparator2.setBackground(new java.awt.Color(255, 153, 51));
-        jSeparator2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
-        jPanel5.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 30, -1, 208));
-
-        departmentNamelbl.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel5.add(departmentNamelbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 91, 121, 20));
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("Schedule :");
-        jPanel5.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 119, 121, -1));
-
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel5.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 141, 121, 20));
-
-        jLabel15.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Schedule Status :");
-        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 169, 121, -1));
-
-        scheduleStatuslbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        scheduleStatuslbl.setForeground(new java.awt.Color(102, 255, 0));
-        jPanel5.add(scheduleStatuslbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 191, 121, 20));
-
-        jSeparator5.setBackground(new java.awt.Color(255, 153, 51));
-        jSeparator5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 0)));
-        jPanel5.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(386, 30, 0, 208));
-
-        timeInbtn.setBackground(new java.awt.Color(0, 255, 0));
-        timeInbtn.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
-        timeInbtn.setText("Time In");
-        timeInbtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 255, 0), 1, true));
-        timeInbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timeInbtnActionPerformed(evt);
-            }
-        });
-        jPanel5.add(timeInbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 320, 50));
-
-        timeOutbtn.setBackground(new java.awt.Color(255, 0, 0));
-        timeOutbtn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        timeOutbtn.setText("Time Out");
-        timeOutbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 0), 3));
-        timeOutbtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                timeOutbtnActionPerformed(evt);
-            }
-        });
-        jPanel5.add(timeOutbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 320, 50));
-
-        HomePanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 12, 578, 290));
-
-        itRolebtn.setText("Incident Reports");
-        itRolebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                itRolebtnActionPerformed(evt);
-            }
-        });
-        HomePanel.add(itRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
-
-        supervisorRolebtn.setText("Requests Records");
-        supervisorRolebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                supervisorRolebtnActionPerformed(evt);
-            }
-        });
-        HomePanel.add(supervisorRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
-
-        hrRolebtn.setText("Employee Records");
-        hrRolebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hrRolebtnActionPerformed(evt);
-            }
-        });
-        HomePanel.add(hrRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 580, 40));
-
-        payrollRolebtn.setText("Payroll Reports");
-        payrollRolebtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                payrollRolebtnActionPerformed(evt);
-            }
-        });
-        HomePanel.add(payrollRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 308, 578, 40));
-
-        jPanel13.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel13.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(255, 255, 51), new java.awt.Color(255, 51, 51)));
-
-        jLabel64.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/new.png"))); // NOI18N
-
-        jLabel18.setFont(new java.awt.Font("Lucida Bright", 1, 35)); // NOI18N
-        jLabel18.setText("Motor");
-        jLabel18.setIconTextGap(0);
-
-        jLabel19.setFont(new java.awt.Font("Lucida Bright", 1, 35)); // NOI18N
-        jLabel19.setForeground(new java.awt.Color(255, 153, 0));
-        jLabel19.setText("PH");
-        jLabel19.setIconTextGap(0);
-
-        jLabel22.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel22.setText("The Filipino's Choice");
-
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/trophy.png"))); // NOI18N
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(103, 103, 103)
-                        .addComponent(jLabel18)
-                        .addGap(6, 6, 6)
-                        .addComponent(jLabel19))
-                    .addGroup(jPanel13Layout.createSequentialGroup()
-                        .addGap(37, 37, 37)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                                .addComponent(jLabel21)
-                                .addGap(0, 0, 0)
-                                .addComponent(jLabel22)
-                                .addGap(12, 12, 12))
-                            .addComponent(jLabel64))))
-                .addContainerGap(37, Short.MAX_VALUE))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel18)
-                    .addComponent(jLabel19))
-                .addComponent(jLabel64)
-                .addGap(0, 0, 0)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        HomePanel.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 360, 340));
-
-        jPanel3.add(HomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 125, 971, 380));
 
         ProfilePanel.setBackground(new java.awt.Color(0, 0, 0));
         ProfilePanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, new java.awt.Color(255, 204, 51), null, null, java.awt.Color.white));
@@ -1708,6 +1708,7 @@ Attendance att = new Attendance();
     }//GEN-LAST:event_btnProfileActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+
     HomePanel.show(true);
     ProfilePanel.show(false);
     AttendancePanel.show(false);
@@ -2070,6 +2071,13 @@ dbManager = new DatabaseManager();
                 
                 // Set the path to the image
                 String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                   
+                String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Department");
                 
                 Map<String, Object> parameters = new HashMap<>();
                 parameters.put("EmployeeID", empID);
@@ -2108,6 +2116,13 @@ dbManager = new DatabaseManager();
                 
                 // Set the path to the image
                 String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                     
+                 String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Department");
                 
                 Map<String, Object> parameters = new HashMap<>();
                 parameters.put("EmployeeID", empID);
@@ -2155,6 +2170,12 @@ dbManager = new DatabaseManager();
                 
                 // Set the path to the image
                 String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Department");
                 
                 Map<String, Object> parameters = new HashMap<>();
                 parameters.put("EmployeeID", empID);
@@ -2190,6 +2211,12 @@ dbManager = new DatabaseManager();
                 
                 String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
+       String payperiodID = rs.getString("PayslipNo");
+                String employeeID = rs.getString("EmployeeID");
+                String name  = rs.getString("Name");
+                String startdate = rs.getString("StartDate");
+                String enddate = rs.getString("EndDate");
+                String position = rs.getString("Position_Department");
                 
                 // Set the path to the image
                 String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
@@ -2379,9 +2406,9 @@ dbManager = new DatabaseManager();
                 row.add(resultSet.getInt("overtimerequestID")); // Assuming leaveapplicationID is an int
                 row.add(resultSet.getString("employeeID"));
                 row.add(resultSet.getDate("datefiled")); // Assuming datefiled is a Date type in your database
-                row.add(resultSet.getString("date"));
-                row.add(resultSet.getDate("starttime")); // Assuming startdate is a Date type in your database
-                row.add(resultSet.getDate("endtime")); // Assuming enddate is a Date type in your database
+                row.add(resultSet.getDate("date"));
+                row.add(resultSet.getTime("starttime")); // Assuming startdate is a Date type in your database
+                row.add(resultSet.getTime("endtime")); // Assuming enddate is a Date type in your database
                 row.add(resultSet.getString("accumulatedovertime"));
                 row.add(resultSet.getString("reason"));
                 row.add(resultSet.getString("remarks"));
