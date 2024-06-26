@@ -25,6 +25,7 @@ import java.sql.Types;
 import java.sql.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.RowFilter;
 import javax.swing.table.TableRowSorter;
 
@@ -183,10 +184,9 @@ public class employee_details extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        UpdateForm updateform = new UpdateForm();
+     UpdateForm updateform = new UpdateForm();
     int selectedRow = employee_table.getSelectedRow();
     if (selectedRow != -1) {
-        // Get data from the selected row and handle types appropriately
         Object empIDObj = employee_table.getValueAt(selectedRow, 0);
         String empID = empIDObj != null ? empIDObj.toString() : null;
 
@@ -198,7 +198,6 @@ public class employee_details extends javax.swing.JFrame {
             try (PreparedStatement pstmt = con.prepareStatement(query)) {
                 pstmt.setString(1, empID);
 
-                // Execute the query
                 try (ResultSet rs = pstmt.executeQuery()) {
                     if (rs.next()) {
                         String employeeID = rs.getString("employeeID");
@@ -218,7 +217,6 @@ public class employee_details extends javax.swing.JFrame {
                         String positionID = rs.getString("positionID");
                         String depID = rs.getString("depID");
                         String status = rs.getString("status");
-                        // Handling Integer to String conversion for supervisorID and basicSalaryID
                         String supervisorID = rs.getObject("supervisorID") != null ? rs.getObject("supervisorID").toString() : null;
                         String basicSalaryID = rs.getObject("basicSalaryID") != null ? rs.getObject("basicSalaryID").toString() : null;
 
@@ -237,15 +235,17 @@ public class employee_details extends javax.swing.JFrame {
                         updateform.setPhilhealthNo(philhealthNo);
                         updateform.setTin(tin);
                         updateform.setPagibigNo(pagibigNo);
-                       updateform.setPositionComboBox(positionID);
-                       updateform.setDepartmentComboBox(depID);
-                       updateform.setStatusComboBox(status);
-                       updateform.setBasicSalaryComboBox(basicSalaryID);
-                       updateform.setSupervisorComboBox(supervisorID);
+
+                        // Use the new method to set combo box selections
+                        setComboBoxSelection(updateform.getPosition(), positionID);
+                        setComboBoxSelection(updateform.getDepartment(), depID);
+                        updateform.setStatusComboBox(status); // Assuming status is set directly
+                        setComboBoxSelection(updateform.getBasicSalary(), basicSalaryID);
+                        setComboBoxSelection(updateform.getSuperVisor(), supervisorID);
 
                         // Show the update form
                         updateform.setVisible(true);
-                        this.show(false);
+                        this.setVisible(false);
 
                     } else {
                         JOptionPane.showMessageDialog(this, "Error Loading Information");
@@ -266,8 +266,30 @@ public class employee_details extends javax.swing.JFrame {
     } else {
         JOptionPane.showMessageDialog(this, "Please select a row to update.", "No Row Selected", JOptionPane.WARNING_MESSAGE);
     }
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    
+    private String extractID(String selectedItem) {
+    if (selectedItem != null && selectedItem.contains(" - ")) {
+        return selectedItem.split(" - ")[0].trim(); // Extracts the ID part before " - "
+    }
+    return null; // Handle appropriately if format doesn't match expected
+}
+
+    
+    private void setComboBoxSelection(JComboBox<String> comboBox, String id) {
+    for (int i = 0; i < comboBox.getItemCount(); i++) {
+        String item = comboBox.getItemAt(i);
+        String itemId = extractID(item);
+        if (itemId != null && itemId.equals(id)) {
+            comboBox.setSelectedIndex(i);
+            break;
+        }
+    }
+}
+
+    
     private void AddbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddbtnActionPerformed
           JFileChooser fileChooser = new JFileChooser();
     int returnValue = fileChooser.showOpenDialog(null);
