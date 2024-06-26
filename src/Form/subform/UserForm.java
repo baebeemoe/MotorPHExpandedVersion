@@ -76,6 +76,7 @@ public class UserForm extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -120,27 +121,35 @@ public class UserForm extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("User Informations");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(202, 202, 202)
                 .addComponent(jButton1)
-                .addGap(14, 14, 14))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 541, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addComponent(jButton1)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -160,26 +169,26 @@ public class UserForm extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       int selectedRow = jTable2.getSelectedRow();
+    
+    if (selectedRow != -1) {
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
+        
+        // Get the values from the selected row
+        int userID = (int) model.getValueAt(selectedRow, 0); // assuming userID is in the first column
+        String employeeID = (String) model.getValueAt(selectedRow, 1);
+        String password = (String) model.getValueAt(selectedRow, 2);
+        String roleID = (String) model.getValueAt(selectedRow, 3);
 
-    // Construct the SQL UPDATE statement
-    String updateSql = "UPDATE user SET employeeID = ?, password = ?, roleID = ? WHERE userID = ?";
+        // Construct the SQL UPDATE statement
+        String updateSql = "UPDATE user SET employeeID = ?, password = ?, roleID = ? WHERE userID = ?";
 
-    try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/newdummy", "root", "");
-         PreparedStatement stmt = con.prepareStatement(updateSql)) {
-
-        // Disable auto-commit for batch processing
-        con.setAutoCommit(false);
-
-        // Iterate through the rows in the table model
-        for (int row = 0; row < model.getRowCount(); row++) {
-            int userID = (int) model.getValueAt(row, 0); // assuming userID is in the first column
-            String employeeID = (String) model.getValueAt(row, 1);
-            String password = (String) model.getValueAt(row, 2);
-            String roleID = (String) model.getValueAt(row, 3);
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/newdummy", "root", "");
+             PreparedStatement stmt = con.prepareStatement(updateSql)) {
 
             // Set parameters for the prepared statement
             stmt.setString(1, employeeID);
@@ -187,36 +196,24 @@ public class UserForm extends javax.swing.JFrame {
             stmt.setString(3, roleID);
             stmt.setInt(4, userID);
 
-            // Add batch to batch update
-            stmt.addBatch();
-        }
+            // Execute the update
+            int rowsUpdated = stmt.executeUpdate();
 
-        // Execute the batch update
-        int[] rowsUpdated = stmt.executeBatch();
-
-        // Commit the transaction
-        con.commit();
-
-        // Enable auto-commit after batch processing
-        con.setAutoCommit(true);
-
-        // Print results or show success message
-        for (int i = 0; i < rowsUpdated.length; i++) {
-            if (rowsUpdated[i] > 0) {
-               JOptionPane.showMessageDialog(this, "Records updated successfully.");
-                // You can also show JOptionPane message here if needed
+            if (rowsUpdated > 0) {
+                JOptionPane.showMessageDialog(this, "Record updated successfully.");
             } else {
-               JOptionPane.showMessageDialog(this, "Error updating records: " , "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Error updating record.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        }
 
-    } catch (SQLException e) {
-        // Rollback transaction on error
-      
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error updating record: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    } else {
+        JOptionPane.showMessageDialog(this, "Please select a row to update.", "No Row Selected", JOptionPane.WARNING_MESSAGE);
     }
-        
-        
+      
     
+       
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -257,6 +254,7 @@ public class UserForm extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
