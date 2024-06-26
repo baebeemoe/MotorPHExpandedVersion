@@ -66,48 +66,48 @@ public class Payslip extends javax.swing.JFrame {
 
     public void setSetpagibig(String pagibig) {
         this.pagibig = pagibig;
-        setpagibig.setText("Php" + " "+ pagibig);
+        setpagibig.setText("Php" + " "+ pagibig + "  ");
     }
 
     public void setSetphilhealth(String philhealth) {
         this.philhealth = philhealth;
-        setphilhealth.setText("Php" +" "+  philhealth);
+        setphilhealth.setText("Php" +" "+  philhealth + "  ");
     }
 
     public void setSetsss(String sss) {
         this.sss = sss;
-        setsss.setText("Php" + " "+ sss);
+        setsss.setText("Php" + " "+ sss + "  ");
        
     }
 
     public void setSettax(String tax) {
         this.tax = tax;
-        settax.setText("Php" +" "+ tax);
+        settax.setText("Php" +" "+ tax+ "  ");
     }
 
     public void setSettotalDeduction(String totalDeduction) {
         this.totaldeduction = totalDeduction;
-        settotaldeduction.setText("Php" + " "+ totalDeduction);
+        settotaldeduction.setText("Php" + " "+ totalDeduction + "  ");
     }
 
     public void setSetgrossIncome(String grossIncome) {
         this.grossIncome = grossIncome;
-        setgrossIncome.setText("Php" + " "+ grossIncome);
+        setgrossIncome.setText("Php" + " "+ grossIncome + "  ");
     }
 
     public void setSetnetPay(String netPay) {
         this.netpay = netPay;
-        setnetPay.setText("Php" + " "+ netPay);
+        setnetPay.setText("Php" + " "+ netPay + "  ");
     }
 
     public void setSettotalBenefit(String totalBenefit) {
         this.totalBenefit = totalBenefit;
-        settotalBenefit.setText("Php" + " "+ totalBenefit);
+        settotalBenefit.setText("Php" + " "+ totalBenefit + "  ");
     }
 
     public void setSettotaldeduction(String totalDeduction) {
         this.totalDeduction = totalDeduction;
-        settotalDeduction.setText("Php" + " "+totalDeduction);
+        settotalDeduction.setText("Php" + " "+totalDeduction + "  ");
     }
  
     
@@ -115,51 +115,51 @@ public class Payslip extends javax.swing.JFrame {
     
     public void setSetclothing(String clothing) {
         this.clothing = clothing;
-        setclothing.setText("Php" + " "+clothing);
+        setclothing.setText("Php" + " "+clothing + "  ");
     }
 
     public void setSetphone(String phone) {
         this.phone = phone;
-        setphone.setText("Php" +" "+ phone);
+        setphone.setText("Php" +" "+ phone + "  ");
     }
 
     public void setSetrice(String rice) {
         this.rice = rice;
-        setrice.setText("Php" +" "+  rice);
+        setrice.setText("Php" +" "+  rice + "  ");
     }
 
     public void setSettotalbenefit(String totalbenefit) {
         this.totalbenefit = totalbenefit;
-        settotalbenefit.setText("Php" + " "+ totalbenefit);
+        settotalbenefit.setText("Php" + " "+ totalbenefit + "  ");
     }
     
     
 
     public void setSetbasicsalary(String setbasicSalary) {
         this.basicsalary = setbasicSalary;
-        setbasicsalary.setText("Php" + " "+ setbasicSalary);
+        setbasicsalary.setText("Php" + " "+ setbasicSalary + "  ");
     }
 
     public void setSetdailyrate(String dailyrate) {
         this.dailyrate = dailyrate;
-        setdailyrate.setText("Php" + " "+ dailyrate);
+        setdailyrate.setText("Php" + " "+ dailyrate + "  ");
     }
 
     public void setSetdaysworked(String daysworked) {
         this.daysworked = daysworked;
-        setdaysworked.setText(daysworked);
+        setdaysworked.setText(daysworked + "  ");
     }
 
     public void setSetovertime(String overtime) {
         this.overtime = overtime;
-        setovertime.setText("Php" + " "+ overtime);
+        setovertime.setText("Php" + " "+ overtime + "  ");
     }
     
     
 
     public void setSetgrossincome(String grossincome) {
         this.totalearnings = grossincome;
-        setgrossincome.setText("Php" + " "+grossincome);
+        setgrossincome.setText("Php" + " "+grossincome + "  ");
     }
        
     
@@ -322,19 +322,19 @@ public class Payslip extends javax.swing.JFrame {
         jLabel7.setBackground(new java.awt.Color(0, 102, 153));
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText(" PAYSLIP NO.:");
+        jLabel7.setText("  PAYSLIP NO.:");
         jLabel7.setOpaque(true);
 
         jLabel8.setBackground(new java.awt.Color(0, 102, 153));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText(" EMPLOYEE ID:");
+        jLabel8.setText("  EMPLOYEE ID:");
         jLabel8.setOpaque(true);
 
         jLabel9.setBackground(new java.awt.Color(0, 102, 153));
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText(" EMPLOYEE NAME:");
+        jLabel9.setText("  EMPLOYEE NAME:");
         jLabel9.setOpaque(true);
 
         setemployeeName.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 1, 0, 1, new java.awt.Color(0, 0, 0)));
@@ -373,22 +373,22 @@ public class Payslip extends javax.swing.JFrame {
         jLabel19.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel19.setForeground(new java.awt.Color(255, 255, 255));
         jLabel19.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel19.setText("EARNINGS");
+        jLabel19.setText("  EARNINGS");
         jLabel19.setOpaque(true);
 
-        jLabel20.setText("Monthly Rate");
+        jLabel20.setText("  Monthly Rate");
 
-        jLabel21.setText("Daily Rate");
+        jLabel21.setText("  Daily Rate");
 
-        jLabel22.setText("Days Worked");
+        jLabel22.setText("  Days Worked");
 
-        jLabel23.setText("Overtime");
+        jLabel23.setText("  Overtime");
 
         setbasicsalary.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         jLabel25.setBackground(new java.awt.Color(204, 204, 204));
         jLabel25.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel25.setText("GROSS INCOME");
+        jLabel25.setText("  GROSS INCOME");
         jLabel25.setOpaque(true);
 
         setdailyrate.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -404,7 +404,7 @@ public class Payslip extends javax.swing.JFrame {
 
         jLabel30.setBackground(new java.awt.Color(204, 204, 204));
         jLabel30.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel30.setText("TOTAL");
+        jLabel30.setText("  TOTAL");
         jLabel30.setOpaque(true);
 
         settotalbenefit.setBackground(new java.awt.Color(204, 204, 204));
@@ -412,17 +412,17 @@ public class Payslip extends javax.swing.JFrame {
         settotalbenefit.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         settotalbenefit.setOpaque(true);
 
-        jLabel33.setText("Clothing Allowance");
+        jLabel33.setText("  Clothing Allowance");
 
-        jLabel34.setText("Phone Allowance");
+        jLabel34.setText("  Phone Allowance");
 
-        jLabel35.setText("Rice Subsidy");
+        jLabel35.setText("  Rice Subsidy");
 
         jLabel36.setBackground(new java.awt.Color(0, 102, 153));
         jLabel36.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel36.setForeground(new java.awt.Color(255, 255, 255));
         jLabel36.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel36.setText("BENEFITS");
+        jLabel36.setText("  BENEFITS");
         jLabel36.setOpaque(true);
 
         setrice.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -438,22 +438,22 @@ public class Payslip extends javax.swing.JFrame {
 
         jLabel40.setBackground(new java.awt.Color(204, 204, 204));
         jLabel40.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel40.setText("TOTAL DEDUCTIONS");
+        jLabel40.setText("  TOTAL DEDUCTIONS");
         jLabel40.setOpaque(true);
 
-        jLabel41.setText("Withholding Tax");
+        jLabel41.setText("  Withholding Tax");
 
-        jLabel42.setText("Pag-Ibig");
+        jLabel42.setText("  Pag-Ibig");
 
-        jLabel43.setText("Philhealth");
+        jLabel43.setText("  Philhealth");
 
-        jLabel44.setText("Social Security System");
+        jLabel44.setText("  Social Security System");
 
         jLabel45.setBackground(new java.awt.Color(0, 102, 153));
         jLabel45.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(255, 255, 255));
         jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel45.setText("DEDUCTIONS");
+        jLabel45.setText("  DEDUCTIONS");
         jLabel45.setOpaque(true);
 
         setsss.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -466,20 +466,20 @@ public class Payslip extends javax.swing.JFrame {
 
         jLabel50.setBackground(new java.awt.Color(204, 204, 204));
         jLabel50.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel50.setText("TAKE HOME PAY");
+        jLabel50.setText("  TAKE HOME PAY");
         jLabel50.setOpaque(true);
 
-        jLabel52.setText("Deducations");
+        jLabel52.setText("  Deducations");
 
-        jLabel53.setText("Benefits");
+        jLabel53.setText("  Benefits");
 
-        jLabel54.setText("Gross Income");
+        jLabel54.setText("  Gross Income");
 
         jLabel55.setBackground(new java.awt.Color(0, 102, 153));
         jLabel55.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel55.setForeground(new java.awt.Color(255, 255, 255));
         jLabel55.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel55.setText("SUMMARY");
+        jLabel55.setText("  SUMMARY");
         jLabel55.setOpaque(true);
 
         setgrossIncome.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
@@ -521,7 +521,7 @@ public class Payslip extends javax.swing.JFrame {
                             .addComponent(setgrossIncome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(settotalBenefit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(settotalDeduction, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(setnetPay, javax.swing.GroupLayout.DEFAULT_SIZE, 559, Short.MAX_VALUE)
+                            .addComponent(setnetPay, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(setsss, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel45, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, payslipPanelLayout.createSequentialGroup()
@@ -532,10 +532,12 @@ public class Payslip extends javax.swing.JFrame {
                             .addComponent(jLabel35, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, 0)
                         .addGroup(payslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(setclothing, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(setphone, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(settotalbenefit, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(setrice, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, payslipPanelLayout.createSequentialGroup()
+                                .addComponent(setclothing, javax.swing.GroupLayout.PREFERRED_SIZE, 454, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(setrice, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(setphone, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, payslipPanelLayout.createSequentialGroup()
                         .addGroup(payslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -546,11 +548,11 @@ public class Payslip extends javax.swing.JFrame {
                             .addComponent(jLabel20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(0, 0, 0)
                         .addGroup(payslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(setdaysworked, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(setdailyrate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(setovertime, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(setgrossincome, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(setbasicsalary, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(setdailyrate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 681, Short.MAX_VALUE)
+                            .addComponent(setbasicsalary, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(setovertime, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(setdaysworked, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(payslipPanelLayout.createSequentialGroup()
                         .addGroup(payslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -572,7 +574,7 @@ public class Payslip extends javax.swing.JFrame {
                             .addComponent(setstardate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                             .addComponent(setposition, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(34, 34, 34))
+                .addGap(24, 24, 24))
             .addGroup(payslipPanelLayout.createSequentialGroup()
                 .addGap(268, 268, 268)
                 .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -587,7 +589,7 @@ public class Payslip extends javax.swing.JFrame {
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(198, Short.MAX_VALUE))
         );
         payslipPanelLayout.setVerticalGroup(
             payslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -721,7 +723,7 @@ public class Payslip extends javax.swing.JFrame {
                 .addGroup(payslipPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(setnetPay, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel50, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         jScrollPane1.setViewportView(payslipPanel);
@@ -738,19 +740,19 @@ public class Payslip extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 747, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 668, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -785,7 +787,7 @@ public class Payslip extends javax.swing.JFrame {
 
             // Example: Create a PDF document with a custom size
             float desiredWidth = 180; // Specify your desired width in points (1 inch = 72 points)
-            float desiredHeight = 230; // Specify your desired height in points
+            float desiredHeight = 210; // Specify your desired height in points
             Document document = new Document(new com.itextpdf.text.Rectangle(desiredWidth, desiredHeight));
 
             try {
