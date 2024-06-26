@@ -122,6 +122,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jLabel20 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         HomePanel = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -148,7 +149,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
         PayslipPanel = new javax.swing.JPanel();
         jLabel55 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -264,6 +264,9 @@ public class Dashboard extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0,90));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         HomePanel.setBackground(new java.awt.Color(0, 0, 0));
         HomePanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, new java.awt.Color(255, 153, 51)));
@@ -438,10 +441,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         HomePanel.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 360, 340));
 
-        getContentPane().add(HomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 125, 971, 380));
-
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0,90));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.add(HomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 125, 971, 380));
 
         PayslipPanel.setBackground(new java.awt.Color(0, 0, 0));
         PayslipPanel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED, java.awt.Color.white, new java.awt.Color(255, 153, 51)));
@@ -1700,6 +1700,7 @@ Attendance att = new Attendance();
     }//GEN-LAST:event_btnProfileActionPerformed
 
     private void btnHomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHomeActionPerformed
+
     HomePanel.show(true);
     ProfilePanel.show(false);
     AttendancePanel.show(false);
