@@ -2072,12 +2072,12 @@ dbManager = new DatabaseManager();
                 // Set the path to the image
                 String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
                    
-                String payperiodID = rs.getString("PayslipNo");
-                String employeeID = rs.getString("EmployeeID");
-                String name  = rs.getString("Name");
-                String startdate = rs.getString("StartDate");
-                String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Department");
+//                String payperiodID = rs.getString("PayslipNo");
+//                String employeeID = rs.getString("EmployeeID");
+//                String name  = rs.getString("Name");
+//                String startdate = rs.getString("StartDate");
+//                String enddate = rs.getString("EndDate");
+//                String position = rs.getString("Position_Department");
                 
                 Map<String, Object> parameters = new HashMap<>();
                 parameters.put("EmployeeID", empID);
@@ -2117,12 +2117,12 @@ dbManager = new DatabaseManager();
                 // Set the path to the image
                 String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
                      
-                 String payperiodID = rs.getString("PayslipNo");
-                String employeeID = rs.getString("EmployeeID");
-                String name  = rs.getString("Name");
-                String startdate = rs.getString("StartDate");
-                String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Department");
+//                String payperiodID = rs.getString("PayslipNo");
+//                String employeeID = rs.getString("EmployeeID");
+//                String name  = rs.getString("Name");
+//                String startdate = rs.getString("StartDate");
+//                String enddate = rs.getString("EndDate");
+//                String position = rs.getString("Position_Department");
                 
                 Map<String, Object> parameters = new HashMap<>();
                 parameters.put("EmployeeID", empID);
@@ -2170,12 +2170,12 @@ dbManager = new DatabaseManager();
                 
                 // Set the path to the image
                 String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
-                String payperiodID = rs.getString("PayslipNo");
-                String employeeID = rs.getString("EmployeeID");
-                String name  = rs.getString("Name");
-                String startdate = rs.getString("StartDate");
-                String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Department");
+//                String payperiodID = rs.getString("PayslipNo");
+//                String employeeID = rs.getString("EmployeeID");
+//                String name  = rs.getString("Name");
+//                String startdate = rs.getString("StartDate");
+//                String enddate = rs.getString("EndDate");
+//                String position = rs.getString("Position_Department");
                 
                 Map<String, Object> parameters = new HashMap<>();
                 parameters.put("EmployeeID", empID);
@@ -2211,12 +2211,12 @@ dbManager = new DatabaseManager();
                 
                 String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
-       String payperiodID = rs.getString("PayslipNo");
-                String employeeID = rs.getString("EmployeeID");
-                String name  = rs.getString("Name");
-                String startdate = rs.getString("StartDate");
-                String enddate = rs.getString("EndDate");
-                String position = rs.getString("Position_Department");
+//                String payperiodID = rs.getString("PayslipNo");
+//                String employeeID = rs.getString("EmployeeID");
+//                String name  = rs.getString("Name");
+//                String startdate = rs.getString("StartDate");
+//                String enddate = rs.getString("EndDate");
+//                String position = rs.getString("Position_Department");
                 
                 // Set the path to the image
                 String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();

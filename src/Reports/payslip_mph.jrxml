@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="payslip" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2f6e4db4-9f8f-4ffe-9759-6e1fd142f492">
 	<property name="template.type" value="columnar"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
@@ -16,11 +16,11 @@
 	</style>
 	<parameter name="EmployeeID" class="java.lang.Integer"/>
 	<parameter name="PayslipNo" class="java.lang.Integer"/>
+	<parameter name="IMAGE_PATH" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT *
 FROM payslip_view
-WHERE EmployeeID = $P{EmployeeID} AND PayslipNo = $P{PayslipNo}
-]]>
+WHERE EmployeeID = $P{EmployeeID} AND PayslipNo = $P{PayslipNo}]]>
 	</queryString>
 	<field name="PayslipNo" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.name" value="PayslipNo"/>
@@ -331,7 +331,7 @@ WHERE EmployeeID = $P{EmployeeID} AND PayslipNo = $P{PayslipNo}
 			</staticText>
 			<image>
 				<reportElement x="81" y="2" width="128" height="81" uuid="f05d4f86-0f66-4f1c-abac-2ff5fdc7fdd2"/>
-				<imageExpression><![CDATA["C:/Users/choi/Documents/NetBeansProjects/MotorPHExpandedVersion/src/images/new.png"]]></imageExpression>
+				<imageExpression><![CDATA[$P{IMAGE_PATH}]]></imageExpression>
 			</image>
 		</band>
 	</title>
