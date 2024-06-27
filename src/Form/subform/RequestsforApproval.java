@@ -66,7 +66,6 @@ public class RequestsforApproval extends javax.swing.JFrame {
 
         OvertimePanel.setPreferredSize(new java.awt.Dimension(464, 510));
 
-        OvertimeTable.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         OvertimeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
