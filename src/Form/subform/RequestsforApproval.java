@@ -64,6 +64,7 @@ public class RequestsforApproval extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        OvertimePanel.setBackground(new java.awt.Color(51, 51, 51));
         OvertimePanel.setPreferredSize(new java.awt.Dimension(464, 510));
 
         OvertimeTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -79,7 +80,11 @@ public class RequestsforApproval extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(OvertimeTable);
 
+        overtimeSaveBtn.setBackground(new java.awt.Color(255, 153, 0));
+        overtimeSaveBtn.setForeground(new java.awt.Color(255, 255, 255));
         overtimeSaveBtn.setText("Save");
+        overtimeSaveBtn.setBorderPainted(false);
+        overtimeSaveBtn.setPreferredSize(new java.awt.Dimension(72, 28));
         overtimeSaveBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 overtimeSaveBtnActionPerformed(evt);
@@ -93,29 +98,34 @@ public class RequestsforApproval extends javax.swing.JFrame {
             .addGroup(OvertimePanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(overtimeSaveBtn)
+                    .addComponent(overtimeSaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1213, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
         OvertimePanelLayout.setVerticalGroup(
             OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(OvertimePanelLayout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(10, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(overtimeSaveBtn))
+                .addComponent(overtimeSaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         getContentPane().add(OvertimePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1230, 510));
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Requests");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
+        overtimerequestbtn.setBackground(new java.awt.Color(255, 153, 0));
+        overtimerequestbtn.setForeground(new java.awt.Color(255, 255, 255));
         overtimerequestbtn.setText("Overtime Requests");
+        overtimerequestbtn.setBorderPainted(false);
+        overtimerequestbtn.setPreferredSize(new java.awt.Dimension(140, 28));
         overtimerequestbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 overtimerequestbtnActionPerformed(evt);
@@ -123,13 +133,19 @@ public class RequestsforApproval extends javax.swing.JFrame {
         });
         jPanel1.add(overtimerequestbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 30, -1, -1));
 
+        leaverequestsbtn.setBackground(new java.awt.Color(255, 153, 0));
+        leaverequestsbtn.setForeground(new java.awt.Color(255, 255, 255));
         leaverequestsbtn.setText("Leave Requests");
+        leaverequestsbtn.setBorderPainted(false);
+        leaverequestsbtn.setPreferredSize(new java.awt.Dimension(140, 28));
         leaverequestsbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 leaverequestsbtnActionPerformed(evt);
             }
         });
         jPanel1.add(leaverequestsbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 120, -1));
+
+        leavePanel.setBackground(new java.awt.Color(51, 51, 51));
 
         LeaveTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
