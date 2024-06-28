@@ -63,17 +63,17 @@ public class logInPage extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0,90));
+        jPanel3.setOpaque(false);
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel6.setFont(new java.awt.Font("Lucida Bright", 1, 16)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Open Sans", 0, 16)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Affordable Rides Since 2020. \"");
+        jLabel6.setText("Affordable Rides Since 2020");
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 365, 250, -1));
 
-        jLabel5.setFont(new java.awt.Font("Lucida Bright", 1, 16)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Open Sans", 0, 16)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("\"Discover MotorPH: Your Trusted Choice for");
+        jLabel5.setText("Discover MotorPH: Your Trusted Choice for");
         jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 335, 370, -1));
 
         jLabel4.setFont(new java.awt.Font("Lucida Bright", 1, 48)); // NOI18N
@@ -94,30 +94,33 @@ public class logInPage extends javax.swing.JFrame {
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 155, -1, 80));
 
         jLabel8.setBackground(new java.awt.Color(255, 153, 51));
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Poppins SemiBold", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("SIGN IN");
-        jLabel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
         jLabel8.setOpaque(true);
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 80, 180, 50));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 80, 180, 50));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 255, 255), 2, true)));
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51)));
         jPanel1.setToolTipText("");
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButton1.setBackground(new java.awt.Color(255, 102, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("Log In");
+        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Log in");
+        jButton1.setBorderPainted(false);
+        jButton1.setPreferredSize(new java.awt.Dimension(72, 36));
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 250, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, 250, -1));
 
-        jButton3.setBackground(new java.awt.Color(0, 0, 0,0));
-        jButton3.setFont(new java.awt.Font("Lucida Bright", 0, 10)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(51, 51, 51));
+        jButton3.setFont(new java.awt.Font("Poppins", 0, 12)); // NOI18N
         jButton3.setForeground(new java.awt.Color(51, 153, 255));
         jButton3.setText("Forgotten your password?");
         jButton3.setBorder(null);
@@ -131,23 +134,27 @@ public class logInPage extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 140, -1));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 160, -1));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/teamwork (3).png"))); // NOI18N
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, -1, -1));
 
+        jtextFieldP1.setMinimumSize(new java.awt.Dimension(64, 28));
         jtextFieldP1.setPlaceHolder("Enter your UserID");
-        jPanel1.add(jtextFieldP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 250, 30));
+        jtextFieldP1.setPreferredSize(new java.awt.Dimension(64, 28));
+        jPanel1.add(jtextFieldP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 250, 30));
 
+        jPasswordFieldP1.setMinimumSize(new java.awt.Dimension(64, 28));
         jPasswordFieldP1.setPlaceHolder("Enter your Password");
-        jPanel1.add(jPasswordFieldP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 250, 30));
+        jPasswordFieldP1.setPreferredSize(new java.awt.Dimension(64, 28));
+        jPanel1.add(jPasswordFieldP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, 250, 30));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 110, 370, 350));
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 110, 370, 360));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 560));
 
         jLabel1.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Default.LAPTOP-JISTTHH9\\Downloads\\background.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bg.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1250, 560));
 
         pack();

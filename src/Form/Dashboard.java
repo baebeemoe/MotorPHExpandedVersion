@@ -2312,11 +2312,11 @@ dbManager = new DatabaseManager();
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payslip_mph.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
                    
 //                String payperiodID = rs.getString("PayslipNo");
 //                String employeeID = rs.getString("EmployeeID");
@@ -2357,11 +2357,11 @@ dbManager = new DatabaseManager();
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payslip_mph.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
                      
 //                String payperiodID = rs.getString("PayslipNo");
 //                String employeeID = rs.getString("EmployeeID");
@@ -2423,11 +2423,11 @@ dbManager = new DatabaseManager();
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payslip_mph.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
 //                String payperiodID = rs.getString("PayslipNo");
 //                String employeeID = rs.getString("EmployeeID");
 //                String name  = rs.getString("Name");
@@ -2467,7 +2467,7 @@ dbManager = new DatabaseManager();
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payslip_mph.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
 //                String payperiodID = rs.getString("PayslipNo");
 //                String employeeID = rs.getString("EmployeeID");
@@ -2477,7 +2477,7 @@ dbManager = new DatabaseManager();
 //                String position = rs.getString("Position_Department");
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
                 
                 Map<String, Object> parameters = new HashMap<>();
                 parameters.put("EmployeeID", empID);
@@ -2512,11 +2512,11 @@ dbManager = new DatabaseManager();
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payslip_mph.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
                 
                 Map<String, Object> parameters = new HashMap<>();
                 parameters.put("EmployeeID", empID);
@@ -2550,11 +2550,11 @@ dbManager = new DatabaseManager();
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payslip_mph.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payslip_mph.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
                 
                 Map<String, Object> parameters = new HashMap<>();
                 parameters.put("EmployeeID", empID);

@@ -938,11 +938,11 @@ displayPayslipDetails(payslipNo, payslipr);        // TODO add your handling cod
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payroll_summary.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payroll_summary.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
                 
                 Map<String, Object> parameters = new HashMap<>();                
                 parameters.put("MonthlyPeriodID", month);
@@ -967,11 +967,11 @@ displayPayslipDetails(payslipNo, payslipr);        // TODO add your handling cod
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payroll_summary.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payroll_summary.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
                 
                 Map<String, Object> parameters = new HashMap<>();                
                 parameters.put("MonthlyPeriodID", month);
@@ -996,11 +996,11 @@ displayPayslipDetails(payslipNo, payslipr);        // TODO add your handling cod
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payroll_summary.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payroll_summary.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
                 
                 Map<String, Object> parameters = new HashMap<>();                
                 parameters.put("MonthlyPeriodID", month);
@@ -1025,11 +1025,11 @@ displayPayslipDetails(payslipNo, payslipr);        // TODO add your handling cod
             // Get the application's directory
                 File currentDir = new File(System.getProperty("user.dir"));
                 
-                String reportPath = new File(currentDir, "src/Reports/payroll_summary.jrxml").getAbsolutePath();
+                String reportPath = new File(currentDir, "reports/payroll_summary.jrxml").getAbsolutePath();
                 JasperReport jr = JasperCompileManager.compileReport(reportPath);
                 
                 // Set the path to the image
-                String imagePath = new File(currentDir, "src/Reports/mph_logo.png").getAbsolutePath();
+                String imagePath = new File(currentDir, "reports/mph_logo.png").getAbsolutePath();
                 
                 Map<String, Object> parameters = new HashMap<>();                
                 parameters.put("MonthlyPeriodID", month);
