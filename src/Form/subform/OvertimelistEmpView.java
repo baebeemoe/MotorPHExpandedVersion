@@ -52,6 +52,7 @@ public class OvertimelistEmpView extends javax.swing.JFrame {
         jScrollPane1.setViewportView(overtimeTable);
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Overtime List");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
