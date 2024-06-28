@@ -556,21 +556,21 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        jLabel12.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel12.setBackground(new java.awt.Color(33, 35, 39));
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("PayPeriod ID");
         jLabel12.setOpaque(true);
 
-        jLabel16.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel16.setBackground(new java.awt.Color(33, 35, 39));
         jLabel16.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Start Date");
         jLabel16.setOpaque(true);
 
-        jLabel17.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel17.setBackground(new java.awt.Color(33, 35, 39));
         jLabel17.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -596,7 +596,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel44.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel44.setText("2022-09-30");
         jLabel44.setOpaque(true);
-        jLabel44.setPreferredSize(new java.awt.Dimension(58, 16));
 
         jLabel45.setBackground(new java.awt.Color(255, 255, 255));
         jLabel45.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -614,13 +613,11 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel47.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel47.setText("2022-10-15");
         jLabel47.setOpaque(true);
-        jLabel47.setPreferredSize(new java.awt.Dimension(58, 16));
 
         jLabel48.setBackground(new java.awt.Color(255, 255, 255));
         jLabel48.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel48.setText("2022-09-15");
         jLabel48.setOpaque(true);
-        jLabel48.setPreferredSize(new java.awt.Dimension(58, 16));
 
         jLabel49.setBackground(new java.awt.Color(255, 255, 255));
         jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -639,7 +636,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel51.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel51.setText("2022-10-31");
         jLabel51.setOpaque(true);
-        jLabel51.setPreferredSize(new java.awt.Dimension(58, 16));
 
         jLabel52.setBackground(new java.awt.Color(204, 204, 204));
         jLabel52.setForeground(new java.awt.Color(0, 0, 0));
@@ -671,14 +667,12 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel57.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel57.setText("2022-11-15");
         jLabel57.setOpaque(true);
-        jLabel57.setPreferredSize(new java.awt.Dimension(58, 16));
 
         jLabel58.setBackground(new java.awt.Color(204, 204, 204));
         jLabel58.setForeground(new java.awt.Color(0, 0, 0));
         jLabel58.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel58.setText("2022-11-30");
         jLabel58.setOpaque(true);
-        jLabel58.setPreferredSize(new java.awt.Dimension(58, 16));
 
         jLabel59.setBackground(new java.awt.Color(204, 204, 204));
         jLabel59.setForeground(new java.awt.Color(0, 0, 0));
@@ -748,7 +742,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
-        jLabel61.setBackground(new java.awt.Color(51, 51, 51));
+        jLabel61.setBackground(new java.awt.Color(33, 35, 39));
         jLabel61.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel61.setForeground(new java.awt.Color(255, 255, 255));
         jLabel61.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
