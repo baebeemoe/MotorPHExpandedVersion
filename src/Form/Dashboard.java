@@ -2680,8 +2680,8 @@ dbManager = new DatabaseManager();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void supervisorRolebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_supervisorRolebtnActionPerformed
-RequestsforApproval req = new  RequestsforApproval(); 
-req.setVisible(true);
+        RequestsforApproval req = new  RequestsforApproval(); 
+        req.setVisible(true);
 
 // TODO add your handling code here:
     }//GEN-LAST:event_supervisorRolebtnActionPerformed

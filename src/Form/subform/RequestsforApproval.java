@@ -37,6 +37,9 @@ public class RequestsforApproval extends javax.swing.JFrame {
      */
     public RequestsforApproval() {
         initComponents();
+        OvertimePanel.setVisible(true);
+        leavePanel.setVisible(false);
+        displayOTPanel();
     }
 
     /**
@@ -48,14 +51,14 @@ public class RequestsforApproval extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        OvertimePanel = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        OvertimeTable = new javax.swing.JTable();
-        overtimeSaveBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         overtimerequestbtn = new javax.swing.JButton();
         leaverequestsbtn = new javax.swing.JButton();
+        OvertimePanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        OvertimeTable = new javax.swing.JTable();
+        overtimeSaveBtn = new javax.swing.JButton();
         leavePanel = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         LeaveTable = new javax.swing.JTable();
@@ -63,55 +66,6 @@ public class RequestsforApproval extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        OvertimePanel.setBackground(new java.awt.Color(51, 51, 51));
-        OvertimePanel.setPreferredSize(new java.awt.Dimension(464, 510));
-
-        OvertimeTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "OT Request ID", "Employee ID", "Date Filed", "Selected Date", "Start Time", "End Time", "Accumulated OT", "Reason", "remarks"
-            }
-        ));
-        jScrollPane1.setViewportView(OvertimeTable);
-
-        overtimeSaveBtn.setBackground(new java.awt.Color(255, 153, 0));
-        overtimeSaveBtn.setForeground(new java.awt.Color(255, 255, 255));
-        overtimeSaveBtn.setText("Save");
-        overtimeSaveBtn.setBorderPainted(false);
-        overtimeSaveBtn.setPreferredSize(new java.awt.Dimension(72, 28));
-        overtimeSaveBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                overtimeSaveBtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout OvertimePanelLayout = new javax.swing.GroupLayout(OvertimePanel);
-        OvertimePanel.setLayout(OvertimePanelLayout);
-        OvertimePanelLayout.setHorizontalGroup(
-            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(OvertimePanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(overtimeSaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1213, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(11, Short.MAX_VALUE))
-        );
-        OvertimePanelLayout.setVerticalGroup(
-            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(OvertimePanelLayout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(overtimeSaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        getContentPane().add(OvertimePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1230, 510));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -145,6 +99,58 @@ public class RequestsforApproval extends javax.swing.JFrame {
         });
         jPanel1.add(leaverequestsbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 30, 120, -1));
 
+        OvertimePanel.setBackground(new java.awt.Color(51, 51, 51));
+        OvertimePanel.setPreferredSize(new java.awt.Dimension(464, 510));
+
+        OvertimeTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "OT Request ID", "Employee ID", "Date Filed", "Selected Date", "Start Time", "End Time", "Accumulated OT", "Reason", "remarks"
+            }
+        ));
+        jScrollPane1.setViewportView(OvertimeTable);
+
+        overtimeSaveBtn.setBackground(new java.awt.Color(255, 153, 0));
+        overtimeSaveBtn.setForeground(new java.awt.Color(255, 255, 255));
+        overtimeSaveBtn.setText("Save");
+        overtimeSaveBtn.setBorderPainted(false);
+        overtimeSaveBtn.setPreferredSize(new java.awt.Dimension(72, 28));
+        overtimeSaveBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                overtimeSaveBtnActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout OvertimePanelLayout = new javax.swing.GroupLayout(OvertimePanel);
+        OvertimePanel.setLayout(OvertimePanelLayout);
+        OvertimePanelLayout.setHorizontalGroup(
+            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OvertimePanelLayout.createSequentialGroup()
+                .addGroup(OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(OvertimePanelLayout.createSequentialGroup()
+                        .addGap(1147, 1147, 1147)
+                        .addComponent(overtimeSaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(OvertimePanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1213, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(11, Short.MAX_VALUE))
+        );
+        OvertimePanelLayout.setVerticalGroup(
+            OvertimePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(OvertimePanelLayout.createSequentialGroup()
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(overtimeSaveBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        jPanel1.add(OvertimePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1230, 510));
+
         leavePanel.setBackground(new java.awt.Color(51, 51, 51));
 
         LeaveTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -160,7 +166,11 @@ public class RequestsforApproval extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(LeaveTable);
 
+        savebtn.setBackground(new java.awt.Color(255, 153, 0));
+        savebtn.setForeground(new java.awt.Color(255, 255, 255));
         savebtn.setText("Save");
+        savebtn.setBorderPainted(false);
+        savebtn.setPreferredSize(new java.awt.Dimension(72, 28));
         savebtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 savebtnActionPerformed(evt);
@@ -176,17 +186,17 @@ public class RequestsforApproval extends javax.swing.JFrame {
                 .addGroup(leavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(leavePanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(savebtn))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1218, Short.MAX_VALUE))
+                        .addComponent(savebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         leavePanelLayout.setVerticalGroup(
             leavePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(leavePanelLayout.createSequentialGroup()
-                .addContainerGap(18, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(savebtn)
+                .addComponent(savebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -199,68 +209,8 @@ public class RequestsforApproval extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void overtimerequestbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_overtimerequestbtnActionPerformed
-
-    dbManager = new DatabaseManager();
-    con = dbManager.getConnection();
-        
+        displayOTPanel();
     
-     try {
-       String query = "SELECT * FROM overtimeapplication ";
-        PreparedStatement pstmt = con.prepareStatement(query);
-     
-        
-        // Execute the query
-      
-             
-           try (ResultSet resultSet = pstmt.executeQuery()) {
-            DefaultTableModel tableModel = (DefaultTableModel) OvertimeTable.getModel();
-            
-            // Clear existing data
-            tableModel.setRowCount(0);
-            
-            // Get column names if not already set
-            if (tableModel.getColumnCount() == 0) {
-                int columnCount = resultSet.getMetaData().getColumnCount();
-                Vector<String> columnNames = new Vector<>();
-                for (int i = 1; i <= columnCount; i++) {
-                    columnNames.add(resultSet.getMetaData().getColumnName(i));
-                }
-                tableModel.setColumnIdentifiers(columnNames);
-            }
-
-            // Get rows
-            while (resultSet.next()) {
-                Vector<Object> row = new Vector<>();
-                row.add(resultSet.getInt("overtimerequestID")); // Assuming leaveapplicationID is an int
-                row.add(resultSet.getString("employeeID"));
-                row.add(resultSet.getDate("datefiled")); // Assuming datefiled is a Date type in your database
-                row.add(resultSet.getString("date"));
-                row.add(resultSet.getDate("starttime")); // Assuming startdate is a Date type in your database
-                row.add(resultSet.getDate("endtime")); // Assuming enddate is a Date type in your database
-                row.add(resultSet.getString("accumulatedovertime"));
-                row.add(resultSet.getString("reason"));
-                row.add(resultSet.getString("remarks"));
-                tableModel.addRow(row);
-            }
-            
-            // Find remarks column index
-        int remarksColumnIndex = tableModel.findColumn("remarks");
-        if (remarksColumnIndex != -1) {
-            // Set custom renderer and editor for remarks column
-            OvertimeTable.getColumnModel().getColumn(remarksColumnIndex).setCellRenderer(new ComboBoxRenderer());
-            OvertimeTable.getColumnModel().getColumn(remarksColumnIndex).setCellEditor(new ComboBoxEditor());
-        } else {
-            System.err.println("Column 'remarks' not found in table model.");
-        }
-
-            leavePanel.setVisible(false);
-            OvertimePanel.setVisible(true);
-        }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
 
         // TODO add your handling code here:
     }//GEN-LAST:event_overtimerequestbtnActionPerformed
@@ -328,6 +278,69 @@ public class RequestsforApproval extends javax.swing.JFrame {
      
     }//GEN-LAST:event_leaverequestsbtnActionPerformed
 
+    private void displayOTPanel(){
+        dbManager = new DatabaseManager();
+    con = dbManager.getConnection();
+        
+    
+     try {
+       String query = "SELECT * FROM overtimeapplication ";
+        PreparedStatement pstmt = con.prepareStatement(query);
+     
+        
+        // Execute the query
+      
+             
+           try (ResultSet resultSet = pstmt.executeQuery()) {
+            DefaultTableModel tableModel = (DefaultTableModel) OvertimeTable.getModel();
+            
+            // Clear existing data
+            tableModel.setRowCount(0);
+            
+            // Get column names if not already set
+            if (tableModel.getColumnCount() == 0) {
+                int columnCount = resultSet.getMetaData().getColumnCount();
+                Vector<String> columnNames = new Vector<>();
+                for (int i = 1; i <= columnCount; i++) {
+                    columnNames.add(resultSet.getMetaData().getColumnName(i));
+                }
+                tableModel.setColumnIdentifiers(columnNames);
+            }
+
+            // Get rows
+            while (resultSet.next()) {
+                Vector<Object> row = new Vector<>();
+                row.add(resultSet.getInt("overtimerequestID")); // Assuming leaveapplicationID is an int
+                row.add(resultSet.getString("employeeID"));
+                row.add(resultSet.getDate("datefiled")); // Assuming datefiled is a Date type in your database
+                row.add(resultSet.getString("date"));
+                row.add(resultSet.getDate("starttime")); // Assuming startdate is a Date type in your database
+                row.add(resultSet.getDate("endtime")); // Assuming enddate is a Date type in your database
+                row.add(resultSet.getString("accumulatedovertime"));
+                row.add(resultSet.getString("reason"));
+                row.add(resultSet.getString("remarks"));
+                tableModel.addRow(row);
+            }
+            
+            // Find remarks column index
+        int remarksColumnIndex = tableModel.findColumn("remarks");
+        if (remarksColumnIndex != -1) {
+            // Set custom renderer and editor for remarks column
+            OvertimeTable.getColumnModel().getColumn(remarksColumnIndex).setCellRenderer(new ComboBoxRenderer());
+            OvertimeTable.getColumnModel().getColumn(remarksColumnIndex).setCellEditor(new ComboBoxEditor());
+        } else {
+            System.err.println("Column 'remarks' not found in table model.");
+        }
+
+            leavePanel.setVisible(false);
+            OvertimePanel.setVisible(true);
+        }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Dashboard.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
     private void savebtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savebtnActionPerformed
 
 dbManager = new DatabaseManager();
