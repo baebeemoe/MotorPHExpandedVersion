@@ -123,6 +123,9 @@ public class OvertimeRequestForm extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Employee ID:");
 
+        employeeid.setForeground(new java.awt.Color(255, 255, 255));
+        employeeid.setText("00000");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(

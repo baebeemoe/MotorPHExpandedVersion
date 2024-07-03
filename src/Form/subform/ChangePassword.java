@@ -58,8 +58,10 @@ public class ChangePassword extends javax.swing.JFrame {
 
         newpassword.setPreferredSize(new java.awt.Dimension(0, 28));
 
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Enter new password");
 
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Confirm Password");
 
         confirmedPassword.setPreferredSize(new java.awt.Dimension(0, 28));

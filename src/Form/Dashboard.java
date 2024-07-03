@@ -286,6 +286,7 @@ public class Dashboard extends javax.swing.JFrame {
         dashboardempNolbl = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
@@ -1695,22 +1696,36 @@ public class Dashboard extends javax.swing.JFrame {
 
         jPanel3.add(DashboardPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 19, 971, -1));
 
-        jLabel4.setFont(new java.awt.Font("Poppins SemiBold", 1, 21)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Poppins SemiBold", 1, 23)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("People Portal");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 75, -1, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, 180, 40));
 
-        jLabel3.setFont(new java.awt.Font("Poppins SemiBold", 1, 32)); // NOI18N
+        jPanel15.setOpaque(false);
+        jPanel15.setLayout(new java.awt.GridBagLayout());
+
+        jLabel3.setFont(new java.awt.Font("Poppins SemiBold", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("PH");
         jLabel3.setIconTextGap(0);
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 33, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel15.add(jLabel3, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Poppins SemiBold", 1, 32)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Poppins SemiBold", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Motor");
         jLabel2.setIconTextGap(0);
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 33, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel15.add(jLabel2, gridBagConstraints);
+
+        jPanel3.add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(255, 153, 0));
         jSeparator1.setForeground(new java.awt.Color(255, 153, 0));
@@ -2965,6 +2980,7 @@ dbManager = new DatabaseManager();
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
