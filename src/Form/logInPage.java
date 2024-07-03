@@ -84,20 +84,23 @@ public class logInPage extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Lucida Bright", 1, 80)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Motor");
+        jLabel2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel2.setIconTextGap(0);
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 145, 250, -1));
 
         jLabel3.setFont(new java.awt.Font("Lucida Bright", 1, 80)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("PH");
+        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jLabel3.setIconTextGap(0);
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(398, 155, -1, 80));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 140, -1, 100));
 
-        jLabel8.setBackground(new java.awt.Color(255, 153, 51));
+        jLabel8.setBackground(new java.awt.Color(51, 51, 51));
         jLabel8.setFont(new java.awt.Font("Poppins SemiBold", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("SIGN IN");
+        jLabel8.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 153, 51)));
         jLabel8.setOpaque(true);
         jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 80, 180, 50));
 
@@ -106,8 +109,8 @@ public class logInPage extends javax.swing.JFrame {
         jPanel1.setToolTipText("");
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(255, 102, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        jButton1.setBackground(new java.awt.Color(255, 153, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Log in");
         jButton1.setBorderPainted(false);

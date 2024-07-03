@@ -176,7 +176,7 @@ public class IncidentReportsForm extends javax.swing.JFrame {
         // Construct the SQL UPDATE statement
         String updateSql = "UPDATE incidentreports SET employeeID = ?, date = ?, issue = ?, description = ?, status = ? WHERE incidentreportID = ?";
 
-        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/newdummy", "root", "");
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/newdummy", "root", "");
              PreparedStatement stmt = con.prepareStatement(updateSql)) {
 
             // Set parameters for the prepared statement

@@ -4,6 +4,7 @@
  */
 package Form.subform;
 
+import Methods.DatabaseManager;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -99,7 +100,7 @@ public class UserForm extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "userID", "employeeID", "password", "roleID"
+                "User ID", "Employee ID", "Password", "Role ID"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -176,27 +177,31 @@ public class UserForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       int selectedRow = jTable2.getSelectedRow();
+        int selectedRow = jTable2.getSelectedRow();
     
     if (selectedRow != -1) {
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
         
         // Get the values from the selected row
-        int userID = (int) model.getValueAt(selectedRow, 0); // assuming userID is in the first column
-        String employeeID = (String) model.getValueAt(selectedRow, 1);
-        String password = (String) model.getValueAt(selectedRow, 2);
-        String roleID = (String) model.getValueAt(selectedRow, 3);
-
+        int userID = Integer.parseInt(model.getValueAt(selectedRow, 0).toString()); // assuming userID is in the first column
+        int employeeID = Integer.parseInt(model.getValueAt(selectedRow, 1).toString());
+        String password = model.getValueAt(selectedRow, 2).toString();
+        int roleID = Integer.parseInt(model.getValueAt(selectedRow, 3).toString());
+        
+        // Show confirmation dialog
+        int response = JOptionPane.showConfirmDialog(this, "Are you sure you want to update this record?", "Confirm Update", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        
+        if (response == JOptionPane.YES_OPTION) {
         // Construct the SQL UPDATE statement
         String updateSql = "UPDATE user SET employeeID = ?, password = ?, roleID = ? WHERE userID = ?";
 
-        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/newdummy", "root", "");
+        try (Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/newdummy", "root", "");
              PreparedStatement stmt = con.prepareStatement(updateSql)) {
 
             // Set parameters for the prepared statement
-            stmt.setString(1, employeeID);
+            stmt.setInt(1, employeeID);
             stmt.setString(2, password);
-            stmt.setString(3, roleID);
+            stmt.setInt(3, roleID);
             stmt.setInt(4, userID);
 
             // Execute the update
@@ -210,6 +215,8 @@ public class UserForm extends javax.swing.JFrame {
 
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(this, "Error updating record: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            e.printStackTrace();
+        }
         }
     } else {
         JOptionPane.showMessageDialog(this, "Please select a row to update.", "No Row Selected", JOptionPane.WARNING_MESSAGE);
