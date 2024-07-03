@@ -305,6 +305,7 @@ public void setBasicSalaryComboBox(String basicSalaryID) {
         TIN.setPlaceHolder("TIN");
 
         savebtn.setBackground(new java.awt.Color(255, 153, 0));
+        savebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         savebtn.setForeground(new java.awt.Color(255, 255, 255));
         savebtn.setText("Save");
         savebtn.setBorderPainted(false);

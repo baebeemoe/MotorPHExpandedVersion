@@ -65,6 +65,7 @@ public class ChangePassword extends javax.swing.JFrame {
         confirmedPassword.setPreferredSize(new java.awt.Dimension(0, 28));
 
         updatePasswordbtn.setBackground(new java.awt.Color(255, 153, 0));
+        updatePasswordbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         updatePasswordbtn.setForeground(new java.awt.Color(255, 255, 255));
         updatePasswordbtn.setText("Update Password");
         updatePasswordbtn.setBorderPainted(false);

@@ -114,6 +114,7 @@ public class UserForm extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable2);
 
         jButton1.setBackground(new java.awt.Color(255, 153, 0));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Save");
         jButton1.setBorderPainted(false);

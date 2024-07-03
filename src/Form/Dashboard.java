@@ -391,7 +391,6 @@ public class Dashboard extends javax.swing.JFrame {
         timeOutbtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 18)); // NOI18N
         timeOutbtn.setForeground(new java.awt.Color(255, 255, 255));
         timeOutbtn.setText("Time out");
-        timeOutbtn.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 0), 3));
         timeOutbtn.setBorderPainted(false);
         timeOutbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1864,7 +1863,8 @@ public class Dashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_timeInbtnActionPerformed
 
     private void logoutbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutbtnActionPerformed
-Attendance att = new Attendance();
+    Attendance att = new Attendance();
+    logInPage login = new logInPage();
     String employeeID = dashboardempNolbl.getText();
     String currentDate = att.getCurrentDateFormatted();
     
@@ -1875,6 +1875,7 @@ Attendance att = new Attendance();
         int dialogResult = JOptionPane.showConfirmDialog(this, "Are you sure you want to log out?", "Confirmation", JOptionPane.YES_NO_OPTION);
         if (dialogResult == JOptionPane.YES_OPTION)
         this.dispose();
+        login.show();
     } else {
         // Show an error message indicating that the employee has not punched out yet
         JOptionPane.showMessageDialog(this, "You have not punched out yet. Please punch out before logging out.", "Error", JOptionPane.ERROR_MESSAGE);

@@ -76,6 +76,7 @@ public class RequestsforApproval extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         overtimerequestbtn.setBackground(new java.awt.Color(255, 153, 0));
+        overtimerequestbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         overtimerequestbtn.setForeground(new java.awt.Color(255, 255, 255));
         overtimerequestbtn.setText("Overtime Requests");
         overtimerequestbtn.setBorderPainted(false);
@@ -88,6 +89,7 @@ public class RequestsforApproval extends javax.swing.JFrame {
         jPanel1.add(overtimerequestbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 30, -1, -1));
 
         leaverequestsbtn.setBackground(new java.awt.Color(255, 153, 0));
+        leaverequestsbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         leaverequestsbtn.setForeground(new java.awt.Color(255, 255, 255));
         leaverequestsbtn.setText("Leave Requests");
         leaverequestsbtn.setBorderPainted(false);
@@ -116,6 +118,7 @@ public class RequestsforApproval extends javax.swing.JFrame {
         jScrollPane1.setViewportView(OvertimeTable);
 
         overtimeSaveBtn.setBackground(new java.awt.Color(255, 153, 0));
+        overtimeSaveBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         overtimeSaveBtn.setForeground(new java.awt.Color(255, 255, 255));
         overtimeSaveBtn.setText("Save");
         overtimeSaveBtn.setBorderPainted(false);
