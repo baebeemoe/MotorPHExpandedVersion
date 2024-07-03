@@ -721,6 +721,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel60.setOpaque(true);
         jLabel60.setPreferredSize(new java.awt.Dimension(36, 36));
 
+        viewbtn400001.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewbtn400001.setText("View");
         viewbtn400001.setBorder(null);
         viewbtn400001.addActionListener(new java.awt.event.ActionListener() {
@@ -730,6 +731,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         viewbtn400002.setBackground(new java.awt.Color(204, 204, 204));
+        viewbtn400002.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewbtn400002.setForeground(new java.awt.Color(0, 0, 0));
         viewbtn400002.setText("View");
         viewbtn400002.setBorder(null);
@@ -739,6 +741,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        viewbtn400003.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewbtn400003.setText("View");
         viewbtn400003.setBorder(null);
         viewbtn400003.addActionListener(new java.awt.event.ActionListener() {
@@ -748,6 +751,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         viewbtn400004.setBackground(new java.awt.Color(204, 204, 204));
+        viewbtn400004.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewbtn400004.setForeground(new java.awt.Color(0, 0, 0));
         viewbtn400004.setText("View");
         viewbtn400004.setBorder(null);
@@ -757,6 +761,7 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        viewbtn400005.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewbtn400005.setText("View");
         viewbtn400005.setBorder(null);
         viewbtn400005.addActionListener(new java.awt.event.ActionListener() {
@@ -766,6 +771,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         viewbtn400006.setBackground(new java.awt.Color(204, 204, 204));
+        viewbtn400006.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         viewbtn400006.setForeground(new java.awt.Color(0, 0, 0));
         viewbtn400006.setText("View");
         viewbtn400006.setBorder(null);
@@ -835,11 +841,11 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(viewbtn400003, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(viewbtn400004, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(viewbtn400005, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(viewbtn400006, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                    .addComponent(viewbtn400006, javax.swing.GroupLayout.DEFAULT_SIZE, 242, Short.MAX_VALUE)
                     .addComponent(jLabel61, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(viewbtn400001, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(viewbtn400002, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(33, 33, 33))
+                .addGap(28, 28, 28))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -899,7 +905,10 @@ public class Dashboard extends javax.swing.JFrame {
 
         LeavePanel.setBackground(new java.awt.Color(33, 35, 39));
         LeavePanel.setPreferredSize(new java.awt.Dimension(880, 440));
-        LeavePanel.setLayout(new java.awt.GridBagLayout());
+        java.awt.GridBagLayout LeavePanelLayout = new java.awt.GridBagLayout();
+        LeavePanelLayout.columnWidths = new int[] {0, 16, 0};
+        LeavePanelLayout.rowHeights = new int[] {0, 16, 0};
+        LeavePanel.setLayout(LeavePanelLayout);
 
         jLabel111.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel111.setForeground(new java.awt.Color(255, 255, 255));
@@ -908,7 +917,6 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(24, 16, 0, 0);
         LeavePanel.add(jLabel111, gridBagConstraints);
 
         jLabel115.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -918,11 +926,10 @@ public class Dashboard extends javax.swing.JFrame {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(24, 18, 0, 0);
         LeavePanel.add(jLabel115, gridBagConstraints);
 
         jPanel11.setBackground(new java.awt.Color(51, 51, 51));
-        jPanel11.setPreferredSize(new java.awt.Dimension(451, 360));
+        jPanel11.setPreferredSize(new java.awt.Dimension(422, 360));
 
         jLabel112.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel112.setForeground(new java.awt.Color(255, 255, 255));
@@ -952,6 +959,7 @@ public class Dashboard extends javax.swing.JFrame {
         LeavePanelReason.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         LeavePanelSubmitButton.setBackground(new java.awt.Color(255, 153, 0));
+        LeavePanelSubmitButton.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         LeavePanelSubmitButton.setForeground(new java.awt.Color(255, 255, 255));
         LeavePanelSubmitButton.setText("Submit");
         LeavePanelSubmitButton.setBorderPainted(false);
@@ -971,7 +979,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(16, 16, 16)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel11Layout.createSequentialGroup()
                         .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -990,7 +998,7 @@ public class Dashboard extends javax.swing.JFrame {
                                 .addComponent(jLabel63, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addContainerGap(16, Short.MAX_VALUE))))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1016,20 +1024,17 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(LeavePanelReason, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(LeavePanelSubmitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 14;
-        gridBagConstraints.ipady = 29;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 16, 25, 0);
         LeavePanel.add(jPanel11, gridBagConstraints);
 
         jPanel12.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel12.setPreferredSize(new java.awt.Dimension(422, 360));
 
         jLabel117.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel117.setForeground(new java.awt.Color(255, 255, 255));
@@ -1048,6 +1053,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel116.setText("Vacation Leave");
 
         jButton2.setBackground(new java.awt.Color(255, 153, 0));
+        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Leave List");
         jButton2.setBorderPainted(false);
@@ -1070,13 +1076,14 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(73, 73, 73))
             .addGroup(jPanel12Layout.createSequentialGroup()
                 .addGap(46, 46, 46)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel12Layout.createSequentialGroup()
-                        .addComponent(leaveSickLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(leaveVacationLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addComponent(leaveSickLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50)
+                .addComponent(leaveVacationLeaveBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1089,19 +1096,15 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel117, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel116))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 88, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35))
         );
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.ipadx = 45;
-        gridBagConstraints.ipady = 82;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 18, 25, 16);
         LeavePanel.add(jPanel12, gridBagConstraints);
 
         jPanel3.add(LeavePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 125, 970, -1));
@@ -1128,6 +1131,7 @@ public class Dashboard extends javax.swing.JFrame {
         jScrollPane1.setViewportView(attendanceTable);
 
         attendanceRequestOvertimebtn.setBackground(new java.awt.Color(255, 153, 0));
+        attendanceRequestOvertimebtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         attendanceRequestOvertimebtn.setForeground(new java.awt.Color(255, 255, 255));
         attendanceRequestOvertimebtn.setText("Request Overtime");
         attendanceRequestOvertimebtn.setBorderPainted(false);
@@ -1141,6 +1145,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         jButton4.setBackground(new java.awt.Color(255, 153, 0));
+        jButton4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Overtime Request List");
         jButton4.setBorderPainted(false);
@@ -1166,11 +1171,11 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 916, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(AttendancePanelLayout.createSequentialGroup()
-                        .addComponent(attendanceRequestOvertimebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(attendanceRequestOvertimebtn, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel11))
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         AttendancePanelLayout.setVerticalGroup(
             AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1180,9 +1185,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(attendanceRequestOvertimebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(AttendancePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(attendanceRequestOvertimebtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(14, 14, 14))
         );
 
@@ -1288,6 +1293,7 @@ public class Dashboard extends javax.swing.JFrame {
         profilePhilhealthNo.setForeground(new java.awt.Color(255, 255, 255));
 
         profileChangePasswordbtn.setBackground(new java.awt.Color(255, 153, 0));
+        profileChangePasswordbtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         profileChangePasswordbtn.setForeground(new java.awt.Color(255, 255, 255));
         profileChangePasswordbtn.setText("Change Password");
         profileChangePasswordbtn.setBorderPainted(false);
@@ -1326,7 +1332,7 @@ public class Dashboard extends javax.swing.JFrame {
                             .addComponent(profilePhilhealthNo, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(50, 50, 50))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                        .addComponent(profileChangePasswordbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(profileChangePasswordbtn, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14))))
         );
         jPanel9Layout.setVerticalGroup(
