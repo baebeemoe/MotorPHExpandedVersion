@@ -17,6 +17,8 @@ import Methods.Attendance;
 import Methods.DatabaseManager;
 import com.formdev.flatlaf.FlatLightLaf;
 import com.sun.jdi.connect.spi.Connection;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.File;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -37,6 +39,7 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.Timer;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -62,6 +65,17 @@ public class Dashboard extends javax.swing.JFrame {
 
     public Dashboard() {
         initComponents();
+        // Update the time initially
+        updateTime();
+        
+        // Create a timer that updates the time every second
+        timer = new Timer(1000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                updateTime();
+            }
+        });
+        timer.start();
     }
     public String getEmployeeID() {
         return employeeID;
@@ -122,7 +136,11 @@ public class Dashboard extends javax.swing.JFrame {
         
     } 
     
-    
+    private void updateTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss a");
+        String currentTime = sdf.format(new Date());
+        clockLbl.setText(currentTime);
+    }
     
     
     @SuppressWarnings("unchecked")
@@ -256,6 +274,7 @@ public class Dashboard extends javax.swing.JFrame {
         btnAttendance = new javax.swing.JButton();
         btnLeave = new javax.swing.JButton();
         btnPayslip = new javax.swing.JButton();
+        clockLbl = new javax.swing.JLabel();
         DashboardPanel = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
@@ -1547,6 +1566,13 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        clockLbl.setBackground(new java.awt.Color(9, 11, 15));
+        clockLbl.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        clockLbl.setForeground(new java.awt.Color(255, 153, 0));
+        clockLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clockLbl.setText("00:00:00");
+        clockLbl.setPreferredSize(new java.awt.Dimension(43, 32));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -1554,11 +1580,13 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAttendance, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
-                    .addComponent(btnLeave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnPayslip, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(clockLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(btnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnAttendance, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
+                        .addComponent(btnLeave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnPayslip, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -1574,7 +1602,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(btnLeave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnPayslip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(87, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(clockLbl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 125, -1, -1));
@@ -1695,7 +1725,8 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
     
     public void applyRoleRestrictions(int roleID) {
         switch (roleID) {
@@ -2830,7 +2861,8 @@ dbManager = new DatabaseManager();
             }
         });
     }
-
+    
+    private javax.swing.Timer timer;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AttendancePanel;
     private javax.swing.JPanel DashboardPanel;
@@ -2848,6 +2880,7 @@ dbManager = new DatabaseManager();
     private javax.swing.JButton btnLeave;
     private javax.swing.JButton btnPayslip;
     private javax.swing.JButton btnProfile;
+    private javax.swing.JLabel clockLbl;
     private javax.swing.JLabel dashboardempNolbl;
     private javax.swing.JLabel dashboardfnamelbl;
     private javax.swing.JLabel departmentNamelbl;
