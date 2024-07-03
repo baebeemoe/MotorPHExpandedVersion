@@ -37,7 +37,6 @@ public class OvertimelistEmpView extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        overtimeTable.setBackground(new java.awt.Color(102, 102, 102));
         overtimeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},

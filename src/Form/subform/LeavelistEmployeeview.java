@@ -39,8 +39,7 @@ public class LeavelistEmployeeview extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        LeaveListTable.setBackground(new java.awt.Color(102, 102, 102));
-        LeaveListTable.setForeground(new java.awt.Color(255, 255, 255));
+        LeaveListTable.setForeground(new java.awt.Color(51, 51, 51));
         LeaveListTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},

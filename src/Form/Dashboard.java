@@ -285,10 +285,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         HomePanel.setBackground(new java.awt.Color(33, 35, 39));
         HomePanel.setPreferredSize(new java.awt.Dimension(880, 400));
-        java.awt.GridBagLayout HomePanelLayout = new java.awt.GridBagLayout();
-        HomePanelLayout.columnWidths = new int[] {0, 5, 0};
-        HomePanelLayout.rowHeights = new int[] {0, 10, 0};
-        HomePanel.setLayout(HomePanelLayout);
+        HomePanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(33, 35, 39));
         jPanel5.setPreferredSize(new java.awt.Dimension(600, 316));
@@ -462,13 +459,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(52, 52, 52))
         );
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = -80;
-        gridBagConstraints.ipady = -36;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE;
-        HomePanel.add(jPanel5, gridBagConstraints);
+        HomePanel.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 578, 280));
 
         jPanel13.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -499,7 +490,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel21)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel22)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel64)
@@ -522,23 +513,18 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel64)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipadx = 37;
-        gridBagConstraints.ipady = 30;
-        HomePanel.add(jPanel13, gridBagConstraints);
+        HomePanel.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 360, 340));
 
         jPanel14.setBackground(new java.awt.Color(33, 35, 39));
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         itRolebtn.setBackground(new java.awt.Color(255, 153, 0));
+        itRolebtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         itRolebtn.setForeground(new java.awt.Color(255, 255, 255));
         itRolebtn.setText("Incident Reports");
         itRolebtn.setBorderPainted(false);
@@ -550,9 +536,10 @@ public class Dashboard extends javax.swing.JFrame {
                 itRolebtnActionPerformed(evt);
             }
         });
-        jPanel14.add(itRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 540, 40));
+        jPanel14.add(itRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 530, 40));
 
         supervisorRolebtn.setBackground(new java.awt.Color(255, 153, 0));
+        supervisorRolebtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         supervisorRolebtn.setForeground(new java.awt.Color(255, 255, 255));
         supervisorRolebtn.setText("Requests Records");
         supervisorRolebtn.setBorderPainted(false);
@@ -561,9 +548,10 @@ public class Dashboard extends javax.swing.JFrame {
                 supervisorRolebtnActionPerformed(evt);
             }
         });
-        jPanel14.add(supervisorRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 540, 40));
+        jPanel14.add(supervisorRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 530, 40));
 
         hrRolebtn.setBackground(new java.awt.Color(255, 153, 0));
+        hrRolebtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         hrRolebtn.setForeground(new java.awt.Color(255, 255, 255));
         hrRolebtn.setText("Employee Records");
         hrRolebtn.setBorderPainted(false);
@@ -572,9 +560,10 @@ public class Dashboard extends javax.swing.JFrame {
                 hrRolebtnActionPerformed(evt);
             }
         });
-        jPanel14.add(hrRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 540, 40));
+        jPanel14.add(hrRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 530, 40));
 
         payrollRolebtn.setBackground(new java.awt.Color(255, 153, 0));
+        payrollRolebtn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         payrollRolebtn.setForeground(new java.awt.Color(255, 255, 255));
         payrollRolebtn.setText("Payroll Reports");
         payrollRolebtn.setBorderPainted(false);
@@ -583,13 +572,9 @@ public class Dashboard extends javax.swing.JFrame {
                 payrollRolebtnActionPerformed(evt);
             }
         });
-        jPanel14.add(payrollRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 540, 40));
+        jPanel14.add(payrollRolebtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 530, 40));
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
-        HomePanel.add(jPanel14, gridBagConstraints);
+        HomePanel.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 320, -1, -1));
 
         jPanel3.add(HomePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(262, 125, 971, -1));
 
@@ -1124,8 +1109,7 @@ public class Dashboard extends javax.swing.JFrame {
         AttendancePanel.setBackground(new java.awt.Color(33, 35, 39));
         AttendancePanel.setPreferredSize(new java.awt.Dimension(880, 400));
 
-        attendanceTable.setBackground(new java.awt.Color(51, 51, 51));
-        attendanceTable.setForeground(new java.awt.Color(255, 255, 255));
+        attendanceTable.setForeground(new java.awt.Color(51, 51, 51));
         attendanceTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -1343,7 +1327,7 @@ public class Dashboard extends javax.swing.JFrame {
                         .addGap(50, 50, 50))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
                         .addComponent(profileChangePasswordbtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(17, 17, 17))))
+                        .addGap(14, 14, 14))))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1489,6 +1473,7 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel2.setPreferredSize(new java.awt.Dimension(225, 400));
 
         btnHome.setBackground(new java.awt.Color(33, 35, 39));
+        btnHome.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnHome.setForeground(new java.awt.Color(255, 153, 0));
         btnHome.setText("Home");
         btnHome.setBorderPainted(false);
@@ -1502,6 +1487,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnProfile.setBackground(new java.awt.Color(9, 11, 15));
+        btnProfile.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnProfile.setForeground(new java.awt.Color(255, 255, 255));
         btnProfile.setText("Profile");
         btnProfile.setBorderPainted(false);
@@ -1515,6 +1501,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnAttendance.setBackground(new java.awt.Color(9, 11, 15));
+        btnAttendance.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnAttendance.setForeground(new java.awt.Color(255, 255, 255));
         btnAttendance.setText("Attendance");
         btnAttendance.setBorderPainted(false);
@@ -1528,6 +1515,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnLeave.setBackground(new java.awt.Color(9, 11, 15));
+        btnLeave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnLeave.setForeground(new java.awt.Color(255, 255, 255));
         btnLeave.setText("Leave");
         btnLeave.setBorderPainted(false);
@@ -1541,6 +1529,7 @@ public class Dashboard extends javax.swing.JFrame {
         });
 
         btnPayslip.setBackground(new java.awt.Color(9, 11, 15));
+        btnPayslip.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnPayslip.setForeground(new java.awt.Color(255, 255, 255));
         btnPayslip.setText("Payslip");
         btnPayslip.setBorderPainted(false);
@@ -1613,32 +1602,43 @@ public class Dashboard extends javax.swing.JFrame {
         DashboardPanel.add(logoutbtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 20, 120, 60));
 
         jPanel4.setBackground(new java.awt.Color(33, 35, 39));
-        jPanel4.setLayout(new java.awt.GridBagLayout());
+        java.awt.GridBagLayout jPanel4Layout = new java.awt.GridBagLayout();
+        jPanel4Layout.columnWidths = new int[] {0, 4, 0};
+        jPanel4Layout.rowHeights = new int[] {0, 5, 0};
+        jPanel4.setLayout(jPanel4Layout);
 
-        jLabel6.setFont(new java.awt.Font("Poppins SemiBold", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Poppins SemiBold", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Welcome, ");
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Welcome,");
         jLabel6.setMaximumSize(new java.awt.Dimension(120, 20));
         jLabel6.setMinimumSize(new java.awt.Dimension(120, 20));
         jLabel6.setPreferredSize(new java.awt.Dimension(120, 20));
-        jPanel4.add(jLabel6, new java.awt.GridBagConstraints());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        jPanel4.add(jLabel6, gridBagConstraints);
 
-        dashboardfnamelbl.setFont(new java.awt.Font("Poppins SemiBold", 0, 14)); // NOI18N
+        dashboardfnamelbl.setFont(new java.awt.Font("Poppins SemiBold", 0, 18)); // NOI18N
         dashboardfnamelbl.setForeground(new java.awt.Color(255, 255, 255));
         dashboardfnamelbl.setMaximumSize(new java.awt.Dimension(120, 20));
         dashboardfnamelbl.setMinimumSize(new java.awt.Dimension(120, 20));
         dashboardfnamelbl.setPreferredSize(new java.awt.Dimension(120, 20));
-        jPanel4.add(dashboardfnamelbl, new java.awt.GridBagConstraints());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        jPanel4.add(dashboardfnamelbl, gridBagConstraints);
 
         jLabel23.setFont(new java.awt.Font("Poppins SemiBold", 0, 14)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLabel23.setText("Employee ID:");
         jLabel23.setMaximumSize(new java.awt.Dimension(120, 20));
         jLabel23.setMinimumSize(new java.awt.Dimension(120, 20));
         jLabel23.setPreferredSize(new java.awt.Dimension(120, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridy = 2;
         jPanel4.add(jLabel23, gridBagConstraints);
 
         dashboardempNolbl.setFont(new java.awt.Font("Poppins SemiBold", 0, 14)); // NOI18N
@@ -1647,11 +1647,11 @@ public class Dashboard extends javax.swing.JFrame {
         dashboardempNolbl.setMinimumSize(new java.awt.Dimension(120, 20));
         dashboardempNolbl.setPreferredSize(new java.awt.Dimension(120, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
         jPanel4.add(dashboardempNolbl, gridBagConstraints);
 
-        DashboardPanel.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 10, 240, 80));
+        DashboardPanel.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 10, 240, 80));
 
         jLabel24.setFont(new java.awt.Font("Poppins SemiBold", 1, 36)); // NOI18N
         jLabel24.setForeground(new java.awt.Color(255, 153, 0));
@@ -1665,13 +1665,13 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel4.setText("People Portal");
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 75, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Poppins SemiBold", 1, 30)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Poppins SemiBold", 1, 32)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 153, 0));
         jLabel3.setText("PH");
         jLabel3.setIconTextGap(0);
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 33, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Poppins SemiBold", 0, 30)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Poppins SemiBold", 1, 32)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Motor");
         jLabel2.setIconTextGap(0);
@@ -2101,7 +2101,7 @@ try {
     }
 } catch (Exception ex) {
     ex.printStackTrace();
-    JOptionPane.showMessageDialog(this, "Error: " + ex.getMessage());
+    JOptionPane.showMessageDialog(this, "Please fill out the form completely.");
 } finally {
     // Close database connection
     try {
